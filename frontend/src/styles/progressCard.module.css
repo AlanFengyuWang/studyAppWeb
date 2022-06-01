@@ -1,0 +1,7 @@
+.progressCard {
+    min-height: 240px;
+    width: 97%;
+    border-radius: 15px;
+    margin: 0 auto;
+    background-color: lightblue;
+}
