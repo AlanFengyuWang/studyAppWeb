@@ -10,6 +10,7 @@ import {
   Link,
   Spacer,
   Stack,
+  Tooltip,
 } from "@chakra-ui/react";
 import NextLink from "next/link";
 import Image from "next/Image";
@@ -56,23 +57,33 @@ const navbar = () => {
         bottom="0"
         width="100%"
         fontSize="lg"
-        paddingBottom="12px"
+        paddingBottom="2.5%"
       >
         <img
           src="/menuOptions/background.svg"
           className={styles.halfCircleBackground}
+          style={{ width: "100%" }}
         ></img>
-        {pages.map((page) => (
-          <Box bg={page.title}>
-            <NextLink href={page.href} passHref>
-              <Image
-                layout="fixed"
-                width={55}
-                height={55}
-                src={page.image}
-                alt={page.title}
-              />
-            </NextLink>
+        {pages.map((page, index) => (
+          <Box bg={page.title} key={index}>
+            <Tooltip
+              label={page.title}
+              placement="bottom"
+              position="relative"
+              top="12"
+            >
+              <span>
+                <NextLink href={page.href} passHref>
+                  <Image
+                    layout="fixed"
+                    width="50vw"
+                    height="50vw"
+                    src={page.image}
+                    alt={page.title}
+                  />
+                </NextLink>
+              </span>
+            </Tooltip>
           </Box>
         ))}
       </Flex>
