@@ -91,9 +91,4 @@ const navbar = () => {
   );
 };
 
-// {pages.map((page) => {
-//   return (
-//   );
-// })}
-
 export default navbar;
