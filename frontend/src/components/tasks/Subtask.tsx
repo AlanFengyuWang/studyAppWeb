@@ -13,14 +13,11 @@ type EventHandlerFuncType = (e: React.MouseEvent<HTMLButtonElement>) => void;
 
 const Subtask = (props: {
   index: number;
+  register: any;
   isLast: boolean;
-  onClickDelFunc: EventHandlerFuncType;
-  onSubmit: Function;
-  register: (name: string, RegisterOptions?);
+  append: (obj: object | object[]) => void;
+  remove: (index?: number | number[]) => void;
 }) => {
-  //   const [subTaskTitle, setSubTaskTitle] = React.useState<string>("");
-  //   const [description, setDescription] = React.useState<string>("");
-
   return (
     <div>
       <FormControl isRequired>
@@ -32,8 +29,9 @@ const Subtask = (props: {
           placeholder="Title"
           size="sm"
           fontSize="sm"
-          value={subTaskTitle}
-          onChange={(e) => setSubTaskTitle(e.target.value)}
+          {...props.register(`subtask.${props.index}.title` as const, {
+            require: true,
+          })}
         />
       </FormControl>
 
@@ -42,21 +40,15 @@ const Subtask = (props: {
           Description:
         </FormLabel>
         <Textarea
-          value={description}
           size="sm"
-          onChange={(e) => setDescription(e.target.value)}
           placeholder="Remind my future self.."
+          {...props.register(`subtask.${props.index}.description` as const)}
         />
       </FormControl>
 
       <Box display="flex" justifyContent="right" width="100%" mb={1}>
         <ButtonGroup spacing="3" size="xs" marginTop="5px">
-          {props.isLast && (
-            <Button colorScheme="green" width="60px" variant="outline">
-              Add
-            </Button>
-          )}
-          <Button colorScheme="red" onClick={props.onClickDelFunc}>
+          <Button colorScheme="red" onClick={() => props.remove(props.index)}>
             Remove
           </Button>
         </ButtonGroup>
