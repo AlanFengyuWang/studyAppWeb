@@ -2,25 +2,17 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
-import type { ReactElement } from "react";
-// import NestedLayout from '../components/nested-layout'
-
-// export default function Page() {
-//   return {
-//     /** Your content */
-//   };
-// }
-
-// Page.getLayout = function getLayout(page: ReactElement) {
-//   return <Layout>{page}{/* <NestedLayout>{page}</NestedLayout> */}</Layout>;
-// };
 
 const Home: NextPage = () => {
   return (
-    <div style={{}}>
+    <div>
       <Head>
         <title>Study App</title>
         <meta name="description" content="Study App"></meta>
+        <style>
+          @import
+          url('https://fonts.googleapis.com/css2?family=Fleur+De+Leah&family=Frank+Ruhl+Libre:wght@400;500;700&family=Roboto+Condensed:ital,wght@0,300;0,400;1,300&family=Roboto:ital,wght@0,300;0,400;1,100;1,300&family=Sen:wght@400;700;800&display=swap');
+        </style>
       </Head>
       <main>Hello</main>
     </div>
