@@ -7,16 +7,20 @@ import {
   Input,
   Textarea,
 } from "@chakra-ui/react";
-import React from "react";
+import React, { MouseEventHandler } from "react";
 
-const Subtask = (props: { index: number; isLast: boolean }) => {
-  let [description, setDescription] = React.useState<string>("");
-  let handleDescriptionInputChange = (
-    e: React.ChangeEvent<HTMLTextAreaElement>
-  ) => {
-    let inputValue = e.target.value;
-    setDescription(inputValue);
-  };
+type EventHandlerFuncType = (e: React.MouseEvent<HTMLButtonElement>) => void;
+
+const Subtask = (props: {
+  index: number;
+  isLast: boolean;
+  onClickDelFunc: EventHandlerFuncType;
+  onSubmit: Function;
+  register: (name: string, RegisterOptions?);
+}) => {
+  //   const [subTaskTitle, setSubTaskTitle] = React.useState<string>("");
+  //   const [description, setDescription] = React.useState<string>("");
+
   return (
     <div>
       <FormControl isRequired>
@@ -24,7 +28,13 @@ const Subtask = (props: { index: number; isLast: boolean }) => {
         <FormLabel marginBottom={0} fontSize="md">
           Task {props.index + 1}:
         </FormLabel>
-        <Input placeholder="Title" size="sm" fontSize="sm" />
+        <Input
+          placeholder="Title"
+          size="sm"
+          fontSize="sm"
+          value={subTaskTitle}
+          onChange={(e) => setSubTaskTitle(e.target.value)}
+        />
       </FormControl>
 
       <FormControl mt={2}>
@@ -34,7 +44,7 @@ const Subtask = (props: { index: number; isLast: boolean }) => {
         <Textarea
           value={description}
           size="sm"
-          onChange={handleDescriptionInputChange}
+          onChange={(e) => setDescription(e.target.value)}
           placeholder="Remind my future self.."
         />
       </FormControl>
@@ -46,7 +56,9 @@ const Subtask = (props: { index: number; isLast: boolean }) => {
               Add
             </Button>
           )}
-          <Button colorScheme="red">Remove</Button>
+          <Button colorScheme="red" onClick={props.onClickDelFunc}>
+            Remove
+          </Button>
         </ButtonGroup>
       </Box>
     </div>

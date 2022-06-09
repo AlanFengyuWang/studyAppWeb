@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { MouseEventHandler, useEffect } from "react";
 import {
   Box,
   Button,
@@ -18,24 +18,41 @@ import {
   Textarea,
   useDisclosure,
 } from "@chakra-ui/react";
-import DateTimePicker from "react-datetime-picker";
-
-// import DateTimePicker from "react-datetime-picker/dist/entry.nostyle";
-import { AddIcon } from "@chakra-ui/icons";
 import Subtask from "./Subtask";
+import { useForm } from "react-hook-form";
+
+type TSubtask = { title: string; description: string[] };
 
 const AddTask = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const initialRef = React.useRef(null);
+
+  //useform
+  const { register, handleSubmit } = useForm();
   const [description, setDescription] = React.useState<string>("");
 
   const [nSubtasks, setnSubtasks] = React.useState<number>(3);
+  const [subTasks, setSubTasks] = React.useState<TSubtask[]>([]);
 
   const handleDescriptionInputChange = (
     e: React.ChangeEvent<HTMLTextAreaElement>
   ) => {
     const inputValue = e.target.value;
     setDescription(inputValue);
+  };
+
+  const onSubmit = (data: any) => {
+    console.log("data = " + data);
+  };
+
+  const updateSubTask = () => {
+    // e.preventDefault();
+  };
+
+  const onClickDelFunc = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    console.log("delting");
+    alert("deleting");
   };
   return (
     <>
@@ -77,17 +94,6 @@ const AddTask = () => {
               </Select>
             </FormControl>
 
-            <FormControl mt={3}>
-              {/* <FormLabel htmlFor="due">Due</FormLabel> */}
-              {/* <Box w="100%" p={4} border="1px solid"> */}
-              {/* <DatePicker
-                selected={startDate}
-                onChange={(date: Date) => setStartDate(date)}
-              /> */}
-              {/* </Box> */}
-              {/* <DateTimePicker onChange={setStartDate} value={startDate} /> */}
-            </FormControl>
-
             <FormControl mt={4}>
               <FormLabel marginBottom={0}>Subtasks</FormLabel>
               {[...Array(nSubtasks)].map((subtaskIndx, index) => (
@@ -95,19 +101,11 @@ const AddTask = () => {
                   index={index}
                   key={index}
                   isLast={index == nSubtasks - 1}
+                  onClickDelFunc={onClickDelFunc}
+                  onSubmit={onSubmit}
+                  register={register}
                 />
               ))}
-
-              {/* <Box display="flex" justifyContent="right" width="100%" mb={2}>
-                <ButtonGroup
-                  variant="outline"
-                  spacing="5"
-                  size="sm"
-                  marginTop="9px"
-                >
-                  <Button colorScheme="red">Remove</Button>
-                </ButtonGroup> 
-              </Box> */}
             </FormControl>
           </ModalBody>
 
