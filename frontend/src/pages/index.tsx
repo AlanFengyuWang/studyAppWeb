@@ -1,9 +1,13 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
+import React from "react";
+import Layout from "../components/layout";
 import styles from "../styles/Home.module.css";
+import Login from "./login";
 
 const Home: NextPage = () => {
+  const [isValidUser, setisValidUser] = React.useState<boolean>(false);
   return (
     <div>
       <Head>
@@ -14,7 +18,7 @@ const Home: NextPage = () => {
           url('https://fonts.googleapis.com/css2?family=Fleur+De+Leah&family=Frank+Ruhl+Libre:wght@400;500;700&family=Roboto+Condensed:ital,wght@0,300;0,400;1,300&family=Roboto:ital,wght@0,300;0,400;1,100;1,300&family=Sen:wght@400;700;800&display=swap');
         </style>
       </Head>
-      <main>Hello</main>
+      <main>{isValidUser ? <Layout></Layout> : <Login></Login>}</main>
     </div>
   );
 };

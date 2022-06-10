@@ -7,25 +7,12 @@ import Layout from "../components/layout";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    // <Layout>
-    //   <Component {...pageProps}></Component>
-    // </Layout>
     <ChakraProvider>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      {/* <Layout> */}
+      <Component {...pageProps} />
+      {/* </Layout> */}
     </ChakraProvider>
   );
 }
 
 export default MyApp;
-
-// export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
-//   // Use the layout defined at the page level, if available
-//   const getLayout = Component.getLayout ?? ((page) => page);
-//   return getLayout(
-//     <ChakraProvider>
-//       <Component {...pageProps} />
-//     </ChakraProvider>
-//   );
-// }
