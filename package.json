@@ -5,6 +5,7 @@
     "@emotion/styled": "^11.8.1",
     "framer-motion": "^6.3.3",
     "mongodb": "^4.6.0",
+    "react-icons": "^4.4.0",
     "react-responsive-carousel": "^3.2.23"
   }
 }
