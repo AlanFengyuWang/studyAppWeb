@@ -15,7 +15,7 @@ import {
   useBreakpointValue,
   useColorModeValue,
 } from "@chakra-ui/react";
-
+import { Link } from "@chakra-ui/react";
 import { Logo } from "./Logo";
 import { OAuthButtonGroup } from "./OAuthButtonGroup";
 import { PasswordField } from "./PasswordField";
@@ -36,9 +36,11 @@ const LogIn = () => {
             </Heading>
             <HStack spacing="1" justify="center" py="2">
               <Text color="muted">Don't have an account?</Text>
-              <Button variant="link" colorScheme="blue">
-                Sign up
-              </Button>
+              <Link href="/signup">
+                <Button variant="link" colorScheme="blue">
+                  Sign up
+                </Button>
+              </Link>
             </HStack>
           </Stack>
         </Stack>
@@ -67,7 +69,7 @@ const LogIn = () => {
               <Button variant="solid">Sign in</Button>
               <HStack>
                 <Divider />
-                <Text fontSize="sm" whiteSpace="nowrap" color="muted">
+                <Text fontSize="sm" whiteSpace="nowrap" color="muted" fontWeight="200">
                   or continue with
                 </Text>
                 <Divider />
