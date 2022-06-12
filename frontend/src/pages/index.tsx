@@ -5,9 +5,12 @@ import React from "react";
 import Layout from "../components/layout";
 import styles from "../styles/Home.module.css";
 import Login from "./login";
+import { useSession, getSession } from "next-auth/react";
+import { stat } from "fs/promises";
 
 const Home: NextPage = () => {
-  const [isValidUser, setisValidUser] = React.useState<boolean>(false);
+  // const [session, setsession] = React.useState<string>();
+  const { data: session, status } = useSession();
   return (
     <div>
       <Head>
@@ -18,7 +21,10 @@ const Home: NextPage = () => {
           url('https://fonts.googleapis.com/css2?family=Fleur+De+Leah&family=Frank+Ruhl+Libre:wght@400;500;700&family=Roboto+Condensed:ital,wght@0,300;0,400;1,300&family=Roboto:ital,wght@0,300;0,400;1,100;1,300&family=Sen:wght@400;700;800&display=swap');
         </style>
       </Head>
-      <main>{isValidUser ? <Layout></Layout> : <Login></Login>}</main>
+      <main>
+        {/* <p>Signed in as {session}</p> */}
+        {status === "authenticated" ? <Layout></Layout> : <Login></Login>}
+      </main>
     </div>
   );
 };
