@@ -24,6 +24,16 @@ export const GoogleIcon = createIcon({
   ),
 });
 
+export const FaceBookIcon = createIcon({
+  displayName: "FaceBookIcon",
+  path: (
+    <path
+      fill="url(#Ld6sqrtcxMyckEl6xeDdMa)"
+      d="M24,4C12.954,4,4,12.954,4,24s8.954,20,20,20s20-8.954,20-20S35.046,4,24,4z"
+    />
+  ),
+});
+
 export const GitHubIcon = createIcon({
   displayName: "GitHubIcon",
   path: (

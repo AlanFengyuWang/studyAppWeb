@@ -19,14 +19,27 @@ export default NextAuth({
       clientSecret: process.env.GOOGLE_SECRET || "",
     }),
   ],
+  secret: process.env.NEXTAUTH_SECRET,
+  session: {
+    strategy: 'jwt'
+  },
+  jwt: {
+    secret: process.env.NEXTAUTH_SECRET,
+  },
   //The callback is called whenever a JSON Web Token is created or updated. The returned value will be
   //encrypted and it is stored in a cookie.
   callbacks: {
+    session({ session, token, user }) {
+      return session // The return type will match the one returned in `useSession()`
+    },
     async jwt({token, account}) {
       if(account) {
         token.accessToken = account.access_token;
       }
       return token;
-    }
+    },
+    async redirect({ url, baseUrl }) {
+      return baseUrl
+    },
   }
 });

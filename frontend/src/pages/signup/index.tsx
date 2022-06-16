@@ -83,4 +83,6 @@ const SignUp = () => {
   );
 };
 
+SignUp.noAuth = true;
+
 export default SignUp;

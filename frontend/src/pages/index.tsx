@@ -1,4 +1,4 @@
-import type { NextPage } from "next";
+import type { GetServerSideProps, NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import React from "react";
@@ -7,9 +7,11 @@ import styles from "../styles/Home.module.css";
 import Login from "./login";
 import { useSession, getSession } from "next-auth/react";
 import { stat } from "fs/promises";
+import type { GetSessionParams } from "next-auth/react";
+import type { Session } from "next-auth";
+import HomePage from "./home";
 
 const Home: NextPage = () => {
-  // const [session, setsession] = React.useState<string>();
   const { data: session, status } = useSession();
   return (
     <div>
@@ -22,12 +24,38 @@ const Home: NextPage = () => {
         </style>
       </Head>
       <main>
-        {/* <p>Signed in as {session}</p> */}
-        {status === "authenticated" ? <Layout></Layout> : <Login></Login>}
+        {/* {status === "authenticated" ? (
+          <Layout>
+            <HomePage />
+          </Layout>
+        ) : (
+          <Login></Login>
+        )} */}
+        <Layout>
+          <HomePage />
+        </Layout>
       </main>
     </div>
   );
 };
+
+// export const getServerSideProps: GetServerSideProps<{
+//   session: Session | null;
+// }> = async (context) => {
+//   return {
+//     props: {
+//       session: await getSession(context),
+//     },
+//   };
+// };
+
+// export async function getServerSideProps(ctx: GetSessionParams) {
+//   return {
+//     props: {
+//       session: await getSession(ctx),
+//     },
+//   };
+// }
 
 const Example: NextPage = () => {
   return (
