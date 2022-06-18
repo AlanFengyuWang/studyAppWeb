@@ -75,7 +75,7 @@ const SignUp = () => {
               </Text>
               <Divider />
             </HStack>
-            <OAuthButtonGroup />
+            <OAuthButtonGroup isSigningUp={true} />
           </Stack>
         </Box>
       </Stack>

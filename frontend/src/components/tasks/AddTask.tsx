@@ -52,9 +52,7 @@ const AddTask = () => {
     console.log("Hello");
     console.log(data);
   };
-
-  const renderCounter = useRef(0);
-  renderCounter.current = renderCounter.current + 1;
+  
 
   return (
     <>

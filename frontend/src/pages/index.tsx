@@ -13,6 +13,7 @@ import HomePage from "./home";
 
 const Home: NextPage = () => {
   const { data: session, status } = useSession();
+
   return (
     <div>
       <Head>

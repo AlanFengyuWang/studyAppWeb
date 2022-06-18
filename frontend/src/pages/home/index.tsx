@@ -7,7 +7,9 @@ import AddTask from "../../components/tasks/AddTask";
 import { useSession } from "next-auth/react";
 
 const HomePage = () => {
-  // const { data: session } = useSession();
+  const { data: session } = useSession();
+  console.log("data = " + JSON.stringify(session));
+
   return (
     <div>
       <Profile />

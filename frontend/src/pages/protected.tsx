@@ -14,12 +14,5 @@ export default function AuthGuard({ children }: { children: JSX.Element }) {
     },
   });
 
-  // if (status === "authenticated") {
-  //   return <>{children}</>;
-  // } else if (status === "unauthenticated") {
-  //   Router.push("/login");
-  // } else if (status === "loading") {
-  //   console.log("loading");
-  // }
   return <>{children}</>;
 }
