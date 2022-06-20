@@ -4,7 +4,12 @@ import ProgressCards from "../../components/home/ProgressDisplay";
 import TodayTaskList from "../../components/home/TodayTaskList";
 import { Text } from "@chakra-ui/react";
 import AddTask from "../../components/tasks/AddTask";
-const Home = () => {
+import { useSession } from "next-auth/react";
+
+const HomePage = () => {
+  const { data: session } = useSession();
+  console.log("data = " + JSON.stringify(session));
+
   return (
     <div>
       <Profile />
@@ -20,4 +25,6 @@ const Home = () => {
   );
 };
 
-export default Home;
+HomePage.auth = true;
+
+export default HomePage;

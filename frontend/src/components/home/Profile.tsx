@@ -12,6 +12,7 @@ import {
   Stack,
 } from "@chakra-ui/react";
 import React from "react";
+import { signOut } from "next-auth/react"
 import { Text } from "@chakra-ui/react";
 const Profile = () => {
   return (
@@ -47,7 +48,7 @@ const Profile = () => {
             <MenuDivider />
             <MenuGroup title="Help">
               <MenuItem>Docs</MenuItem>
-              <MenuItem>FAQ</MenuItem>
+              <MenuItem onClick={() => signOut()}>Log out</MenuItem>
             </MenuGroup>
           </MenuList>
         </Menu>

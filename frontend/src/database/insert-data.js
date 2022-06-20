@@ -1,12 +1,11 @@
 const { MongoClient } = require("mongodb");
 
 // Replace the following with your Atlas connection string
-const url =
-  "mongodb+srv://AlanWang:Wangfengyu2344@studyweb.zpefl.mongodb.net/?retryWrites=true&w=majority";
+const url = process.env.DATABASE_URL;
 const client = new MongoClient(url);
 
 // The database to use
-const dbName = "test";
+const dbName = "studyApp";
 
 async function run() {
   try {
@@ -15,15 +14,32 @@ async function run() {
     const db = client.db(dbName);
 
     // Use the collection "people"
-    const col = db.collection("people");
+    const col = db.collection("users");
 
     // Construct a document
     let personDocument = {
-      name: { first: "Alan", last: "Turing" },
-      birth: new Date(1912, 5, 23), // May 23, 1912
-      death: new Date(1954, 5, 7), // May 7, 1954
-      contribs: ["Turing machine", "Turing test", "Turingery"],
-      views: 1250000,
+      name: { first: "Fengyu", last: "Wang" },
+      accountTimeCreated: new Date(2022, 6, 16),
+      email: "wfy1361202895@gmail.com",
+      image:
+        "https://lh3.googleusercontent.com/a/AATXAJxUDzkNkkuG1y0lqH7s7xI0EcwMqkUOtvogGtkW=s96-c",
+      lastTimeRevised: new Date(2022, 6, 16, 20, 45),
+      task: [
+        {
+          taskName: "Finishing chemistry week 2 lecture",
+          description: "I need to work harder",
+          type: "Work",
+          due: new Date(2022, 6, 19, 16),
+          percentageRemained: 30,
+          subtasks: [
+            {
+              subTaskName: "finishing 2A",
+              description: "it will be hard",
+              due: new Date(2022, 6, 17, 14, 30),
+            },
+          ],
+        },
+      ],
     };
 
     // Insert a single document, wait for promise so we can read it back

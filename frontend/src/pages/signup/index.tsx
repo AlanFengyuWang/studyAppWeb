@@ -75,12 +75,14 @@ const SignUp = () => {
               </Text>
               <Divider />
             </HStack>
-            <OAuthButtonGroup />
+            <OAuthButtonGroup isSigningUp={true} />
           </Stack>
         </Box>
       </Stack>
     </Container>
   );
 };
+
+SignUp.noAuth = true;
 
 export default SignUp;
