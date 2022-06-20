@@ -38,7 +38,7 @@ const AddTask = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const initialRef = React.useRef(null);
 
-  const [dateTime, setDateTime] = useState(new Date());
+  const [dateTime, setDateTime] = useState<Date>();
 
   const noDueDate = new Date();
   noDueDate.setDate(noDueDate.getDate() + 99999);
@@ -77,10 +77,13 @@ const AddTask = () => {
     window.localStorage.setItem("tasks", JSON.stringify(newTasks));
   };
 
-  const onChangeDateTime = (date: Date) => {
-    setDateTime(date);
-    setValue("due", dateTime);
-  };
+  useEffect(() => {
+    if (dateTime == undefined) {
+      setValue("due", noDueDate);
+    } else {
+      setValue("due", dateTime);
+    }
+  }, [dateTime]);
 
   return (
     <>
@@ -127,7 +130,7 @@ const AddTask = () => {
                 {/* <DateTimePicker
                   onChange={(value: Date) => setValue("due", value)}
                 /> */}
-                <DateTimePicker onChange={onChangeDateTime} value={dateTime} />
+                <DateTimePicker onChange={setDateTime} value={dateTime} />
               </FormControl>
 
               <FormControl mt={4}>
