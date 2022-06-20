@@ -25,16 +25,16 @@ const Home: NextPage = () => {
         </style>
       </Head>
       <main>
-        {/* {status === "authenticated" ? (
+        {status === "authenticated" ? (
           <Layout>
             <HomePage />
           </Layout>
         ) : (
           <Login></Login>
-        )} */}
-        <Layout>
+        )}
+        {/* <Layout>
           <HomePage />
-        </Layout>
+        </Layout> */}
       </main>
     </div>
   );

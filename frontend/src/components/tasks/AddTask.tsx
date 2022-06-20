@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import {
   Box,
   Button,
@@ -20,12 +20,17 @@ import {
 } from "@chakra-ui/react";
 import Subtask from "./Subtask";
 import { useForm, useFieldArray } from "react-hook-form";
+import DateTimePicker from "react-datetime-picker/dist/entry.nostyle";
+import "react-datetime-picker/dist/DateTimePicker.css";
+import "react-calendar/dist/Calendar.css";
+import "react-clock/dist/Clock.css";
 
 type TaskType = "Work" | "Exercise" | "Entertainment" | "Others" | "Study";
 type FormValues = {
   taskTitle: string;
   taskDescription: string;
   type: TaskType;
+  due: Date;
   subtask: { title: string; description: string }[];
 };
 
@@ -33,14 +38,26 @@ const AddTask = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const initialRef = React.useRef(null);
 
+  const [dateTime, setDateTime] = useState(new Date());
+
+  const noDueDate = new Date();
+  noDueDate.setDate(noDueDate.getDate() + 99999);
+
   //useFieldAray
   const {
     register,
+    setValue,
     control,
     handleSubmit,
     formState: { errors },
   } = useForm<FormValues>({
-    defaultValues: { subtask: [{ title: "", description: "" }] },
+    defaultValues: {
+      taskTitle: "",
+      taskDescription: "",
+      type: "Others",
+      due: noDueDate,
+      subtask: [{ title: "", description: "" }],
+    },
     mode: "onBlur",
   });
   const { fields, append, remove } = useFieldArray({
@@ -49,10 +66,21 @@ const AddTask = () => {
   });
 
   const onSubmit = (data: FormValues) => {
-    console.log("Hello");
-    console.log(data);
+    //store to the localstorage
+    const tasks = window.localStorage.hasOwnProperty("tasks")
+      ? window.localStorage.getItem("tasks")
+      : "[]";
+
+    let newTasks: Array<string | Object> = tasks ? JSON.parse(tasks) : [];
+
+    newTasks.push(data);
+    window.localStorage.setItem("tasks", JSON.stringify(newTasks));
   };
-  
+
+  const onChangeDateTime = (date: Date) => {
+    setDateTime(date);
+    setValue("due", dateTime);
+  };
 
   return (
     <>
@@ -91,6 +119,15 @@ const AddTask = () => {
                   <option>Entertainment</option>
                   <option>Others</option>
                 </Select>
+              </FormControl>
+
+              <FormControl mt={3}>
+                <FormLabel htmlFor="due">Due:</FormLabel>
+                {/* <DateTimePicker {...register("dateTime" as const)} /> */}
+                {/* <DateTimePicker
+                  onChange={(value: Date) => setValue("due", value)}
+                /> */}
+                <DateTimePicker onChange={onChangeDateTime} value={dateTime} />
               </FormControl>
 
               <FormControl mt={4}>
