@@ -39,32 +39,8 @@ const signInAndRegisterThirdParty = (
       email: session.user.email,
       image: session.user.image,
     };
-    // registerUser(userInfo);
   }
 };
-
-// const sessionIsValid = (session: any | null): boolean => {
-//   if (session !== null && session !== undefined) {
-//     const user = session.user;
-//     if (user === null || user === undefined) return false;
-
-//     //check every elements in the user
-//     let result: boolean = true;
-//     Object.entries(user).forEach((entry) => {
-//       const [key, value] = entry;
-//       if (
-//         key === "undefined" ||
-//         key === "null" ||
-//         value === undefined ||
-//         value === null
-//       ) {
-//         result = false;
-//       }
-//     });
-//     return result;
-//   }
-//   return false;
-// };
 
 export const OAuthButtonGroup = (isSigningUp?: { isSigningUp?: boolean }) => {
   const { data: session, status } = useSession();
