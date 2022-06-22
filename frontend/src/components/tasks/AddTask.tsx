@@ -27,11 +27,12 @@ import "react-clock/dist/Clock.css";
 
 type TaskType = "Work" | "Exercise" | "Entertainment" | "Others" | "Study";
 type FormValues = {
+  _id: string;
   taskTitle: string;
   taskDescription: string;
   type: TaskType;
   due: Date;
-  subtask: { title: string; description: string }[];
+  subtask: { _id: string; title: string; description: string }[];
 };
 
 const AddTask = () => {
@@ -52,11 +53,14 @@ const AddTask = () => {
     formState: { errors },
   } = useForm<FormValues>({
     defaultValues: {
+      _id: "UNIQUE COUNT DOCUMENT IDENTIFIER",
       taskTitle: "",
       taskDescription: "",
       type: "Others",
       due: noDueDate,
-      subtask: [{ title: "", description: "" }],
+      subtask: [
+        { _id: "UNIQUE COUNT DOCUMENT IDENTIFIER", title: "", description: "" },
+      ],
     },
     mode: "onBlur",
   });

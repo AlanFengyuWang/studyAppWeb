@@ -35,4 +35,21 @@ recordRoutes.route("/user/:id").get(function (req, res) {
   });
 });
 
+//insert user
+recordRoutes.route("/user/add").post(function (req, response) {
+  let db_connect = dbo.getDb();
+  let userobj = {
+    name: { first: req.body.first, last: req.body.last },
+    email: req.body.email,
+    password: req.body.password, //Here we assume password is empty if it's third party, otherwise it's hashed password
+    image: req.body.image,
+    accountTimeCreated: req.body.accountTimeCreated,
+    tasks: [],
+  };
+  db_connect.collection("users").insertOne(myobj, function (err, res) {
+    if (err) throw err;
+    response.json(res);
+  });
+});
+
 module.exports = recordRoutes;
