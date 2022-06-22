@@ -25,7 +25,7 @@ recordRoutes.route("/user").get(function (req, res) {
     });
 });
 
-//get a single user given by email
+//get a single user given by id
 recordRoutes.route("/user/:id").get(function (req, res) {
   let db_connect = dbo.getDb();
   let myquery = { _id: ObjectId(req.params.id) };
