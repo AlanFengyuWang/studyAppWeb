@@ -1,4 +1,5 @@
 const express = require("express");
+const { func } = require("prop-types");
 
 // recordRoutes is an instance of the express router.
 // We use it to define our routes.
@@ -7,6 +8,7 @@ const recordRoutes = express.Router();
 
 // This will help us connect to the database
 const dbo = require("../connect");
+console.log("----->>>>dbo = " + JSON.stringify(dbo));
 
 // This help convert the id from string to ObjectId for the _id.
 const ObjectId = require("mongodb").ObjectId;
@@ -14,6 +16,7 @@ const ObjectId = require("mongodb").ObjectId;
 // Get a list of all the users.
 recordRoutes.route("/user").get(function (req, res) {
   let db_connect = dbo.getDb("studyApp");
+  console.log("db_connect = " + db_connect);
   db_connect
     .collection("users")
     .find({})
@@ -29,6 +32,16 @@ recordRoutes.route("/user").get(function (req, res) {
 recordRoutes.route("/user/:id").get(function (req, res) {
   let db_connect = dbo.getDb();
   let myquery = { _id: ObjectId(req.params.id) };
+  db_connect.collection("users").findOne(myquery, function (err, result) {
+    if (err) throw err;
+    res.json(result);
+  });
+});
+
+//get user given by email
+recordRoutes.route("/user/email/:email").get(function (req, res) {
+  let db_connect = dbo.getDb();
+  let myquery = { email: req.params.email };
   db_connect.collection("users").findOne(myquery, function (err, result) {
     if (err) throw err;
     res.json(result);

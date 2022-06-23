@@ -3,7 +3,6 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import ProgressCard from "./ProgressCard";
 import { IProgress } from "../../types";
 import { Carousel } from "react-responsive-carousel/lib/js";
-import klass from "./cssClasses";
 
 interface IRenderIndicator {
   onClickHandler: (e: React.MouseEvent | React.KeyboardEvent) => void;
@@ -24,8 +23,9 @@ const ImageSlider = (props: { slides: IProgress[] }) => {
         preventMovementUntilSwipeScrollTolerance
         swipeScrollTolerance={100}
       >
-        {props.slides.map((slide) => (
+        {props.slides.map((slide, index) => (
           <ProgressCard
+            key={index}
             timeType={slide.timeType}
             progress={slide.progress}
           ></ProgressCard>

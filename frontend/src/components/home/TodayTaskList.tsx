@@ -42,8 +42,8 @@ const TodayTaskList = () => {
     // console.log(window.localStorage.getItem("tasks"));
     return (
       <>
-        {tasksObject.map((task: string | Object) => (
-          <TaskCard task={task} />
+        {tasksObject.map((task: string | Object, index) => (
+          <TaskCard task={task} key={index} />
         ))}
       </>
     );
