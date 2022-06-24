@@ -8,8 +8,6 @@ const recordRoutes = express.Router();
 
 // This will help us connect to the database
 const dbo = require("../connect");
-console.log("----->>>>dbo = " + JSON.stringify(dbo));
-
 // This help convert the id from string to ObjectId for the _id.
 const ObjectId = require("mongodb").ObjectId;
 
@@ -52,17 +50,40 @@ recordRoutes.route("/user/email/:email").get(function (req, res) {
 recordRoutes.route("/user/add").post(function (req, response) {
   let db_connect = dbo.getDb();
   let userobj = {
-    name: { first: req.body.first, last: req.body.last },
+    name: { first: req.body.name.first, last: req.body.name.last },
     email: req.body.email,
     password: req.body.password, //Here we assume password is empty if it's third party, otherwise it's hashed password
     image: req.body.image,
     accountTimeCreated: req.body.accountTimeCreated,
     tasks: [],
   };
-  db_connect.collection("users").insertOne(myobj, function (err, res) {
+  db_connect.collection("users").insertOne(userobj, function (err, res) {
     if (err) throw err;
     response.json(res);
   });
+});
+
+//update
+recordRoutes.route("/user/update").post(function (req, response) {
+  let db_connect = dbo.getDb();
+  let userobj = {
+    name: { first: req.body.name.first, last: req.body.name.last },
+    email: req.body.email,
+    password: req.body.password, //Here we assume password is empty if it's third party, otherwise it's hashed password
+    image: req.body.image,
+    accountTimeCreated: req.body.accountTimeCreated,
+    tasks: [],
+  };
+  db_connect
+    .collection("users")
+    .updateOne(
+      { _id: ObjectId(req.body.userId) },
+      { $set: userobj },
+      function (err, res) {
+        if (err) throw err;
+        response.json(res);
+      }
+    );
 });
 
 module.exports = recordRoutes;

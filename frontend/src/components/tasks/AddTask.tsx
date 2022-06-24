@@ -22,18 +22,11 @@ import Subtask from "./Subtask";
 import { useForm, useFieldArray } from "react-hook-form";
 import DateTimePicker from "react-datetime-picker/dist/entry.nostyle";
 import "react-datetime-picker/dist/DateTimePicker.css";
+import { format } from 'date-fns';
 import "react-calendar/dist/Calendar.css";
 import "react-clock/dist/Clock.css";
+import { FormValues } from "../../types";
 
-type TaskType = "Work" | "Exercise" | "Entertainment" | "Others" | "Study";
-type FormValues = {
-  _id: string;
-  taskTitle: string;
-  taskDescription: string;
-  type: TaskType;
-  due: Date;
-  subtask: { _id: string; title: string; description: string }[];
-};
 
 const AddTask = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -85,6 +78,8 @@ const AddTask = () => {
     if (dateTime == undefined) {
       setValue("due", noDueDate);
     } else {
+
+      // const parsedDate = parseDate()
       setValue("due", dateTime);
     }
   }, [dateTime]);
@@ -130,10 +125,6 @@ const AddTask = () => {
 
               <FormControl mt={3}>
                 <FormLabel htmlFor="due">Due:</FormLabel>
-                {/* <DateTimePicker {...register("dateTime" as const)} /> */}
-                {/* <DateTimePicker
-                  onChange={(value: Date) => setValue("due", value)}
-                /> */}
                 <DateTimePicker onChange={setDateTime} value={dateTime} />
               </FormControl>
 
@@ -164,7 +155,7 @@ const AddTask = () => {
               </FormControl>
             </ModalBody>
             <ModalFooter>
-              <Button colorScheme="blue" mr={3} type="submit">
+              <Button colorScheme="blue" mr={3} onClick={onClose} type="submit">
                 Save
               </Button>
               <Button onClick={onClose}>Cancel</Button>
