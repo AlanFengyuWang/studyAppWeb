@@ -1,4 +1,10 @@
-import { FormControl, FormLabel } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  ButtonGroup,
+  FormControl,
+  FormLabel,
+} from "@chakra-ui/react";
 import React from "react";
 import DateTimePicker from "react-datetime-picker/dist/entry.nostyle";
 import "react-datetime-picker/dist/DateTimePicker.css";
@@ -25,7 +31,13 @@ const Milestone = (props: {
           value={props.milestones[props.index]}
         />
       </FormControl>
-      <RemoveButton index={props.index} remove={props.remove} />
+      <Box display="flex" justifyContent="left" width="100%" mb={1}>
+        <ButtonGroup spacing="3" size="xs" marginTop="5px">
+          <Button colorScheme="red" onClick={() => props.remove(props.index)}>
+            Remove
+          </Button>
+        </ButtonGroup>
+      </Box>
     </div>
   );
 };

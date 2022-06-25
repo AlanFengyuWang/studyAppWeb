@@ -32,6 +32,17 @@ const Subtask = (props: {
           })}
         />
       </FormControl>
+      <FormControl mt={2}>
+        <FormLabel marginBottom={0} fontSize="sm">
+          Description:
+        </FormLabel>
+        <Textarea
+          size="sm"
+          placeholder="Remind my future self.."
+          {...props.register(`subtask.${props.index}.description` as const)}
+        />
+      </FormControl>
+
       <RemoveButton index={props.index} remove={props.remove} />
     </div>
   );
