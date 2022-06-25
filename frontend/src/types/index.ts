@@ -12,5 +12,6 @@ export type FormValues = {
   taskDescription: string;
   type: TaskType;
   due: Date;
+  milestones: {milestone: Date}[];
   subtask: { _id: string; title: string; description: string }[];
 };

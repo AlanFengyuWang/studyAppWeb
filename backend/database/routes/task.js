@@ -21,13 +21,6 @@ recordRoutes.route("/task/:id").get(function (req, res) {
   });
 });
 
-// _id: string;
-// taskTitle: string;
-// taskDescription: string;
-// type: TaskType;
-// due: Date;
-// subtask: { _id: string; title: string; description: string }[];
-
 //insert tasks
 //input needs to include user id
 recordRoutes.route("/task/add").post(function (req, res) {

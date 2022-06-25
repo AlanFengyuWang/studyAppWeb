@@ -7,9 +7,8 @@ import {
   Input,
   Textarea,
 } from "@chakra-ui/react";
-import React, { MouseEventHandler } from "react";
-
-type EventHandlerFuncType = (e: React.MouseEvent<HTMLButtonElement>) => void;
+import React from "react";
+import RemoveButton from "../home/buttons/removeButton";
 
 const Subtask = (props: {
   index: number;
@@ -21,7 +20,6 @@ const Subtask = (props: {
   return (
     <div>
       <FormControl isRequired>
-        {/* <Text>Task {props.index}</Text> */}
         <FormLabel marginBottom={0} fontSize="md">
           Task {props.index + 1}:
         </FormLabel>
@@ -34,25 +32,7 @@ const Subtask = (props: {
           })}
         />
       </FormControl>
-
-      <FormControl mt={2}>
-        <FormLabel marginBottom={0} fontSize="sm">
-          Description:
-        </FormLabel>
-        <Textarea
-          size="sm"
-          placeholder="Remind my future self.."
-          {...props.register(`subtask.${props.index}.description` as const)}
-        />
-      </FormControl>
-
-      <Box display="flex" justifyContent="right" width="100%" mb={1}>
-        <ButtonGroup spacing="3" size="xs" marginTop="5px">
-          <Button colorScheme="red" onClick={() => props.remove(props.index)}>
-            Remove
-          </Button>
-        </ButtonGroup>
-      </Box>
+      <RemoveButton index={props.index} remove={props.remove} />
     </div>
   );
 };
