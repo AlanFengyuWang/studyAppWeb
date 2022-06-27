@@ -80,6 +80,8 @@ const AddTask = () => {
   });
 
   const onSubmit = (data: FormValues) => {
+    console.log("data = " + JSON.stringify(data));
+
     /**
      * ===========Local storage START==========
      */

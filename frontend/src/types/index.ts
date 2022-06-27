@@ -15,3 +15,10 @@ export type FormValues = {
   milestones: {milestone: Date}[];
   subtask: { _id: string; title: string; description: string }[];
 };
+
+//users
+export type UserInfo = {
+  name: { first: string, last: string },
+      email: string,
+      image: string,
+}

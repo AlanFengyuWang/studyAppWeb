@@ -11,6 +11,7 @@ import type { GetSessionParams } from "next-auth/react";
 import type { Session } from "next-auth";
 import HomePage from "./home";
 import UserisExist from "../functions/users/UserisExist";
+import { AddUser } from "../functions/users/AddUser";
 
 const checkRegisterUser = async (session: Session | null) => {
   //then store the user info to the database
@@ -25,13 +26,16 @@ const checkRegisterUser = async (session: Session | null) => {
     //get the first and the last
     const nameParts = session.user.name.split(" ");
     const userInfo = {
-      name: { first: nameParts[0], last: nameParts[-1] },
+      name: { first: nameParts[0], last: nameParts[nameParts.length - 1] },
       email: session.user.email,
       image: session.user.image,
     };
-    //check if user exist
+    //insert user if it doesn't exist in the database
     const result = await UserisExist(userInfo.email);
-    console.log("--->result = " + result);
+    console.log("result = " + result);
+    if (!result) {
+      AddUser(userInfo);
+    }
   }
 };
 
