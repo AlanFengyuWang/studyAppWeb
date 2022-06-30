@@ -5,6 +5,7 @@ import { SessionProvider, getSession, useSession } from "next-auth/react";
 import React, { createContext, ReactNode, useState } from "react";
 import AuthGuard from "./protected";
 import { EmailProvider } from "./EmailContext";
+import Layout from "../components/layout";
 
 export type NextApplicationPage<P = any, IP = P> = NextPage<P, IP> & {
   noAuth?: boolean;
@@ -26,7 +27,9 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
               <Component {...pageProps} />
             ) : (
               <AuthGuard>
-                <Component {...pageProps} />
+                <Layout>
+                  <Component {...pageProps} />
+                </Layout>
               </AuthGuard>
             )}
           </EmailProvider>

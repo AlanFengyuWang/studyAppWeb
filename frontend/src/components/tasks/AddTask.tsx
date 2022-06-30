@@ -22,13 +22,13 @@ import Subtask from "./Subtask";
 import { useForm, useFieldArray } from "react-hook-form";
 import DateTimePicker from "react-datetime-picker/dist/entry.nostyle";
 import "react-datetime-picker/dist/DateTimePicker.css";
-import { format } from "date-fns";
 import "react-calendar/dist/Calendar.css";
 import "react-clock/dist/Clock.css";
 import { FormValues } from "../../types";
 import Milestone from "../home/Milestone";
 import { buttonAddStyle } from "../../styles/home/buttonAdd";
 import { addTask } from "../../functions/tasks/addTask";
+import { useEmailContext } from "../../pages/EmailContext";
 
 const AddTask = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -40,6 +40,9 @@ const AddTask = () => {
 
   const noDueDate = new Date();
   noDueDate.setDate(noDueDate.getDate() + 99999);
+
+  //get email
+  const { email } = useEmailContext();
 
   //useFieldAray
   const {
@@ -56,9 +59,7 @@ const AddTask = () => {
       type: "Others",
       due: noDueDate,
       milestones: [],
-      subtask: [
-        // { _id: "UNIQUE COUNT DOCUMENT IDENTIFIER", title: "", description: "" },
-      ],
+      subtask: [],
     },
     mode: "onBlur",
   });
@@ -81,8 +82,12 @@ const AddTask = () => {
   });
 
   const onSubmit = (data: FormValues) => {
-    console.log("data = " + JSON.stringify(data));
-    addTask(data);
+    //add email
+    let dataWithEmail: any = data;
+    dataWithEmail["email"] = email;
+    console.log("data = " + JSON.stringify(dataWithEmail));
+
+    addTask(dataWithEmail);
 
     /**
      * ===========Local storage START==========

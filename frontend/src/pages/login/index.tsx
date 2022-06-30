@@ -17,8 +17,6 @@ import {
 } from "@chakra-ui/react";
 import { Link } from "@chakra-ui/react";
 import { Logo } from "./Logo";
-import { useSession } from "next-auth/react";
-import type { Session } from "next-auth";
 import { OAuthButtonGroup } from "./OAuthButtonGroup";
 import { PasswordField } from "./PasswordField";
 
@@ -89,5 +87,7 @@ const LogIn = () => {
     </Container>
   );
 };
+
+LogIn.noAuth = true;
 
 export default LogIn;
