@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Box,
   Button,
@@ -17,6 +17,8 @@ import {
 } from "@chakra-ui/react";
 import { Link } from "@chakra-ui/react";
 import { Logo } from "./Logo";
+import { useSession } from "next-auth/react";
+import type { Session } from "next-auth";
 import { OAuthButtonGroup } from "./OAuthButtonGroup";
 import { PasswordField } from "./PasswordField";
 
@@ -69,7 +71,12 @@ const LogIn = () => {
               <Button variant="solid">Sign in</Button>
               <HStack>
                 <Divider />
-                <Text fontSize="sm" whiteSpace="nowrap" color="muted" fontWeight="200">
+                <Text
+                  fontSize="sm"
+                  whiteSpace="nowrap"
+                  color="muted"
+                  fontWeight="200"
+                >
                   or continue with
                 </Text>
                 <Divider />
