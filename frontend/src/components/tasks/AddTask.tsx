@@ -28,6 +28,7 @@ import "react-clock/dist/Clock.css";
 import { FormValues } from "../../types";
 import Milestone from "../home/Milestone";
 import { buttonAddStyle } from "../../styles/home/buttonAdd";
+import { addTask } from "../../functions/tasks/addTask";
 
 const AddTask = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -81,6 +82,7 @@ const AddTask = () => {
 
   const onSubmit = (data: FormValues) => {
     console.log("data = " + JSON.stringify(data));
+    addTask(data);
 
     /**
      * ===========Local storage START==========

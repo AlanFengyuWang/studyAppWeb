@@ -2,8 +2,9 @@ import "../styles/globals.css";
 import { NextComponentType, NextPage, NextPageContext } from "next";
 import { ChakraProvider } from "@chakra-ui/react";
 import { SessionProvider, getSession, useSession } from "next-auth/react";
-import React, { ReactNode } from "react";
+import React, { createContext, ReactNode, useState } from "react";
 import AuthGuard from "./protected";
+import { EmailProvider } from "./EmailContext";
 
 export type NextApplicationPage<P = any, IP = P> = NextPage<P, IP> & {
   noAuth?: boolean;
@@ -15,18 +16,20 @@ type AppProps = {
 };
 
 function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
+  const [email, setEmail] = useState<string>("");
   return (
     <>
       <SessionProvider session={session}>
         <ChakraProvider>
-          {/* <p>Hello</p> */}
-          {Component.noAuth ? (
-            <Component {...pageProps} />
-          ) : (
-            <AuthGuard>
+          <EmailProvider>
+            {Component.noAuth ? (
               <Component {...pageProps} />
-            </AuthGuard>
-          )}
+            ) : (
+              <AuthGuard>
+                <Component {...pageProps} />
+              </AuthGuard>
+            )}
+          </EmailProvider>
         </ChakraProvider>
       </SessionProvider>
     </>

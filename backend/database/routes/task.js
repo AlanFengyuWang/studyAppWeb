@@ -21,24 +21,39 @@ recordRoutes.route("/task/:id").get(function (req, res) {
   });
 });
 
+//get all tasks given by user email
+recordRoutes.route("/task/email").get(function (req, res) {
+  let db_connect = dbo.getDb();
+  let myquery = { email: req.params.email };
+  db_connect.collection("users").findOne(myquery, function (err, result) {
+    if (err) throw err;
+    res.json(result);
+  });
+});
+
 //insert tasks
-//input needs to include user id
+//input needs to include user email
 recordRoutes.route("/task/add").post(function (req, res) {
   let db_connect = dbo.getDb();
   const taskObj = {
-    _id: "UNIQUE COUNT DOCUMENT IDENTIFIER",
+    _id: new ObjectId(),
     taskTitle: req.body.taskTitle,
     taskDescription: req.body.taskDescription,
     type: req.body.type,
     due: req.body.due,
-    subtask: req.body.subtask,
+    // milestones: req.body.milestones,
+    subtasks: req.body.subtask,
   };
 
   //add array elements using push
   db_connect.collection("users").updateOne(
-    { _id: req.body.userId },
+    { email: req.body.email },
     {
-      $push: taskObj,
+      $push: { tasks: taskObj },
+    },
+    function (err, result) {
+      if (err) throw err;
+      res.json(result);
     }
   );
 });

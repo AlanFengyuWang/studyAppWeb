@@ -21,10 +21,8 @@ import { useSession } from "next-auth/react";
 import type { Session } from "next-auth";
 import { OAuthButtonGroup } from "./OAuthButtonGroup";
 import { PasswordField } from "./PasswordField";
-import UserisExist from "../../functions/users/UserisExist";
 
 const LogIn = () => {
-
   return (
     <Container
       maxW="lg"

@@ -1,7 +1,7 @@
 import type { GetServerSideProps, NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import Layout from "../components/layout";
 import styles from "../styles/Home.module.css";
 import Login from "./login";
@@ -10,12 +10,12 @@ import { stat } from "fs/promises";
 import type { GetSessionParams } from "next-auth/react";
 import type { Session } from "next-auth";
 import HomePage from "./home";
-import UserisExist from "../functions/users/UserisExist";
-import { AddUser } from "../functions/users/AddUser";
+import userisExist from "../functions/users/UserisExist";
+import { addUser } from "../functions/users/AddUser";
+import { useEmailContext } from "./EmailContext";
 
 const checkRegisterUser = async (session: Session | null) => {
   //then store the user info to the database
-
   if (
     session &&
     session.user &&
@@ -31,10 +31,11 @@ const checkRegisterUser = async (session: Session | null) => {
       image: session.user.image,
     };
     //insert user if it doesn't exist in the database
-    const result = await UserisExist(userInfo.email);
-    console.log("result = " + result);
+    // console.log("userInfo.email = " + userInfo.email);
+
+    const result = await userisExist(userInfo.email);
     if (!result) {
-      AddUser(userInfo);
+      addUser(userInfo);
     }
   }
 };
@@ -42,11 +43,18 @@ const checkRegisterUser = async (session: Session | null) => {
 const Home: NextPage = () => {
   const { data: session, status } = useSession();
 
+  //check if the user is authenticated
   useEffect(() => {
     if (status === "authenticated") {
       checkRegisterUser(session);
     }
   }, [status]);
+
+  //using useContext to set email after logged in
+  const { setEmail } = useEmailContext();
+  setEmail(
+    session && session.user && session.user.email ? session.user.email : ""
+  );
 
   return (
     <div>

@@ -11,6 +11,7 @@ var _db;
 module.exports = {
   connectToServer: function (callback) {
     client.connect(function (err, db) {
+      console.log("Trying to connect");
       if (db) {
         _db = db.db("studyApp");
         console.log("Successfully connected to MongoDB.");
