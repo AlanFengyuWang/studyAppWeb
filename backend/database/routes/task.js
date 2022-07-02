@@ -22,7 +22,7 @@ recordRoutes.route("/task/:id").get(function (req, res) {
 });
 
 //get all tasks given by user email
-recordRoutes.route("/task/email").get(function (req, res) {
+recordRoutes.route("/task/email/:email").get(function (req, res) {
   let db_connect = dbo.getDb();
   let myquery = { email: req.params.email };
   db_connect.collection("users").findOne(myquery, function (err, result) {

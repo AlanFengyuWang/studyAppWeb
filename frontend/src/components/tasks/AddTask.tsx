@@ -3,6 +3,7 @@ import {
   Box,
   Button,
   ButtonGroup,
+  Center,
   FormControl,
   FormLabel,
   IconButton,
@@ -24,11 +25,12 @@ import DateTimePicker from "react-datetime-picker/dist/entry.nostyle";
 import "react-datetime-picker/dist/DateTimePicker.css";
 import "react-calendar/dist/Calendar.css";
 import "react-clock/dist/Clock.css";
-import { FormValues } from "../../types";
+import { TaskFormValues } from "../../types";
 import Milestone from "../home/Milestone";
-import { buttonAddStyle } from "../../styles/home/buttonAdd";
+import { buttonAddStyle } from "../../styles/home/styledComponents";
 import { addTask } from "../../functions/tasks/addTask";
 import { useEmailContext } from "../../pages/EmailContext";
+import { Theme } from "../../styles/theme";
 
 const AddTask = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -51,7 +53,7 @@ const AddTask = () => {
     control,
     handleSubmit,
     formState: { errors },
-  } = useForm<FormValues>({
+  } = useForm<TaskFormValues>({
     defaultValues: {
       _id: "UNIQUE COUNT DOCUMENT IDENTIFIER",
       taskTitle: "",
@@ -81,11 +83,10 @@ const AddTask = () => {
     control,
   });
 
-  const onSubmit = (data: FormValues) => {
+  const onSubmit = (data: TaskFormValues) => {
     //add email
     let dataWithEmail: any = data;
     dataWithEmail["email"] = email;
-    console.log("data = " + JSON.stringify(dataWithEmail));
 
     addTask(dataWithEmail);
 
@@ -124,8 +125,13 @@ const AddTask = () => {
   }, [dateTime]);
 
   return (
-    <>
-      <Button colorScheme="teal" size="sm" onClick={onOpen}>
+    <Center>
+      <Button
+        colorScheme={Theme.colors.task.add}
+        size="sm"
+        onClick={onOpen}
+        width="50%"
+      >
         Add Tasks
       </Button>
       <Modal initialFocusRef={initialRef} isOpen={isOpen} onClose={onClose}>
@@ -222,7 +228,7 @@ const AddTask = () => {
           </ModalContent>
         </form>
       </Modal>
-    </>
+    </Center>
   );
 };
 

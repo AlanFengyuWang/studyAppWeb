@@ -1,8 +1,8 @@
 import React from 'react'
-import { FormValues } from '../../types'
+import { TaskFormValues } from '../../types'
 
 
-export const addTask = (taskInfo: FormValues & {email:string}) => {
+export const addTask = (taskInfo: TaskFormValues & {email:string}) => {
     const data = {
     taskTitle: taskInfo.taskTitle, 
     taskDescription: taskInfo.taskDescription, 

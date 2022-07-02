@@ -50,7 +50,7 @@ const navbar = () => {
     },
   ];
   return (
-    <div className={styles.halfCircleBackground}>
+    <div className={styles.halfCircleBackground} style={{ zIndex: "999" }}>
       <Flex
         justify="space-evenly"
         position="fixed"
