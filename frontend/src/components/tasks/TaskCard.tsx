@@ -11,8 +11,6 @@ const TaskCard = ({ task }: { task: TaskFormValues }) => {
   let color = Theme.colors.task.green;
   const imgPath = "/taskTypes/" + task.type + ".svg";
 
-  console.log("task = " + JSON.stringify(task));
-
   return (
     <Box
       background={color}

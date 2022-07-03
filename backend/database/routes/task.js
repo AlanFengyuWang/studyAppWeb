@@ -31,6 +31,27 @@ recordRoutes.route("/task/email/:email").get(function (req, res) {
   });
 });
 
+//delete task given by id
+recordRoutes.route("/task/delete/:id").post(function (req, res) {
+  let db_connect = dbo.getDb();
+  db_connect.collection("users").updateOne(
+    {
+      email: req.body.email,
+    },
+    {
+      $pull: {
+        tasks: {
+          _id: ObjectId(req.params.id),
+        },
+      },
+    },
+    function (err, result) {
+      if (err) throw err;
+      res.json(result);
+    }
+  );
+});
+
 //insert tasks
 //input needs to include user email
 recordRoutes.route("/task/add").post(function (req, res) {

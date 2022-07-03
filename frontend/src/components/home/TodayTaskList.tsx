@@ -21,8 +21,9 @@ import {
 } from "react-swipeable-list";
 import { MdDeleteForever } from "react-icons/md";
 
-import { deleteActionContent } from "../../styles/home/styledComponents";
+import { deleteActionStyle } from "../../styles/home/styledComponents";
 import "react-swipeable-list/dist/styles.css";
+import { deleteTask } from "../../functions/tasks/deleteTask";
 
 const TodayTaskList = () => {
   const [showAllTask, setshowAllTask] = useState(false);
@@ -30,12 +31,36 @@ const TodayTaskList = () => {
     setshowAllTask(!showAllTask);
   };
 
-  //fetch all existing unfinished tasks for the user
   const { email } = useEmailContext();
+  //fetch all existing unfinished tasks for the user
   const SHOW_TASK_URL = process.env.GET_TASKS_URL + email;
 
   const fetcher = (url: string) => fetch(url).then((res) => res.json());
   const { data, error } = useSWR(SHOW_TASK_URL, fetcher);
+
+  function onSwipeDelete(taskId: string) {
+    console.log("hello");
+
+    deleteTask(email, taskId);
+  }
+
+  // const onSwipeDelete = () => {
+  //   console.log("hello");
+  // };
+
+  const trailingActions = (taskId: string) => (
+    <TrailingActions>
+      <SwipeAction
+        destructive={true}
+        onClick={() => onSwipeDelete(taskId)}
+        // onClick={onSwipeDelete}
+      >
+        <Flex {...deleteActionStyle}>
+          <MdDeleteForever color="#E2E8F0" size="43px" />
+        </Flex>
+      </SwipeAction>
+    </TrailingActions>
+  );
 
   if (error)
     return (
@@ -55,10 +80,7 @@ const TodayTaskList = () => {
               return index < endIndex;
             })
             .map((task: TaskFormValues, index: number) => (
-              <SwipeableListItem
-                // leadingActions={leadingActions()}
-                trailingActions={trailingActions()}
-              >
+              <SwipeableListItem trailingActions={trailingActions(task._id)}>
                 <TaskCard task={task} key={index} />
               </SwipeableListItem>
             ))}
@@ -77,33 +99,5 @@ const TodayTaskList = () => {
     </Stack>
   );
 };
-
-const trailingActions = () => (
-  <TrailingActions>
-    <SwipeAction
-      destructive={true}
-      onClick={() => console.info("swipe action triggered")}
-    >
-      <Flex
-        backgroundColor="#E53E3E"
-        borderRadius="10"
-        marginBottom="9px"
-        paddingRight="15px"
-        paddingTop="35px"
-        {...deleteActionContent}
-      >
-        <MdDeleteForever color="#E2E8F0" size="43px" />
-      </Flex>
-    </SwipeAction>
-  </TrailingActions>
-);
-
-// const leadingActions = () => (
-//   <LeadingActions>
-//     <SwipeAction onClick={() => console.info("swipe action triggered")}>
-//       Action name
-//     </SwipeAction>
-//   </LeadingActions>
-// );
 
 export default TodayTaskList;

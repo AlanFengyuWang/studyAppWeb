@@ -10,13 +10,12 @@ export const buttonAddStyle = {
     marginLeft:"40%",
 }
 
-export const deleteActionContent = {
-    // display: "flex",
-    // alignItems: "center",
-    // padding: "8px",
-    // fontSize: "12px",
-    // fontWeight: "500",
-    // boxSizing: "border-box",
+export const deleteActionStyle = {
+    backgroundColor:"#E53E3E",
+    borderRadius:"10",
+    marginBottom:"9px",
+    paddingRight:"15px",
+    paddingTop:"35px",
     color: colors.deleted,
     // userSelect: "none"
 }
