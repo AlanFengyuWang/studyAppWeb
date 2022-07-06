@@ -10,6 +10,7 @@ const nextConfig = {
     GOOGLE_SECRET: "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",
     NEXTAUTH_URL: "http://localhost:3000",
     NEXTAUTH_SECRET: "46a0d54003a9c769761950c3c062b323",
+    GET_TASKS_URL: "http://localhost:2000/task/email/",
   },
 };
 

@@ -6,7 +6,7 @@ export interface IProgress {
 
 //tasks
 export type TaskType = "Work" | "Exercise" | "Entertainment" | "Others" | "Study";
-export type FormValues = {
+export type TaskFormValues = {
   _id: string;
   taskTitle: string;
   taskDescription: string;
@@ -15,6 +15,7 @@ export type FormValues = {
   milestones: {milestone: Date}[];
   subtask: { _id: string; title: string; description: string }[];
 };
+
 
 //users
 export type UserInfo = {

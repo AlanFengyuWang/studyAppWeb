@@ -1,11 +1,11 @@
 import React, { useRef, useEffect, useState, SyntheticEvent } from "react";
 import {
-  Box,
+  Alert,
+  AlertIcon,
   Button,
-  ButtonGroup,
+  Center,
   FormControl,
   FormLabel,
-  IconButton,
   Input,
   Modal,
   ModalBody,
@@ -17,29 +17,34 @@ import {
   Select,
   Textarea,
   useDisclosure,
+  Text,
 } from "@chakra-ui/react";
 import Subtask from "./Subtask";
 import { useForm, useFieldArray } from "react-hook-form";
 import DateTimePicker from "react-datetime-picker/dist/entry.nostyle";
 import "react-datetime-picker/dist/DateTimePicker.css";
-import { format } from "date-fns";
 import "react-calendar/dist/Calendar.css";
 import "react-clock/dist/Clock.css";
-import { FormValues } from "../../types";
+import { TaskFormValues } from "../../types";
 import Milestone from "../home/Milestone";
-import { buttonAddStyle } from "../../styles/home/buttonAdd";
+import { buttonAddStyle } from "../../styles/home/styledComponents";
 import { addTask } from "../../functions/tasks/addTask";
+import { useEmailContext } from "../../pages/EmailContext";
+import { Theme } from "../../styles/theme";
+import useSWR, { useSWRConfig } from "swr";
 
-const AddTask = () => {
+const AddTask = (props: { url: string; mutate: any }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const initialRef = React.useRef(null);
-
   const [dateTime, setDateTime] = useState<Date>();
-
   const [milestonesState, setMilestonesState] = useState<Date[]>([]);
 
+  //set default date
   const noDueDate = new Date();
   noDueDate.setDate(noDueDate.getDate() + 99999);
+
+  //get email
+  const { email } = useEmailContext();
 
   //useFieldAray
   const {
@@ -48,7 +53,7 @@ const AddTask = () => {
     control,
     handleSubmit,
     formState: { errors },
-  } = useForm<FormValues>({
+  } = useForm<TaskFormValues>({
     defaultValues: {
       _id: "UNIQUE COUNT DOCUMENT IDENTIFIER",
       taskTitle: "",
@@ -56,9 +61,7 @@ const AddTask = () => {
       type: "Others",
       due: noDueDate,
       milestones: [],
-      subtask: [
-        // { _id: "UNIQUE COUNT DOCUMENT IDENTIFIER", title: "", description: "" },
-      ],
+      subtask: [],
     },
     mode: "onBlur",
   });
@@ -80,9 +83,13 @@ const AddTask = () => {
     control,
   });
 
-  const onSubmit = (data: FormValues) => {
-    console.log("data = " + JSON.stringify(data));
-    addTask(data);
+  const onSubmit = (data: TaskFormValues) => {
+    let dataWithEmail: any = data;
+    dataWithEmail["email"] = email;
+    //update tasks to the component immediatelly
+    addTask(dataWithEmail).then(() => {
+      props.mutate();
+    });
 
     /**
      * ===========Local storage START==========
@@ -118,9 +125,22 @@ const AddTask = () => {
     }
   }, [dateTime]);
 
+  // if (fetchtaskDataError)
+  //   return (
+  //     <Alert status="error" marginTop="3%" padding="12px">
+  //       <AlertIcon />
+  //       <Text fontSize="sm">Failed to fetch your new tasks</Text>
+  //     </Alert>
+  //   );
+
   return (
-    <>
-      <Button colorScheme="teal" size="sm" onClick={onOpen}>
+    <Center>
+      <Button
+        colorScheme={Theme.colors.task.add}
+        size="sm"
+        onClick={onOpen}
+        width="50%"
+      >
         Add Tasks
       </Button>
       <Modal initialFocusRef={initialRef} isOpen={isOpen} onClose={onClose}>
@@ -217,7 +237,7 @@ const AddTask = () => {
           </ModalContent>
         </form>
       </Modal>
-    </>
+    </Center>
   );
 };
 

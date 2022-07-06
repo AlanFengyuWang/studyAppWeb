@@ -22,13 +22,34 @@ recordRoutes.route("/task/:id").get(function (req, res) {
 });
 
 //get all tasks given by user email
-recordRoutes.route("/task/email").get(function (req, res) {
+recordRoutes.route("/task/email/:email").get(function (req, res) {
   let db_connect = dbo.getDb();
   let myquery = { email: req.params.email };
   db_connect.collection("users").findOne(myquery, function (err, result) {
     if (err) throw err;
     res.json(result);
   });
+});
+
+//delete task given by id
+recordRoutes.route("/task/delete/:id").post(function (req, res) {
+  let db_connect = dbo.getDb();
+  db_connect.collection("users").updateOne(
+    {
+      email: req.body.email,
+    },
+    {
+      $pull: {
+        tasks: {
+          _id: ObjectId(req.params.id),
+        },
+      },
+    },
+    function (err, result) {
+      if (err) throw err;
+      res.json(result);
+    }
+  );
 });
 
 //insert tasks
@@ -41,7 +62,7 @@ recordRoutes.route("/task/add").post(function (req, res) {
     taskDescription: req.body.taskDescription,
     type: req.body.type,
     due: req.body.due,
-    // milestones: req.body.milestones,
+    milestones: req.body.milestones,
     subtasks: req.body.subtask,
   };
 
