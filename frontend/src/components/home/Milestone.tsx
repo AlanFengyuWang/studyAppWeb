@@ -8,7 +8,6 @@ import {
 import React from "react";
 import DateTimePicker from "react-datetime-picker/dist/entry.nostyle";
 import "react-datetime-picker/dist/DateTimePicker.css";
-import RemoveButton from "./buttons/removeButton";
 
 const Milestone = (props: {
   index: number;

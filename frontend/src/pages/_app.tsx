@@ -4,7 +4,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 import { SessionProvider, getSession, useSession } from "next-auth/react";
 import React, { createContext, ReactNode, useState } from "react";
 import AuthGuard from "./protected";
-import { EmailProvider, useEmailContext } from "./EmailContext";
+import EmailProvider from "../context/EmailContext";
 import Layout from "../components/layout";
 
 export type NextApplicationPage<P = any, IP = P> = NextPage<P, IP> & {
@@ -15,7 +15,6 @@ type AppProps = {
   pageProps: any;
   Component: NextApplicationPage;
 };
-
 
 function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   return (

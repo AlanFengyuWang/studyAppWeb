@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import Profile from "../../components/home/Profile";
-import ProgressCards from "../../components/home/ProgressDisplay";
+import ProgressCards from "../../components/home/taskProgress/ProgressDisplay";
 import TodayTaskList from "../../components/home/TodayTaskList";
 import { Box, Button, Text } from "@chakra-ui/react";
 import { useSession } from "next-auth/react";
 import AddTask from "../../components/tasks/AddTask";
-import { useEmailContext } from "../EmailContext";
+import { useEmailContext } from "../../context/EmailContext";
 import useSWR from "swr";
 
 const HomePage = () => {

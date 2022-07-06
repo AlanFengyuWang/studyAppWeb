@@ -24,10 +24,8 @@ const TaskCard = ({ task }: { task: TaskFormValues }) => {
           backgroundColor="#C4C4C4"
           width="60px"
           height="60px"
-          // bottom="10%"
           pos="relative"
           bottom="1"
-          // left="1"
         >
           <Box position="relative" left="14%" top="10%">
             <Image

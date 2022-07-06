@@ -1,6 +1,6 @@
 import { Box, Image } from "@chakra-ui/react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import ProgressCard from "./ProgressCard";
+import ProgressCard from "./taskProgress/ProgressCard";
 import { IProgress } from "../../types";
 // import { Carousel } from "react-responsive-carousel/lib/js";
 import { Carousel } from "react-responsive-carousel";

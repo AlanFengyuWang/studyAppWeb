@@ -15,8 +15,8 @@ import {
   Divider,
 } from "@chakra-ui/react";
 import React from "react";
-import { Logo } from "../login/Logo";
-import { OAuthButtonGroup } from "../login/OAuthButtonGroup";
+import Logo from "../../components/login/Logo";
+import OAuthButtonGroup from "../../components/login/OAuthButtonGroup";
 
 const SignUp = () => {
   return (

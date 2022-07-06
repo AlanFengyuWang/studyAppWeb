@@ -1,7 +1,17 @@
 {
   "/_app": "pages/_app.js",
+  "/api/hello": "pages/api/hello.js",
+  "/award": "pages/award.html",
+  "/api/auth/[...nextauth]": "pages/api/auth/[...nextauth].js",
   "/_error": "pages/_error.js",
+  "/community": "pages/community.html",
+  "/login": "pages/login.html",
+  "/home": "pages/home.html",
+  "/protected": "pages/protected.html",
+  "/": "pages/index.html",
+  "/signup": "pages/signup.html",
+  "/study": "pages/study.html",
+  "/schedule": "pages/schedule.html",
   "/_document": "pages/_document.js",
-  "/home": "pages/home.js",
-  "/api/auth/[...nextauth]": "pages/api/auth/[...nextauth].js"
+  "/404": "pages/404.html"
 }

@@ -16,9 +16,9 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import { Link } from "@chakra-ui/react";
-import { Logo } from "./Logo";
-import { OAuthButtonGroup } from "./OAuthButtonGroup";
-import { PasswordField } from "./PasswordField";
+import Logo from "../../components/login/Logo";
+import OAuthButtonGroup from "../../components/login/OAuthButtonGroup";
+import PasswordField from "../../components/login/PasswordField";
 
 const LogIn = () => {
   return (

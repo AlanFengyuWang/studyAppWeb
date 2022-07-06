@@ -7,7 +7,7 @@ import type { Session } from "next-auth";
 import HomePage from "./home";
 import userisExist from "../functions/users/UserisExist";
 import { addUser } from "../functions/users/AddUser";
-import { useEmailContext } from "./EmailContext";
+import { useEmailContext } from "../context/EmailContext";
 
 const checkRegisterUser = async (session: Session | null) => {
   //store the user info to the database

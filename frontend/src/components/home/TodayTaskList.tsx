@@ -10,7 +10,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import TaskCard from "../tasks/TaskCard";
-import { useEmailContext } from "../../pages/EmailContext";
+import { useEmailContext } from "../../context/EmailContext";
 import { TaskFormValues  } from "../../types";
 import {
   SwipeableList,

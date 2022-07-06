@@ -8,7 +8,7 @@ import {
   Textarea,
 } from "@chakra-ui/react";
 import React from "react";
-import RemoveButton from "../home/buttons/removeButton";
+import RemoveButton from "../../components/home/buttons/RemoveButton";
 
 const Subtask = (props: {
   index: number;

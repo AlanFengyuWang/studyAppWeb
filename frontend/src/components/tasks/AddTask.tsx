@@ -1,7 +1,5 @@
-import React, { useRef, useEffect, useState, SyntheticEvent } from "react";
+import React, { useEffect, useState } from "react";
 import {
-  Alert,
-  AlertIcon,
   Button,
   Center,
   FormControl,
@@ -21,8 +19,7 @@ import {
 } from "@chakra-ui/react";
 import Subtask from "./Subtask";
 import { useForm, useFieldArray } from "react-hook-form";
-// import DateTimePicker from "react-datetime-picker/dist/entry.nostyle";
-import DateTimePicker from 'react-datetime-picker/dist/entry.nostyle'
+import DateTimePicker from "react-datetime-picker/dist/entry.nostyle";
 // import DateTimePicker from "react-datetime-picker";
 import "react-datetime-picker/dist/DateTimePicker.css";
 import "react-calendar/dist/Calendar.css";
@@ -31,7 +28,7 @@ import { TaskFormValues } from "../../types";
 import Milestone from "../home/Milestone";
 import { buttonAddStyle } from "../../styles/home/styledComponents";
 import { addTask } from "../../functions/tasks/addTask";
-import { useEmailContext } from "../../pages/EmailContext";
+import { useEmailContext } from "../../context/EmailContext";
 import { Theme } from "../../styles/theme";
 
 const AddTask = (props: { url: string; mutate: any }) => {
