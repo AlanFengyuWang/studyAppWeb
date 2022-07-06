@@ -1,5 +1,5 @@
-import { Box, Flex, Stack, StackDivider, VStack, Text } from "@chakra-ui/react";
-import React, { useState } from "react";
+import { Box, Flex, Text } from "@chakra-ui/react";
+import React from "react";
 import { TaskFormValues } from "../../types";
 import { Theme } from "../../styles/theme";
 import Image from "next/image";

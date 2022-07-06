@@ -21,7 +21,9 @@ import {
 } from "@chakra-ui/react";
 import Subtask from "./Subtask";
 import { useForm, useFieldArray } from "react-hook-form";
-import DateTimePicker from "react-datetime-picker/dist/entry.nostyle";
+// import DateTimePicker from "react-datetime-picker/dist/entry.nostyle";
+import DateTimePicker from 'react-datetime-picker/dist/entry.nostyle'
+// import DateTimePicker from "react-datetime-picker";
 import "react-datetime-picker/dist/DateTimePicker.css";
 import "react-calendar/dist/Calendar.css";
 import "react-clock/dist/Clock.css";
@@ -31,7 +33,6 @@ import { buttonAddStyle } from "../../styles/home/styledComponents";
 import { addTask } from "../../functions/tasks/addTask";
 import { useEmailContext } from "../../pages/EmailContext";
 import { Theme } from "../../styles/theme";
-import useSWR, { useSWRConfig } from "swr";
 
 const AddTask = (props: { url: string; mutate: any }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
