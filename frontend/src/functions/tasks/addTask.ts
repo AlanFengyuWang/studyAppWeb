@@ -19,5 +19,5 @@ export const addTask = (taskInfo: TaskFormValues & {email:string}) => {
         body: JSON.stringify(data)
     }
 
-    fetch(process.env.SERVERPORT + "/task/add/", requestOptions);
+    return fetch(process.env.SERVERPORT + "/task/add/", requestOptions);
 }

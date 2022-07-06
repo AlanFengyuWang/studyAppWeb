@@ -10,8 +10,5 @@ export const deleteTask = (email:string, taskId: string) => {
         body: JSON.stringify(data)
     }
 
-    console.log("Fetching");
-    console.log("process.env.SERVERPORT + /task/delete/ + taskId = " +process.env.SERVERPORT + "/task/delete/" + taskId);
-    
-    fetch(process.env.SERVERPORT + "/task/delete/" + taskId, requestOptions);
+    return fetch(process.env.SERVERPORT + "/task/delete/" + taskId, requestOptions);
 }

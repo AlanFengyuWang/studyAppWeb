@@ -1,12 +1,11 @@
 import React, { useRef, useEffect, useState, SyntheticEvent } from "react";
 import {
-  Box,
+  Alert,
+  AlertIcon,
   Button,
-  ButtonGroup,
   Center,
   FormControl,
   FormLabel,
-  IconButton,
   Input,
   Modal,
   ModalBody,
@@ -18,6 +17,7 @@ import {
   Select,
   Textarea,
   useDisclosure,
+  Text,
 } from "@chakra-ui/react";
 import Subtask from "./Subtask";
 import { useForm, useFieldArray } from "react-hook-form";
@@ -31,15 +31,15 @@ import { buttonAddStyle } from "../../styles/home/styledComponents";
 import { addTask } from "../../functions/tasks/addTask";
 import { useEmailContext } from "../../pages/EmailContext";
 import { Theme } from "../../styles/theme";
+import useSWR, { useSWRConfig } from "swr";
 
-const AddTask = () => {
+const AddTask = (props: { url: string; mutate: any }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const initialRef = React.useRef(null);
-
   const [dateTime, setDateTime] = useState<Date>();
-
   const [milestonesState, setMilestonesState] = useState<Date[]>([]);
 
+  //set default date
   const noDueDate = new Date();
   noDueDate.setDate(noDueDate.getDate() + 99999);
 
@@ -84,11 +84,12 @@ const AddTask = () => {
   });
 
   const onSubmit = (data: TaskFormValues) => {
-    //add email
     let dataWithEmail: any = data;
     dataWithEmail["email"] = email;
-
-    addTask(dataWithEmail);
+    //update tasks to the component immediatelly
+    addTask(dataWithEmail).then(() => {
+      props.mutate();
+    });
 
     /**
      * ===========Local storage START==========
@@ -123,6 +124,14 @@ const AddTask = () => {
       setValue("due", dateTime);
     }
   }, [dateTime]);
+
+  // if (fetchtaskDataError)
+  //   return (
+  //     <Alert status="error" marginTop="3%" padding="12px">
+  //       <AlertIcon />
+  //       <Text fontSize="sm">Failed to fetch your new tasks</Text>
+  //     </Alert>
+  //   );
 
   return (
     <Center>

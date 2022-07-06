@@ -17,7 +17,6 @@ type AppProps = {
 };
 
 function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
-  const [email, setEmail] = useState<string>("");
   return (
     <>
       <SessionProvider session={session}>

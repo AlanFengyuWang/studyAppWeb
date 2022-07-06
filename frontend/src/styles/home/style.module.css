@@ -1,0 +1,15 @@
+/* @keyframes deleteButton-slide-in {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0%);
+    }
+} */
+
+.deleteButton {
+    /* animation: deleteButton-slide-in 500ms; */
+    background-color: "red !important";
+    width: "900px !important";
+    height: "100px !important";
+}
