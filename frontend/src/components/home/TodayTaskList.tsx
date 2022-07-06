@@ -13,7 +13,6 @@ import TaskCard from "../tasks/TaskCard";
 import { useEmailContext } from "../../pages/EmailContext";
 import { TaskFormValues } from "../../types";
 import {
-  LeadingActions,
   SwipeableList,
   SwipeableListItem,
   SwipeAction,
@@ -43,11 +42,6 @@ const TodayTaskList = (props: { data: any; error: any; mutate: Function }) => {
   function onSwipeDelete(taskId: string) {
     deleteTask(email, taskId).then(() => props.mutate());
   }
-
-  // function setonSwipeStart() {
-  //   console.log("swiping");
-  //   sethoveredTaskId("");
-  // }
 
   const trailingActions = (taskId: string) => {
     return (
