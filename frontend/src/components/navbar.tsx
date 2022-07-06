@@ -13,7 +13,7 @@ import {
   Tooltip,
 } from "@chakra-ui/react";
 import NextLink from "next/link";
-import Image from "next/Image";
+import Image from "next/image";
 import styles from "../styles/navBar/navBar.module.css";
 
 const navbar = () => {
@@ -50,7 +50,7 @@ const navbar = () => {
     },
   ];
   return (
-    <div className={styles.halfCircleBackground}>
+    <div className={styles.halfCircleBackground} style={{ zIndex: "999" }}>
       <Flex
         justify="space-evenly"
         position="fixed"

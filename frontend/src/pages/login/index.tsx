@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Box,
   Button,
@@ -69,7 +69,12 @@ const LogIn = () => {
               <Button variant="solid">Sign in</Button>
               <HStack>
                 <Divider />
-                <Text fontSize="sm" whiteSpace="nowrap" color="muted" fontWeight="200">
+                <Text
+                  fontSize="sm"
+                  whiteSpace="nowrap"
+                  color="muted"
+                  fontWeight="200"
+                >
                   or continue with
                 </Text>
                 <Divider />
@@ -82,5 +87,7 @@ const LogIn = () => {
     </Container>
   );
 };
+
+LogIn.noAuth = true;
 
 export default LogIn;
