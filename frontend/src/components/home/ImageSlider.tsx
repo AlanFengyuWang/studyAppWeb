@@ -5,13 +5,6 @@ import { IProgress } from "../../types";
 // import { Carousel } from "react-responsive-carousel/lib/js";
 import { Carousel } from "react-responsive-carousel";
 
-// interface IRenderIndicator {
-//   onClickHandler: (e: React.MouseEvent | React.KeyboardEvent) => void;
-//   isSelected: boolean;
-//   index: number;
-//   label: string;
-// }
-
 const ImageSlider = (props: { slides: IProgress[] }) => {
   return (
     <div>

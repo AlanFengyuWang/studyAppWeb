@@ -1,11 +1,5 @@
 import React, { useEffect } from "react";
-import {
-  Box,
-  CircularProgress,
-  CircularProgressLabel,
-  position,
-  Text,
-} from "@chakra-ui/react";
+import { Box, Text } from "@chakra-ui/react";
 import styles from "../../../styles/progressCard.module.css";
 import { easeQuadInOut } from "d3-ease";
 import AnimatedProgressProvider from "./AnimatedProgressProvider";
@@ -44,10 +38,9 @@ const ProgressCard: React.FC<IProps> = ({ timeType, progress }) => {
       </Text>
       <AnimatedProgressProvider
         valueStart={0}
-        valueEnd={66}
+        valueEnd={progress}
         duration={1.4}
         easingFunction={easeQuadInOut}
-        repeat
       >
         {(value: number) => {
           const roundedValue = Math.round(value);
@@ -64,7 +57,11 @@ const ProgressCard: React.FC<IProps> = ({ timeType, progress }) => {
               <CircularProgressbar
                 value={value}
                 text={`${roundedValue}%`}
-                styles={buildStyles({ pathTransition: "none" })}
+                styles={buildStyles({
+                  pathTransition: "none",
+                  textColor: color,
+                  pathColor: color,
+                })}
               />
             </Box>
           );
