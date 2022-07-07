@@ -8,6 +8,7 @@ export const addTask = (taskInfo: TaskFormValues & {email:string}) => {
     taskDescription: taskInfo.taskDescription, 
     type: taskInfo.type, 
     email: taskInfo.email,
+    scheduleTime: taskInfo.scheduleTime,
     due: taskInfo.due, 
     milestones: taskInfo.milestones, 
     subtask: taskInfo.subtask

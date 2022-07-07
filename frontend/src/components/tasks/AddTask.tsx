@@ -58,6 +58,7 @@ const AddTask = (props: { url: string; mutate: any }) => {
       taskDescription: "",
       type: "Others",
       due: noDueDate,
+      scheduleTime: [],
       milestones: [],
       subtask: [],
     },

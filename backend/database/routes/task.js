@@ -62,6 +62,7 @@ recordRoutes.route("/task/add").post(function (req, res) {
     taskDescription: req.body.taskDescription,
     type: req.body.type,
     due: req.body.due,
+    scheduleTime: req.body.scheduleTime,
     milestones: req.body.milestones,
     subtasks: req.body.subtask,
   };

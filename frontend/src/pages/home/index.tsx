@@ -7,10 +7,11 @@ import { useSession } from "next-auth/react";
 import AddTask from "../../components/tasks/AddTask";
 import { useEmailContext } from "../../context/EmailContext";
 import useSWR from "swr";
+import IncomingSchedule from "../../components/home/incomingSchedule/IncomingSchedule";
 
 const HomePage = () => {
   //using useContext to set email after logged in
-  const { data: session, status } = useSession();
+  const { data: session } = useSession();
   const { setEmail } = useEmailContext();
   setEmail(
     session && session.user && session.user.email ? session.user.email : ""
@@ -30,6 +31,7 @@ const HomePage = () => {
         </Text>
         <TodayTaskList data={data} error={error} mutate={mutate} />
         <AddTask url={SHOW_TASK_URL} mutate={() => mutate()} />
+        <IncomingSchedule data={data ? data.task : []} />
       </Box>
     </Box>
   );
