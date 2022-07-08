@@ -11,12 +11,22 @@ import {
   isMorning,
   isToday,
 } from "../../../functions/date/dateCheck";
+import { useInView } from "react-intersection-observer";
+import { Theme } from "../../../styles/theme";
 
 const IncomingSchedule = (props: { data: TaskFormValues[] }) => {
   const { morningScheduleTasks, afternoonScheduleTasks, eveningScheduleTasks } =
     storeScheduleBasedOnPeriod(props.data);
+
+  //intersection observer
+  const { ref, inView, entry } = useInView({
+    rootMargin: "0px 0px -550px 0px", //this is because we have a nav bar in the bottom
+  });
+
+  // console.log("inview = " + inView);
+
   return (
-    <Stack mt="20px">
+    <Stack mt="20px" ref={ref}>
       <Text fontWeight="bold">My Incoming Schedule...</Text>
       <Box>
         <MorningSchedule scheduledTasks={morningScheduleTasks} />

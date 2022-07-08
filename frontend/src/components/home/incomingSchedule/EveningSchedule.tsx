@@ -2,11 +2,16 @@ import { Box, Center } from "@chakra-ui/react";
 import React from "react";
 import { TaskFormValues } from "../../../types";
 import Image from "next/image";
+import { Theme } from "../../../styles/theme";
 
 const EveningSchedule = (props: { scheduledTasks: TaskFormValues[] }) => {
   return (
-    <Box bgColor="#718096">
-      <Center>
+    <Box
+      bgColor={Theme.schedule.colors.evening}
+      minHeight={Theme.schedule.schedulePeriodsHeight}
+      borderRadius={Theme.schedule.borderRadius}
+    >
+      <Center paddingTop="4px">
         <Image
           src="/schedule/evening.svg"
           alt="picture of the evening schedule"

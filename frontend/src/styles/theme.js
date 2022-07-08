@@ -8,4 +8,13 @@ export const Theme = {
       due: "#E2E8F0",
     },
   },
+  schedule: {
+    schedulePeriodsHeight: "130px",
+    borderRadius: "10",
+    colors: {
+      morning: "#FAF089",
+      afternoon: "#F6AD55",
+      evening: "#718096",
+    },
+  },
 };
