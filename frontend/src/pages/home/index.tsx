@@ -29,8 +29,8 @@ const HomePage = () => {
         <Text fontSize="1xl" fontWeight={600}>
           What do I need to do today?
         </Text>
-        <TodayTaskList data={data} error={error} mutate={mutate} />
         <AddTask url={SHOW_TASK_URL} mutate={() => mutate()} />
+        <TodayTaskList data={data} error={error} mutate={mutate} />
         <IncomingSchedule data={data ? data.task : []} />
       </Box>
     </Box>

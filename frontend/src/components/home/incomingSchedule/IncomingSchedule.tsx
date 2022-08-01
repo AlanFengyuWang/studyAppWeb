@@ -26,8 +26,8 @@ const IncomingSchedule = (props: { data: TaskFormValues[] }) => {
   // console.log("inview = " + inView);
 
   return (
-    <Stack mt="20px" ref={ref}>
-      <Text fontWeight="bold">My Incoming Schedule...</Text>
+    <Stack mt="35px" ref={ref}>
+      {/* <Text fontWeight="bold">My Incoming Schedule...</Text> */}
       <Box>
         <MorningSchedule scheduledTasks={morningScheduleTasks} />
       </Box>

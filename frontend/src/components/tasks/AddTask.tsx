@@ -139,6 +139,8 @@ const AddTask = (props: { url: string; mutate: any }) => {
         size="sm"
         onClick={onOpen}
         width="50%"
+        marginTop={3}
+        marginBottom={1}
       >
         Add Tasks
       </Button>
