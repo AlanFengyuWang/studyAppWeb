@@ -8,7 +8,6 @@ const TaskCard = ({ task }: { task: TaskFormValues }) => {
   //deciding the background color: red means its urgent, oragne means it's moderate urgent, green means it's not urgent
   let color = Theme.colors.task.green;
   const imgPath = "/taskTypes/" + task.type + ".svg";
-  console.log("hello");
 
   return (
     <Box
