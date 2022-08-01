@@ -7,15 +7,17 @@ export interface IProgress {
 //tasks
 export type TaskType = "Work" | "Exercise" | "Entertainment" | "Others" | "Study";
 export type SchedulePeriod = "Morning" | "Afternoon" | "Evening";
-export type ScheduleTimeType = {startingTime: Date | SchedulePeriod, endingTime: Date | SchedulePeriod}[];
+export type ScheduleTime = {startingTime: Date, endingTime: Date};
 export type TaskFormValues = {
   _id: string;
   taskTitle: string;
   taskDescription: string;
   type: TaskType;
   due: Date;
-  scheduleTime: ScheduleTimeType;
+  scheduledPeriod: SchedulePeriod;
+  scheduledTime: ScheduleTime;
   milestones: {milestone: Date}[];
+  isDone: boolean;
   subtask: { _id: string; title: string; description: string }[];
 };
 

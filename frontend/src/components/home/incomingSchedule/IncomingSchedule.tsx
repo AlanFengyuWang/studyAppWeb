@@ -13,6 +13,7 @@ import {
 } from "../../../functions/date/dateCheck";
 import { useInView } from "react-intersection-observer";
 import { Theme } from "../../../styles/theme";
+import { Droppable } from "react-beautiful-dnd";
 
 const IncomingSchedule = (props: { data: TaskFormValues[] }) => {
   const { morningScheduleTasks, afternoonScheduleTasks, eveningScheduleTasks } =
@@ -23,10 +24,8 @@ const IncomingSchedule = (props: { data: TaskFormValues[] }) => {
     rootMargin: "0px 0px -550px 0px", //this is because we have a nav bar in the bottom
   });
 
-  // console.log("inview = " + inView);
-
   return (
-    <Stack mt="35px" ref={ref}>
+    <Stack mt="35px">
       {/* <Text fontWeight="bold">My Incoming Schedule...</Text> */}
       <Box>
         <MorningSchedule scheduledTasks={morningScheduleTasks} />
@@ -48,35 +47,31 @@ function storeScheduleBasedOnPeriod(data: TaskFormValues[]) {
   let eveningScheduleTasks: TaskFormValues[] = [];
   data !== undefined &&
     data.map((task) => {
-      if (task.scheduleTime.length !== 0) {
-        let hasScheduled = false;
-        switch (task.scheduleTime[0].startingTime) {
-          case "Morning":
+      //if there's a scheduled time, we arrange based on the starting and finishing time
+      //it means it will appear both in the morning and in afternoon if the starting time is in the morning and finishing time is in the afternoon
+      if (task.scheduledTime) {
+        let startingTime = new Date(task.scheduledTime.startingTime);
+        let endingTime = new Date(task.scheduledTime.endingTime);
+        if (isToday(startingTime)) {
+          if (isMorning(startingTime) || isMorning(endingTime)) {
             morningScheduleTasks.push(task);
-            hasScheduled = true;
-            break;
-          case "Afternoon":
+          }
+
+          if (isAfternoon(startingTime) || isAfternoon(endingTime)) {
             afternoonScheduleTasks.push(task);
-            hasScheduled = true;
-            break;
-          case "Evening":
+          }
+
+          if (isEvening(startingTime) || isEvening(endingTime)) {
             eveningScheduleTasks.push(task);
-            hasScheduled = true;
-            break;
-        }
-        if (!hasScheduled) {
-          let startingTime = new Date(task.scheduleTime[0].startingTime);
-          if (beforeToday(startingTime) || isToday(startingTime)) {
-            //All tasks before today will be scheduled to today morning
-            if (beforeToday(startingTime) || isMorning(startingTime)) {
-              morningScheduleTasks.push(task);
-            } else if (isAfternoon(startingTime)) {
-              afternoonScheduleTasks.push(task);
-            } else if (isEvening(startingTime)) {
-              eveningScheduleTasks.push(task);
-            }
           }
         }
+
+        //for the past unfinished tasks, we arrange to the morning
+        else if (beforeToday(startingTime) && !task.isDone) {
+          morningScheduleTasks.push(task);
+        }
+      } else {
+        //when it doesn't have a scheduled time
       }
     });
   return {

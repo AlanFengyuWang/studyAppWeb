@@ -8,6 +8,7 @@ import AddTask from "../../components/tasks/AddTask";
 import { useEmailContext } from "../../context/EmailContext";
 import useSWR from "swr";
 import IncomingSchedule from "../../components/home/incomingSchedule/IncomingSchedule";
+import { DragDropContext } from "react-beautiful-dnd";
 
 const HomePage = () => {
   //using useContext to set email after logged in
@@ -21,6 +22,8 @@ const HomePage = () => {
   const fetcher = (url: string) => fetch(url).then((res) => res.json());
   const { data, error, mutate } = useSWR(SHOW_TASK_URL, fetcher);
 
+  const onDragEnd = () => {};
+
   return (
     <Box marginBottom="30%">
       <Profile />
@@ -30,8 +33,10 @@ const HomePage = () => {
           What do I need to do today?
         </Text>
         <AddTask url={SHOW_TASK_URL} mutate={() => mutate()} />
-        <TodayTaskList data={data} error={error} mutate={mutate} />
-        <IncomingSchedule data={data ? data.task : []} />
+        <DragDropContext onDragEnd={onDragEnd}>
+          <TodayTaskList data={data} error={error} mutate={mutate} />
+          <IncomingSchedule data={data ? data.task : []} />
+        </DragDropContext>
       </Box>
     </Box>
   );
