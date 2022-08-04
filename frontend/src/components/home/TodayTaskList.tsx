@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import {
   Alert,
   AlertIcon,
+  border,
   Box,
   Button,
   Flex,
@@ -11,7 +12,7 @@ import {
 } from "@chakra-ui/react";
 import TaskCard from "../tasks/TaskCard";
 import { useEmailContext } from "../../context/EmailContext";
-import { TaskFormValues  } from "../../types";
+import { TaskFormValues } from "../../types";
 import {
   SwipeableList,
   SwipeableListItem,
@@ -25,6 +26,7 @@ import {
 } from "../../styles/home/styledComponents";
 import "react-swipeable-list/dist/styles.css";
 import { deleteTask } from "../../functions/tasks/deleteTask";
+import { Draggable } from "react-beautiful-dnd";
 
 const TodayTaskList = (props: { data: any; error: any; mutate: Function }) => {
   const [hoveredTaskId, sethoveredTaskId] = useState("");
@@ -87,7 +89,21 @@ const TodayTaskList = (props: { data: any; error: any; mutate: Function }) => {
                       ? moveTaskCardToLeftStyle
                       : {})}
                   >
-                    <TaskCard task={task} key={index} />
+                    <Draggable
+                      draggableId={task._id}
+                      index={index}
+                      key={task._id}
+                    >
+                      {(provided) => (
+                        <Box
+                          ref={provided.innerRef}
+                          {...provided.dragHandleProps}
+                          {...provided.dragHandleProps}
+                        >
+                          <TaskCard task={task} key={task._id} />
+                        </Box>
+                      )}
+                    </Draggable>
                   </Box>
                   <Button
                     {...hideDelete}

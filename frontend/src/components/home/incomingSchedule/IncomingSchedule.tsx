@@ -20,9 +20,9 @@ const IncomingSchedule = (props: { data: TaskFormValues[] }) => {
     storeScheduleBasedOnPeriod(props.data);
 
   //intersection observer
-  const { ref, inView, entry } = useInView({
-    rootMargin: "0px 0px -550px 0px", //this is because we have a nav bar in the bottom
-  });
+  // const { ref, inView, entry } = useInView({
+  //   rootMargin: "0px 0px -550px 0px", //this is because we have a nav bar in the bottom
+  // });
 
   return (
     <Stack mt="35px">
@@ -65,7 +65,6 @@ function storeScheduleBasedOnPeriod(data: TaskFormValues[]) {
             eveningScheduleTasks.push(task);
           }
         }
-
         //for the past unfinished tasks, we arrange to the morning
         else if (beforeToday(startingTime) && !task.isDone) {
           morningScheduleTasks.push(task);
