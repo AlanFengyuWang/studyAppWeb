@@ -16,7 +16,7 @@ import {
   DropResult,
   NotDraggingStyle,
 } from "react-beautiful-dnd";
-import Dnd from "./dndExample/Dnd";
+import Dnd from "../../components/dndExample/Dnd";
 import DragDropTaskList from "../../components/tasks/DragDropTaskList";
 import { loadGetInitialProps } from "next/dist/shared/lib/utils";
 import { TaskFormValues, TaskType } from "../../types";
@@ -84,7 +84,7 @@ const HomePage = () => {
           <DragDropTaskList tasks={listItems} error={error} mutate={mutate} />
         </DragDropContext>
       </Box>
-      <Dnd />
+      {/* <Dnd /> */}
     </Box>
   );
 };

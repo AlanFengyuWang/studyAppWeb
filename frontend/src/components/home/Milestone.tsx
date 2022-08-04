@@ -15,7 +15,7 @@ const Milestone = (props: {
   isLast: boolean;
   updateMilestones: (e: Date, index: number) => void;
   milestones: Date[];
-  append: (obj: object | object[]) => void;
+  append: (obj: { milestone: Date } | { milestone: Date }[]) => void;
   remove: (index?: number | number[]) => void;
 }) => {
   return (

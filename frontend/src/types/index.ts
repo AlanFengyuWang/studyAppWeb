@@ -18,7 +18,7 @@ export type TaskFormValues = {
   scheduledTime: ScheduleTime;
   milestones: {milestone: Date}[];
   isDone: boolean;
-  subtask: { _id: string; title: string; description: string }[];
+  subtask: { title: string; description: string }[];
 };
 
 

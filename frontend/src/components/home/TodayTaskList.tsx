@@ -100,7 +100,7 @@ const TodayTaskList = (props: { data: any; error: any; mutate: Function }) => {
                           {...provided.dragHandleProps}
                           {...provided.dragHandleProps}
                         >
-                          <TaskCard task={task} key={task._id} />
+                          <TaskCard task={task} key={task._id} index={0} />
                         </Box>
                       )}
                     </Draggable>

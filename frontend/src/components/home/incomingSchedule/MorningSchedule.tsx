@@ -25,7 +25,7 @@ const MorningSchedule = (props: { scheduledTasks: TaskFormValues[] }) => {
         })} */}
       </Center>
       {props.scheduledTasks.map((task, index) => (
-        <TaskCard task={task} key={task._id} />
+        <TaskCard task={task} key={task._id} index={index} />
       ))}
     </Box>
   );
