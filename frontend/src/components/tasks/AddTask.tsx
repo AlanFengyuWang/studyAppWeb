@@ -26,7 +26,7 @@ import "react-calendar/dist/Calendar.css";
 import "react-clock/dist/Clock.css";
 import { TaskFormValues } from "../../types";
 import Milestone from "../home/Milestone";
-import { buttonAddStyle } from "../../styles/home/styledComponents";
+import { buttonAddStyle } from "../../styles/home/buttonStyles";
 import { addTask } from "../../functions/tasks/addTask";
 import { useEmailContext } from "../../context/EmailContext";
 import { Theme } from "../../styles/theme";

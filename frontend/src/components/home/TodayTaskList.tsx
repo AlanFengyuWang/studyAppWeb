@@ -13,28 +13,24 @@ import {
 import TaskCard from "../tasks/TaskCard";
 import { useEmailContext } from "../../context/EmailContext";
 import { TaskFormValues } from "../../types";
-import {
-  SwipeableList,
-  SwipeableListItem,
-  SwipeAction,
-  TrailingActions,
-} from "react-swipeable-list";
 import { MdDeleteForever } from "react-icons/md";
-import {
-  deleteActionStyle,
-  hideDelete,
-} from "../../styles/home/styledComponents";
-import "react-swipeable-list/dist/styles.css";
 import { deleteTask } from "../../functions/tasks/deleteTask";
-import { Draggable } from "react-beautiful-dnd";
+import { Draggable, Droppable } from "react-beautiful-dnd";
 
-const TodayTaskList = (props: { data: any; error: any; mutate: Function }) => {
-  const [hoveredTaskId, sethoveredTaskId] = useState("");
-  const moveTaskCardToLeftStyle = {
-    transition: "transform 0.3s",
-    transform: "translateX(-23%)",
-    opacity: "100%",
-  };
+const TodayTaskList = (props: {
+  tasks: TaskFormValues[];
+  error: any;
+  mutate: Function;
+}) => {
+  //fix the issue of animation for drag and drop for react 18
+  const [enabled, setEnabled] = useState(false);
+  useEffect(() => {
+    const animation = requestAnimationFrame(() => setEnabled(true));
+    return () => {
+      cancelAnimationFrame(animation);
+      setEnabled(false);
+    };
+  }, []);
 
   const [showAllTask, setshowAllTask] = useState(false);
   const showAll = () => {
@@ -45,18 +41,6 @@ const TodayTaskList = (props: { data: any; error: any; mutate: Function }) => {
     deleteTask(email, taskId).then(() => props.mutate());
   }
 
-  const trailingActions = (taskId: string) => {
-    return (
-      <TrailingActions>
-        <SwipeAction destructive={true} onClick={() => onSwipeDelete(taskId)}>
-          <Flex {...deleteActionStyle}>
-            <MdDeleteForever color="#E2E8F0" size="43px" />
-          </Flex>
-        </SwipeAction>
-      </TrailingActions>
-    );
-  };
-
   if (props.error)
     return (
       <Alert status="error" marginTop="3%" padding="12px">
@@ -65,47 +49,39 @@ const TodayTaskList = (props: { data: any; error: any; mutate: Function }) => {
       </Alert>
     );
 
+  //fix the animation of drag and drop
+  if (!enabled) {
+    return null;
+  }
+
   return (
-    <Stack align="stretch" marginTop="3">
-      <SwipeableList>
-        {props.data &&
-          props.data.tasks
-            .filter((item: TaskFormValues, index: number) => {
-              const endIndex: number = showAllTask
-                ? props.data.tasks.length
-                : 3;
-              return index < endIndex;
-            })
-            .map((task: TaskFormValues, index: number) => (
-              <SwipeableListItem
-                trailingActions={trailingActions(task._id)}
+    // <Droppable droppableId="droppableID" isDropDisabled={false}>
+    //   {(provided, snapshot) => (
+    <Stack
+      align="stretch"
+      // width="100%"
+      marginTop="3"
+      // ref={provided.innerRef}
+    >
+      {/* {props.tasks && props.tasks.map((task: TaskFormValues, index:number) => ())} */}
+      {props.tasks &&
+        props.tasks
+          .filter((item: TaskFormValues, index: number) => {
+            const endIndex: number = showAllTask ? props.tasks.length : 3;
+            return index < endIndex;
+          })
+          .map((task: TaskFormValues, index: number) => (
+            <Flex width="100%" position="relative">
+              <TaskCard
+                task={task}
                 key={task._id}
-              >
-                <Flex width="100%" position="relative">
-                  <Box
-                    width="100%"
-                    height="100%"
-                    {...(task._id === hoveredTaskId
-                      ? moveTaskCardToLeftStyle
-                      : {})}
-                  >
-                    <Draggable
-                      draggableId={task._id}
-                      index={index}
-                      key={task._id}
-                    >
-                      {(provided) => (
-                        <Box
-                          ref={provided.innerRef}
-                          {...provided.dragHandleProps}
-                          {...provided.dragHandleProps}
-                        >
-                          <TaskCard task={task} key={task._id} index={0} />
-                        </Box>
-                      )}
-                    </Draggable>
-                  </Box>
-                  <Button
+                index={index}
+                // hoveredTaskId={hoveredTaskId}
+                // sethoveredTaskId={sethoveredTaskId}
+                onSwipeDelete={onSwipeDelete}
+              />
+              {/* <TaskItem /> */}
+              {/* <Button
                     {...hideDelete}
                     opacity="0%"
                     left="80%"
@@ -139,12 +115,10 @@ const TodayTaskList = (props: { data: any; error: any; mutate: Function }) => {
                     }}
                   >
                     <MdDeleteForever color="#E2E8F0" size="43px" />
-                  </Button>
-                </Flex>
-              </SwipeableListItem>
-            ))}
-      </SwipeableList>
-      {props.data && props.data.tasks.length > 3 && (
+                  </Button> */}
+            </Flex>
+          ))}
+      {props.tasks && props.tasks.length > 3 && (
         <Button
           bg="none"
           marginTop="0 !important"
@@ -157,7 +131,10 @@ const TodayTaskList = (props: { data: any; error: any; mutate: Function }) => {
           {showAllTask ? "Hide" : "Show All"}
         </Button>
       )}
+      {/* {provided.placeholder} */}
     </Stack>
+    //   )}
+    // </Droppable>
   );
 };
 

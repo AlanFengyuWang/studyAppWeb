@@ -26,9 +26,12 @@ const HomePage = () => {
   //using useContext to set email after logged in
   const { data: session } = useSession();
   const { setEmail } = useEmailContext();
-  setEmail(
-    session && session.user && session.user.email ? session.user.email : ""
-  );
+  useEffect(() => {
+    setEmail(
+      session && session.user && session.user.email ? session.user.email : ""
+    );
+  }, []);
+
   const { email } = useEmailContext();
   const SHOW_TASK_URL = process.env.GET_TASKS_URL + email;
   const fetcher = (url: string) => fetch(url).then((res) => res.json());
@@ -42,7 +45,6 @@ const HomePage = () => {
     // if (data && data.tasks) newArray.push(data.tasks);
     // console.log(newArray);
     if (data && data.tasks) setItems(data.tasks);
-    if (listItems) console.log("listItems = " + JSON.stringify(listItems));
   }, [data]);
 
   const reorder = (
@@ -62,7 +64,6 @@ const HomePage = () => {
     if (!result.destination) {
       return;
     }
-    // console.log("before, listItems = " + listItems.tasks.length);
     const items = reorder(
       listItems,
       result.source.index,
@@ -81,7 +82,17 @@ const HomePage = () => {
         </Text>
         <AddTask url={SHOW_TASK_URL} mutate={() => mutate()} />
         <DragDropContext onDragEnd={onDragEnd}>
-          <DragDropTaskList tasks={listItems} error={error} mutate={mutate} />
+        <TodayTaskList
+          tasks={listItems ? listItems : []}
+          error={error}
+          mutate={mutate}
+        />
+        
+        {/* <DragDropTaskList
+            tasks={listItems ? listItems : []}
+            error={error}
+            mutate={mutate}
+          /> */}
         </DragDropContext>
       </Box>
       {/* <Dnd /> */}

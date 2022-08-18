@@ -1,4 +1,4 @@
-import { Box, Flex } from "@chakra-ui/react";
+import { Box, Flex, Stack } from "@chakra-ui/react";
 import { Session } from "inspector";
 import React, { useEffect, useState } from "react";
 import { Draggable, Droppable } from "react-beautiful-dnd";
@@ -41,21 +41,21 @@ const DragDropTaskList = (props: {
     };
   }, []);
 
-  console.log("before");
-
   if (!enabled) {
     return null;
   }
 
-  //   if (props.tasks)
-  //     console.log(
-  //       "rendering drag and drop task list, props.data.tasks = " +
-  //         props.data.tasks
-  //     );
-
   return (
     <Droppable droppableId="droppable" isDropDisabled={false}>
       {(provided, snapshot) => (
+        // <Stack ref={provided.innerRef}>
+        //   {props.tasks &&
+        //     props.tasks.map((task: any, index: number) => (
+        //       <TaskCard task={task} key={task._id} index={index} />
+        //     ))}
+        //   {/* <IncomingSchedule data={props.data ? props.data.task : []} /> */}
+        //   {provided.placeholder}
+        // </Stack>
         <Flex ref={provided.innerRef} style={{ flexDirection: "column" }}>
           {props.tasks &&
             props.tasks.map((task: any, index: number) => (
