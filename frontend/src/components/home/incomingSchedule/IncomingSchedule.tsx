@@ -14,8 +14,12 @@ import {
 import { useInView } from "react-intersection-observer";
 import { Theme } from "../../../styles/theme";
 import { Droppable } from "react-beautiful-dnd";
+import { mutate } from "swr";
 
-const IncomingSchedule = (props: { data: TaskFormValues[] }) => {
+const IncomingSchedule = (props: {
+  data: TaskFormValues[];
+  mutate: Function;
+}) => {
   const { morningScheduleTasks, afternoonScheduleTasks, eveningScheduleTasks } =
     storeScheduleBasedOnPeriod(props.data);
 
@@ -28,13 +32,22 @@ const IncomingSchedule = (props: { data: TaskFormValues[] }) => {
     <Stack mt="35px">
       {/* <Text fontWeight="bold">My Incoming Schedule...</Text> */}
       <Box>
-        <MorningSchedule scheduledTasks={morningScheduleTasks} />
+        <MorningSchedule
+          scheduledTasks={morningScheduleTasks}
+          mutate={mutate}
+        />
       </Box>
       <Box>
-        <AfternoonSchedule scheduledTasks={afternoonScheduleTasks} />
+        <AfternoonSchedule
+          scheduledTasks={afternoonScheduleTasks}
+          mutate={mutate}
+        />
       </Box>
       <Box>
-        <EveningSchedule scheduledTasks={eveningScheduleTasks} />
+        <EveningSchedule
+          scheduledTasks={eveningScheduleTasks}
+          mutate={mutate}
+        />
       </Box>
     </Stack>
   );

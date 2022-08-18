@@ -6,12 +6,14 @@ import { Theme } from "../../../styles/theme";
 import { Droppable } from "react-beautiful-dnd";
 import TaskCard from "../../tasks/TaskCard";
 
-const MorningSchedule = (props: { scheduledTasks: TaskFormValues[] }) => {
+const MorningSchedule = (props: {
+  scheduledTasks: TaskFormValues[];
+  mutate: Function;
+}) => {
   return (
     <Box
       bgColor={Theme.schedule.colors.morning}
       minHeight={Theme.schedule.schedulePeriodsHeight}
-      // minHeight="1000px"
       borderRadius={Theme.schedule.borderRadius}
     >
       <Center>
@@ -25,7 +27,12 @@ const MorningSchedule = (props: { scheduledTasks: TaskFormValues[] }) => {
         })} */}
       </Center>
       {props.scheduledTasks.map((task, index) => (
-        <TaskCard task={task} key={task._id} index={index} />
+        <TaskCard
+          task={task}
+          key={task._id}
+          index={index}
+          mutate={props.mutate}
+        />
       ))}
     </Box>
   );

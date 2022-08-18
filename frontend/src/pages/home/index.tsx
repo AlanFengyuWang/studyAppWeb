@@ -17,7 +17,6 @@ import {
   NotDraggingStyle,
 } from "react-beautiful-dnd";
 import Dnd from "../../components/dndExample/Dnd";
-import DragDropTaskList from "../../components/tasks/DragDropTaskList";
 import { loadGetInitialProps } from "next/dist/shared/lib/utils";
 import { TaskFormValues, TaskType } from "../../types";
 import TaskCard from "../../components/tasks/TaskCard";
@@ -33,6 +32,7 @@ const HomePage = () => {
   }, []);
 
   const { email } = useEmailContext();
+  //fetch data
   const SHOW_TASK_URL = process.env.GET_TASKS_URL + email;
   const fetcher = (url: string) => fetch(url).then((res) => res.json());
   const { data, error, mutate } = useSWR(SHOW_TASK_URL, fetcher);
@@ -41,9 +41,6 @@ const HomePage = () => {
   const [listItems, setItems] = useState<TaskFormValues[]>();
 
   useEffect(() => {
-    // const newArray = [];
-    // if (data && data.tasks) newArray.push(data.tasks);
-    // console.log(newArray);
     if (data && data.tasks) setItems(data.tasks);
   }, [data]);
 
@@ -80,22 +77,15 @@ const HomePage = () => {
         <Text fontSize="1xl" fontWeight={600}>
           What do I need to do today?
         </Text>
-        <AddTask url={SHOW_TASK_URL} mutate={() => mutate()} />
+        <AddTask mutate={mutate}/>
         <DragDropContext onDragEnd={onDragEnd}>
-        <TodayTaskList
-          tasks={listItems ? listItems : []}
-          error={error}
-          mutate={mutate}
-        />
-        
-        {/* <DragDropTaskList
+          <TodayTaskList
             tasks={listItems ? listItems : []}
             error={error}
             mutate={mutate}
-          /> */}
+          />
         </DragDropContext>
       </Box>
-      {/* <Dnd /> */}
     </Box>
   );
 };
