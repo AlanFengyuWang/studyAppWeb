@@ -11,11 +11,8 @@ import {
   Text,
 } from "@chakra-ui/react";
 import TaskCard from "../tasks/TaskCard";
-import { useEmailContext } from "../../context/EmailContext";
 import { TaskFormValues } from "../../types";
-import { MdDeleteForever } from "react-icons/md";
-import { deleteTask } from "../../functions/tasks/deleteTask";
-import { Draggable, Droppable } from "react-beautiful-dnd";
+import { Droppable } from "react-beautiful-dnd";
 
 const TodayTaskList = (props: {
   tasks: TaskFormValues[];
@@ -36,10 +33,6 @@ const TodayTaskList = (props: {
   const showAll = () => {
     setshowAllTask(!showAllTask);
   };
-  const { email } = useEmailContext();
-  function onSwipeDelete(taskId: string) {
-    deleteTask(email, taskId).then(() => props.mutate());
-  }
 
   if (props.error)
     return (
@@ -56,82 +49,39 @@ const TodayTaskList = (props: {
 
   return (
     <Droppable droppableId="droppableID" isDropDisabled={false}>
-      {(provided, snapshot) => (
-    <Stack
-      align="stretch"
-      // width="100%"
-      marginTop="3"
-      ref={provided.innerRef}
-    >
-      {props.tasks &&
-        props.tasks
-          .filter((item: TaskFormValues, index: number) => {
-            const endIndex: number = showAllTask ? props.tasks.length : 3;
-            return index < endIndex;
-          })
-          .map((task: TaskFormValues, index: number) => (
-            <Flex width="100%" position="relative">
-              <TaskCard
-                task={task}
-                key={task._id}
-                index={index}
-                // hoveredTaskId={hoveredTaskId}
-                // sethoveredTaskId={sethoveredTaskId}
-                onSwipeDelete={onSwipeDelete}
-              />
-              {/* <TaskItem /> */}
-              {/* <Button
-                    {...hideDelete}
-                    opacity="0%"
-                    left="80%"
-                    position="absolute"
-                    onMouseEnter={() => {
-                      sethoveredTaskId(task._id);
-                    }}
-                    onMouseLeave={() => {
-                      sethoveredTaskId("");
-                    }}
-                  ></Button>
-                  <Button
-                    {...hideDelete}
-                    position="absolute"
-                    onMouseEnter={() => {
-                      sethoveredTaskId(task._id);
-                    }}
-                    onMouseLeave={() => {
-                      sethoveredTaskId("");
-                    }}
-                    onClick={() => onSwipeDelete(task._id)}
-                    //makes sure that it get moved when we hover on the invisibile button above and it's still outside the screen
-                    {...(task._id === hoveredTaskId && {
-                      transition: "transform 0.3s",
-                      transform: "translateX(-100%)",
-                    })}
-                    //make sure after it moved and are hovered, it stays in the same place
-                    _hover={{
-                      transition: "transform 0.3s",
-                      transform: "translateX(-100%)",
-                    }}
-                  >
-                    <MdDeleteForever color="#E2E8F0" size="43px" />
-                  </Button> */}
-            </Flex>
-          ))}
-      {props.tasks && props.tasks.length > 3 && (
-        <Button
-          bg="none"
-          marginTop="0 !important"
-          _hover={{ bg: "none" }}
-          _active={{ bg: "none" }}
-          color="#2B6CB0"
-          fontWeight="600"
-          onClick={showAll}
-        >
-          {showAllTask ? "Hide" : "Show All"}
-        </Button>
-      )}
-      {provided.placeholder}
-    </Stack>
+      {(provided) => (
+        <Stack align="stretch" marginTop="3" ref={provided.innerRef}>
+          {props.tasks &&
+            props.tasks
+              .filter((item: TaskFormValues, index: number) => {
+                const endIndex: number = showAllTask ? props.tasks.length : 3;
+                return index < endIndex;
+              })
+              .map((task: TaskFormValues, index: number) => (
+                <Flex width="100%" position="relative">
+                  <TaskCard
+                    task={task}
+                    key={task._id}
+                    index={index}
+                    mutate={props.mutate}
+                  />
+                </Flex>
+              ))}
+          {props.tasks && props.tasks.length > 3 && (
+            <Button
+              bg="none"
+              marginTop="0 !important"
+              _hover={{ bg: "none" }}
+              _active={{ bg: "none" }}
+              color="#2B6CB0"
+              fontWeight="600"
+              onClick={showAll}
+            >
+              {showAllTask ? "Hide" : "Show All"}
+            </Button>
+          )}
+          {provided.placeholder}
+        </Stack>
       )}
     </Droppable>
   );

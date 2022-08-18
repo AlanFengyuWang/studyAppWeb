@@ -26,23 +26,23 @@ import "react-calendar/dist/Calendar.css";
 import "react-clock/dist/Clock.css";
 import { TaskFormValues } from "../../types";
 import Milestone from "../home/Milestone";
-import { buttonAddStyle } from "../../styles/home/buttonStyles";
+import { buttonStyles } from "../../styles/home/buttonStyles";
 import { addTask } from "../../functions/tasks/addTask";
 import { useEmailContext } from "../../context/EmailContext";
 import { Theme } from "../../styles/theme";
 
-const AddTask = (props: { url: string; mutate: any }) => {
+const AddTask = (props: {mutate: Function}) => {
+  const { email } = useEmailContext();
   const { isOpen, onOpen, onClose } = useDisclosure();
   const initialRef = React.useRef(null);
   const [dateTime, setDateTime] = useState<Date>();
   const [milestonesState, setMilestonesState] = useState<Date[]>([]);
+  // const SHOW_TASK_URL = process.env.GET_TASKS_URL + email;
 
   //set default date
   const noDueDate = new Date();
   noDueDate.setDate(noDueDate.getDate() + 99999);
 
-  //get email
-  const { email } = useEmailContext();
 
   //useFieldAray
   const {
@@ -202,7 +202,7 @@ const AddTask = (props: { url: string; mutate: any }) => {
                 ))}
                 {milestones.length < 3 && (
                   <Button
-                    {...buttonAddStyle}
+                    {...buttonStyles}
                     bottom={milestones.length !== 0 ? "28.5px" : "0"}
                     onClick={onClickMilestoneAdd}
                   >
@@ -224,7 +224,7 @@ const AddTask = (props: { url: string; mutate: any }) => {
                   />
                 ))}
                 <Button
-                  {...buttonAddStyle}
+                  {...buttonStyles}
                   bottom={subtask.length !== 0 ? "28.5px" : "0"}
                   onClick={() => subtaskAppend({ title: "", description: "" })}
                 >

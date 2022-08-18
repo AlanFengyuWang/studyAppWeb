@@ -4,7 +4,7 @@ import { TaskFormValues } from "../../../types";
 import Image from "next/image";
 import { Theme } from "../../../styles/theme";
 
-const AfternoonSchedule = (props: { scheduledTasks: TaskFormValues[] }) => {
+const AfternoonSchedule = (props: { scheduledTasks: TaskFormValues[], mutate: Function }) => {
   return (
     <Box
       bgColor={Theme.schedule.colors.afternoon}
