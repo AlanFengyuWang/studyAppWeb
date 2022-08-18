@@ -39,8 +39,8 @@ const TaskCard = ({
   // const getTaskCardStyle = (isDragging, draggableStyle) => ({})
 
   return (
-    // <Draggable draggableId={task._id} index={index}>
-    //   {(provided, snapshot) => (
+    <Draggable draggableId={task._id} index={index}>
+      {(provided, snapshot) => (
     <Box
       // background={isDragging ? draggingColor : defaultColor}
       borderRadius="10"
@@ -49,9 +49,9 @@ const TaskCard = ({
       paddingLeft="5"
       marginBottom="2%"
       backgroundColor={defaultColor}
-      // ref={provided.innerRef}
-      // {...provided.draggableProps}
-      // {...provided.dragHandleProps}
+      ref={provided.innerRef}
+      {...provided.draggableProps}
+      {...provided.dragHandleProps}
       // style={draggableStyle}
       {...(task._id === hoveredTaskId ? buttonStyles.moveTaskCardToLeft : {})}
     >
@@ -138,8 +138,8 @@ const TaskCard = ({
         <MdDeleteForever color="#E2E8F0" size="43px" />
       </Button>
     </Box>
-    //   )}
-    // </Draggable>
+      )}
+    </Draggable>
   );
 };
 

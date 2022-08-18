@@ -55,15 +55,14 @@ const TodayTaskList = (props: {
   }
 
   return (
-    // <Droppable droppableId="droppableID" isDropDisabled={false}>
-    //   {(provided, snapshot) => (
+    <Droppable droppableId="droppableID" isDropDisabled={false}>
+      {(provided, snapshot) => (
     <Stack
       align="stretch"
       // width="100%"
       marginTop="3"
-      // ref={provided.innerRef}
+      ref={provided.innerRef}
     >
-      {/* {props.tasks && props.tasks.map((task: TaskFormValues, index:number) => ())} */}
       {props.tasks &&
         props.tasks
           .filter((item: TaskFormValues, index: number) => {
@@ -131,10 +130,10 @@ const TodayTaskList = (props: {
           {showAllTask ? "Hide" : "Show All"}
         </Button>
       )}
-      {/* {provided.placeholder} */}
+      {provided.placeholder}
     </Stack>
-    //   )}
-    // </Droppable>
+      )}
+    </Droppable>
   );
 };
 
