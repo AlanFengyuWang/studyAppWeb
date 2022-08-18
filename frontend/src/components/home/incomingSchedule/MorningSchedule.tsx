@@ -1,8 +1,10 @@
-import { Box, Center } from "@chakra-ui/react";
+import { Box, Center, Flex } from "@chakra-ui/react";
 import React from "react";
 import Image from "next/image";
 import { TaskFormValues } from "../../../types";
 import { Theme } from "../../../styles/theme";
+import { Droppable } from "react-beautiful-dnd";
+import TaskCard from "../../tasks/TaskCard";
 
 const MorningSchedule = (props: { scheduledTasks: TaskFormValues[] }) => {
   return (
@@ -19,7 +21,12 @@ const MorningSchedule = (props: { scheduledTasks: TaskFormValues[] }) => {
           width={50}
           height={50}
         />
+        {/* {props.scheduledTasks.map(task => {
+        })} */}
       </Center>
+      {props.scheduledTasks.map((task, index) => (
+        <TaskCard task={task} key={task._id} index={index} />
+      ))}
     </Box>
   );
 };

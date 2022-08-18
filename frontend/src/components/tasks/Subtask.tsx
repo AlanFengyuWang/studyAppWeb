@@ -14,7 +14,11 @@ const Subtask = (props: {
   index: number;
   register: any;
   isLast: boolean;
-  append: (obj: object | object[]) => void;
+  append: (
+    obj:
+      | { title: string; description: string }
+      | { title: string; description: string }[]
+  ) => void;
   remove: (index?: number | number[]) => void;
 }) => {
   return (

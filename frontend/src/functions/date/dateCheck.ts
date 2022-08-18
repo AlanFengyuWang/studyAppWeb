@@ -1,5 +1,5 @@
 export function isMorning(date: Date) {
-    return date.getHours() >= 4 && date.getHours() <= 12;
+    return date.getHours() >= 3 && date.getHours() <= 12;
   }
   
 export function isAfternoon(date: Date) {
@@ -7,7 +7,7 @@ export function isAfternoon(date: Date) {
 }
 
 export function isEvening(date: Date) {
-    return date.getHours() > 18 && date.getHours() <= 4;
+    return date.getHours() > 18 && date.getHours() < 4;
 }
   
 export const isToday = (someDate: Date) => {

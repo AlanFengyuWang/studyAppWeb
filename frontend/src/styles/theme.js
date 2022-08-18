@@ -6,6 +6,7 @@ export const Theme = {
       green: "#48BB78",
       add: "teal",
       due: "#E2E8F0",
+      dragging: "RGBA(0, 0, 0, 0.36)",
     },
   },
   schedule: {

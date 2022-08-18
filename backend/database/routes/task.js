@@ -14,7 +14,7 @@ const ObjectId = require("mongodb").ObjectId;
 //get all tasks given by user id
 recordRoutes.route("/task/:id").get(function (req, res) {
   let db_connect = dbo.getDb();
-  let myquery = { _id: ObjectId(req.params.id) };
+  let myquery = { _id: req.params.id };
   db_connect.collection("users").findOne(myquery, function (err, result) {
     if (err) throw err;
     res.json(result);

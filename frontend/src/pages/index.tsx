@@ -45,9 +45,11 @@ const Home: NextPage = () => {
 
   //using useContext to set email after logged in
   const { setEmail } = useEmailContext();
-  setEmail(
-    session && session.user && session.user.email ? session.user.email : ""
-  );
+  useEffect(() => {
+    setEmail(
+      session && session.user && session.user.email ? session.user.email : ""
+    );
+  }, []);
 
   return (
     <div>

@@ -26,7 +26,7 @@ import "react-calendar/dist/Calendar.css";
 import "react-clock/dist/Clock.css";
 import { TaskFormValues } from "../../types";
 import Milestone from "../home/Milestone";
-import { buttonAddStyle } from "../../styles/home/styledComponents";
+import { buttonAddStyle } from "../../styles/home/buttonStyles";
 import { addTask } from "../../functions/tasks/addTask";
 import { useEmailContext } from "../../context/EmailContext";
 import { Theme } from "../../styles/theme";
@@ -58,7 +58,10 @@ const AddTask = (props: { url: string; mutate: any }) => {
       taskDescription: "",
       type: "Others",
       due: noDueDate,
-      scheduleTime: [],
+      scheduledTime: {
+        startingTime: undefined,
+        endingTime: undefined,
+      },
       milestones: [],
       subtask: [],
     },
@@ -139,6 +142,8 @@ const AddTask = (props: { url: string; mutate: any }) => {
         size="sm"
         onClick={onOpen}
         width="50%"
+        marginTop={3}
+        marginBottom={1}
       >
         Add Tasks
       </Button>
