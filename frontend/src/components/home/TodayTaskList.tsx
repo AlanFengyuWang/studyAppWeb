@@ -48,7 +48,7 @@ const TodayTaskList = (props: {
   }
 
   return (
-    <Droppable droppableId="droppableID" isDropDisabled={false}>
+    <Droppable droppableId="column-1" isDropDisabled={false}>
       {(provided) => (
         <Stack align="stretch" marginTop="3" ref={provided.innerRef}>
           {props.tasks &&

@@ -10,7 +10,7 @@ export const Theme = {
     },
   },
   schedule: {
-    schedulePeriodsHeight: "130px",
+    schedulePeriodsMinHeight: "170px",
     borderRadius: "10",
     colors: {
       morning: "#FAF089",

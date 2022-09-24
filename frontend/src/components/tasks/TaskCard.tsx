@@ -94,6 +94,7 @@ const TaskCard = ({
           <Button
             {...deleteInvisibleButton}
             position="absolute"
+            backgroundColor="red" //debug
             onMouseEnter={() => {
               sethoveredTaskId(task._id);
             }}
