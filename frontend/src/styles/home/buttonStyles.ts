@@ -17,11 +17,11 @@ export const buttonStyles = {
     deleteButton: {
         backgroundColor:"#E53E3E",
         borderRadius:"10",
-        bottom:"5%",
+        bottom:"0%",
         paddingTop:"35px",
         paddingRight:"15px",
         width:"24%",
-        height:"95%",
+        height:"100%",
         paddingBottom:"5%",
         color: colors.deleted,
     },

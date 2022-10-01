@@ -22,7 +22,7 @@ const MorningSchedule = (props: {
         >
           <Center>
             <Image
-              src="/schedule/morning.svg" 
+              src="/schedule/morning.svg"
               alt="picture of the morning schedule"
               width={50}
               height={50}
@@ -34,6 +34,7 @@ const MorningSchedule = (props: {
               key={task._id}
               index={index}
               mutate={props.mutate}
+              hoverisDisabled={true}
             />
           ))}
           {provided.placeholder}

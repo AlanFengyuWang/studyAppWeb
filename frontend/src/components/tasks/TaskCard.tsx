@@ -21,10 +21,12 @@ const TaskCard = ({
   task,
   index,
   mutate,
+  hoverisDisabled,
 }: {
   task: TaskFormValues;
   index: number;
   mutate: Function;
+  hoverisDisabled: boolean;
 }) => {
   const [hoveredTaskId, sethoveredTaskId] = useState("");
   const { email } = useEmailContext();
@@ -41,96 +43,102 @@ const TaskCard = ({
 
   return (
     <Draggable draggableId={task._id} index={index}>
-      {(provided, snapshot) => (
-        <Box
-          // background={isDragging ? draggingColor : defaultColor}
-          borderRadius="10"
-          width="100%"
-          padding="7%"
-          paddingLeft="5"
-          marginBottom="2%"
-          backgroundColor={defaultColor}
-          ref={provided.innerRef}
-          {...provided.draggableProps}
-          {...provided.dragHandleProps}
-          // style={draggableStyle}
-          {...(task._id === hoveredTaskId
-            ? buttonStyles.moveTaskCardToLeft
-            : {})}
-        >
-          <Flex gap="12%">
-            <Box
-              borderRadius="100%"
-              backgroundColor="#C4C4C4"
-              width="60px"
-              height="60px"
-              pos="relative"
-              bottom="1"
-            >
-              <Box position="relative" left="14%" top="10%">
-                <Image
-                  layout="fixed"
-                  width="40vw"
-                  height="40vw"
-                  src={imgPath}
-                  alt="task image"
-                />
-              </Box>
-            </Box>
-            <Text fontWeight="semibold">{task.taskTitle}</Text>
-          </Flex>
-          {/* due */}
-          {task.due && (
-            <Text
-              color={Theme.colors.task.due}
-              fontSize="xs"
-              float="right"
-              fontWeight="semibold"
-            >
-              <>Due: {task.due}</>
-            </Text>
-          )}
-          {/* invisible button that triggers the visible delete button once user hover on it */}
-          <Button
-            {...deleteInvisibleButton}
-            position="absolute"
-            backgroundColor="red" //debug
-            onMouseEnter={() => {
-              sethoveredTaskId(task._id);
-            }}
-            onMouseLeave={() => {
-              sethoveredTaskId("");
-            }}
-          ></Button>
-          <Button
-            {...buttonStyles.hideDelete}
-            {...buttonStyles.deleteButton}
-            opacity="100%"
-            position="absolute"
-            onMouseEnter={() => {
-              sethoveredTaskId(task._id);
-            }}
-            onMouseLeave={() => {
-              sethoveredTaskId("");
-            }}
-            onClick={() => onSwipeDelete(task._id)}
-            // move the delete button to the left
-            {...(task._id === hoveredTaskId && {
-              transition: "transform 0.1s",
-              transform: "translateX(-42%)",
-              zIndex: "1",
-            })}
-            //make sure after it moved and are hovered, it stays in the same place
-            _hover={{
-              transition: "transform 0.1s",
-              transform: "translateX(-42%)",
-              zIndex: "1",
-            }}
+      {(provided, snapshot) => {
+        return (
+          <Box
+            // background={isDragging ? draggingColor : defaultColor}
+            borderRadius="10"
+            width="100%"
+            padding="7%"
+            paddingLeft="5"
+            marginBottom="2%"
+            position="relative"
+            backgroundColor={defaultColor}
+            ref={provided.innerRef}
+            {...provided.draggableProps}
+            {...provided.dragHandleProps}
+            // style={draggableStyle}
+            {...(task._id === hoveredTaskId
+              ? buttonStyles.moveTaskCardToLeft
+              : {})}
           >
-            <MdDeleteForever color="#E2E8F0" size="43px" />
-          </Button>
-        </Box>
-      )}
+            <Flex gap="12%">
+              <Box
+                borderRadius="100%"
+                backgroundColor="#C4C4C4"
+                width="60px"
+                height="60px"
+                pos="relative"
+                bottom="1"
+              >
+                <Box position="relative" left="14%" top="10%">
+                  <Image
+                    layout="fixed"
+                    width="40vw"
+                    height="40vw"
+                    src={imgPath}
+                    alt="task image"
+                  />
+                </Box>
+              </Box>
+              <Text fontWeight="semibold">{task.taskTitle}</Text>
+            </Flex>
+            {/* due */}
+            {task.due && (
+              <Text
+                color={Theme.colors.task.due}
+                position="absolute"
+                left="45%"
+                fontSize="xs"
+                float="right"
+                fontWeight="semibold"
+              >
+                <>Due: {task.due}</>
+              </Text>
+            )}
+            {/* invisible button that triggers the visible delete button once user hover on it */}
+            <Button
+              {...deleteInvisibleButton}
+              position="absolute"
+              opacity="0%"
+              // backgroundColor="red" //debug
+              onMouseEnter={() => {
+                sethoveredTaskId(task._id);
+              }}
+              onMouseLeave={() => {
+                sethoveredTaskId("");
+              }}
+            ></Button>
+            <Button
+              {...buttonStyles.hideDelete}
+              {...buttonStyles.deleteButton}
+              opacity="100%"
+              position="absolute"
+              onMouseEnter={() => {
+                sethoveredTaskId(task._id);
+              }}
+              onMouseLeave={() => {
+                sethoveredTaskId("");
+              }}
+              onClick={() => onSwipeDelete(task._id)}
+              // move the delete button to the left
+              {...(task._id === hoveredTaskId && {
+                transition: "transform 0.1s",
+                transform: "translateX(-42%)",
+                zIndex: "1",
+              })}
+              //make sure after it moved and are hovered, it stays in the same place
+              _hover={{
+                transition: "transform 0.1s",
+                transform: "translateX(-42%)",
+                zIndex: "1",
+              }}
+            >
+              <MdDeleteForever color="#E2E8F0" size="43px" />
+            </Button>
+          </Box>
+        );
+      }}
     </Draggable>
   );
 };

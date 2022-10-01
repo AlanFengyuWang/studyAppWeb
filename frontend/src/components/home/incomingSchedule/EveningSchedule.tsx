@@ -34,6 +34,7 @@ const EveningSchedule = (props: {
               key={task._id}
               index={index}
               mutate={props.mutate}
+              hoverisDisabled={true}
             />
           ))}
           {provided.placeholder}

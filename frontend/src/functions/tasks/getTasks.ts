@@ -16,7 +16,6 @@ export const getMorningTasks = (listItems: TaskFormValues[]) => {
         if(task.due !== null && task.due !== undefined) {
             const due:Date = new Date(task.due);
             if(isToday(due) && isMorning(due)) {
-                console.log("due = " + due);
                 return task;
             }
         }
