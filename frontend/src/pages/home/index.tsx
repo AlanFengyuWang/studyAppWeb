@@ -66,10 +66,6 @@ const HomePage = () => {
   //drag and drop
   // const [listItems, setItems] = useState<TaskFormValues[]>([]);
   const [initialData, setInitialData] = useState<InitialDataType>({
-    // tasks: Object.assign(
-    //   {},
-    //   ...listItems.map((item) => ({ [item._id]: { ...item } }))
-    // ),
     columns: {
       "column-1": {
         id: "column-1",
@@ -125,38 +121,9 @@ const HomePage = () => {
     }
   }, [data]);
 
-  useEffect(() => {
-    console.log("initialData = " + JSON.stringify(initialData.columns));
-  }, [initialData]);
-
-  // const initialData: InitialDataType = {
-  //   tasks: Object.assign(
-  //     {},
-  //     ...listItems.map((item) => ({ [item._id]: { ...item } }))
-  //   ),
-  //   columns: {
-  //     "column-1": {
-  //       id: "column-1",
-  //       title: "Not scheduled",
-  //       tasks: getUnscheduledTasks(listItems),
-  //     },
-  //     "column-2": {
-  //       id: "column-2",
-  //       title: "Morning schedule",
-  //       tasks: getMorningTasks(listItems),
-  //     },
-  //     "column-3": {
-  //       id: "column-3",
-  //       title: "Afternoon schedule",
-  //       tasks: getAfternoonTasks(listItems),
-  //     },
-  //     "column-4": {
-  //       id: "column-4",
-  //       title: "Evening schedule",
-  //       tasks: getEveningTasks(listItems),
-  //     },
-  //   },
-  // };
+  // useEffect(() => {
+  //   console.log("initialData = " + JSON.stringify(initialData.columns));
+  // }, [initialData]);
 
   // const [columns, setColumns] = useState<ColumnsType>(initialData.columns);
 
@@ -196,22 +163,45 @@ const HomePage = () => {
     ) {
       return;
     }
-    // const start = columns[source.droppableId as keyof typeof columns];
-    // const finish = columns[destination.droppableId as keyof typeof columns];
+    console.log("source.droppableId = " + source.droppableId);
 
-    // console.log(
-    //   "start = " +
-    //     JSON.stringify(start) +
-    //     ", finish = " +
-    //     JSON.stringify(finish)
-    // );
+    const start = initialData.columns[source.droppableId as ColumnsKeyType];
+    const finish =
+      initialData.columns[destination.droppableId as ColumnsKeyType];
 
-    //when the column is the same
-    // if (start === finish) {
-    //   const newTaskIds = Array.from(start.tasks);
-    //   console.log("newTaskIds = " + newTaskIds);
-    // }
+    // console.log("start = " + JSON.stringify(start.tasks));
+
+    //when the drag and drop in the same column
+    if (start === finish) {
+      const newTaskIds = Array.from(start.tasks);
+      const [removed] = newTaskIds.splice(source.index, 1);
+      newTaskIds.splice(destination.index, 0, removed);
+
+      // console.log(
+      //   "newTaskIds = " +
+      //     JSON.stringify(newTaskIds) +
+      //     ", start = " +
+      //     JSON.stringify(start.id)
+      // );
+
+      //update column
+      setInitialData((current) => {
+        return {
+          // ...current,
+          columns: {
+            ...current.columns,
+            [start.id]: newTaskIds,
+          },
+        };
+      });
+    }
   };
+
+  useEffect(() => {
+    console.log(
+      "---->initialData = " + JSON.stringify(initialData.columns["column-1"])
+    );
+  }, [initialData]);
 
   return (
     <Box marginBottom="30%">
