@@ -163,13 +163,14 @@ const HomePage = () => {
     ) {
       return;
     }
-    console.log("source.droppableId = " + source.droppableId);
+    console.log("source.droppableId = " + source.droppableId); //here droppableId is column id
 
-    const start = initialData.columns[source.droppableId as ColumnsKeyType];
+    const start = initialData.columns[source.droppableId as ColumnsKeyType]; //here start is the list of all tasks in the starter column
     const finish =
       initialData.columns[destination.droppableId as ColumnsKeyType];
 
     // console.log("start = " + JSON.stringify(start.tasks));
+    // console.log("finish = " + JSON.stringify(finish.tasks));
 
     //when the drag and drop in the same column
     if (start === finish) {
@@ -177,24 +178,26 @@ const HomePage = () => {
       const [removed] = newTaskIds.splice(source.index, 1);
       newTaskIds.splice(destination.index, 0, removed);
 
-      // console.log(
-      //   "newTaskIds = " +
-      //     JSON.stringify(newTaskIds) +
-      //     ", start = " +
-      //     JSON.stringify(start.id)
-      // );
+      console.log("newTaskIds = " + JSON.stringify(newTaskIds));
 
       //update column
       setInitialData((current) => {
         return {
-          // ...current,
+          ...current,
           columns: {
             ...current.columns,
-            [start.id]: newTaskIds,
+            [destination.droppableId]: {
+              ...current.columns[destination.droppableId as ColumnsKeyType],
+              tasks: newTaskIds
+            },
           },
         };
       });
+      return;
     }
+
+    //when the drag and drop is in the diff column
+    // const startTasks
   };
 
   useEffect(() => {
