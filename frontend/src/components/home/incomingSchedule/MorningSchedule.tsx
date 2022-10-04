@@ -1,5 +1,5 @@
 import { Box, Center, Flex, Stack } from "@chakra-ui/react";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { TaskFormValues } from "../../../types";
 import { Theme } from "../../../styles/theme";
@@ -10,15 +10,32 @@ const MorningSchedule = (props: {
   scheduledTasks: TaskFormValues[];
   mutate: Function;
 }) => {
+  //fix the issue of animation for drag and drop for react 18
+  const [enabled, setEnabled] = useState(false);
+  useEffect(() => {
+    const animation = requestAnimationFrame(() => setEnabled(true));
+    return () => {
+      cancelAnimationFrame(animation);
+      setEnabled(false);
+    };
+  }, []);
+
+  //fix the animation of drag and drop
+  if (!enabled) {
+    return null;
+  }
   return (
     <Droppable droppableId="column-2">
       {(provided, snapshot) => (
         <Stack
           bgColor={Theme.schedule.colors.morning}
+          // bg={snapshot.isDraggingOver ? "red" : "blue"}
           minHeight={Theme.schedule.schedulePeriodsMinHeight}
+          // minWidth="500px"
           borderRadius={Theme.schedule.borderRadius}
           ref={provided.innerRef}
-          {...provided.droppableProps}
+          flexGrow={1}
+          // {...provided.droppableProps}
         >
           <Center>
             <Image

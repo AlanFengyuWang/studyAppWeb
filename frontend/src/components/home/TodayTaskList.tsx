@@ -49,8 +49,13 @@ const TodayTaskList = (props: {
 
   return (
     <Droppable droppableId="column-1" isDropDisabled={false}>
-      {(provided) => (
-        <Stack align="stretch" marginTop="3" ref={provided.innerRef}>
+      {(provided, snapshot) => (
+        <Stack
+          align="stretch"
+          marginTop="3"
+          bg={snapshot.isDraggingOver ? "blue" : "none"}
+          ref={provided.innerRef}
+        >
           {props.tasks &&
             props.tasks
               .filter((item: TaskFormValues, index: number) => {

@@ -28,6 +28,7 @@ import {
   getUnscheduledTasks,
 } from "../../functions/tasks/getTasks";
 import FutureTasks from "../../components/tasks/FutureTasks";
+import MorningSchedule from "../../components/home/incomingSchedule/MorningSchedule";
 
 const HomePage = () => {
   //declare types
@@ -121,6 +122,7 @@ const HomePage = () => {
     }
   }, [data]);
 
+
   // useEffect(() => {
   //   console.log("initialData = " + JSON.stringify(initialData.columns));
   // }, [initialData]);
@@ -163,7 +165,6 @@ const HomePage = () => {
     ) {
       return;
     }
-    console.log("source.droppableId = " + source.droppableId); //here droppableId is column id
 
     const start = initialData.columns[source.droppableId as ColumnsKeyType]; //here start is the list of all tasks in the starter column
     const finish =
@@ -174,11 +175,9 @@ const HomePage = () => {
 
     //when the drag and drop in the same column
     if (start === finish) {
-      const newTaskIds = Array.from(start.tasks);
-      const [removed] = newTaskIds.splice(source.index, 1);
-      newTaskIds.splice(destination.index, 0, removed);
-
-      console.log("newTaskIds = " + JSON.stringify(newTaskIds));
+      const newTaskList = Array.from(start.tasks);
+      const [removed] = newTaskList.splice(source.index, 1);
+      newTaskList.splice(destination.index, 0, removed);
 
       //update column
       setInitialData((current) => {
@@ -188,23 +187,49 @@ const HomePage = () => {
             ...current.columns,
             [destination.droppableId]: {
               ...current.columns[destination.droppableId as ColumnsKeyType],
-              tasks: newTaskIds
+              tasks: newTaskList,
             },
           },
         };
       });
       return;
     }
+    console.log("start = " + JSON.stringify(start));
 
     //when the drag and drop is in the diff column
-    // const startTasks
+    //update the start task list
+    const startTaskList = Array.from(start.tasks);
+    const [removed] = startTaskList.splice(source.index, 1);
+    const newStart = {
+      ...start,
+      tasks: startTaskList
+    }
+
+    //update the finished task list
+    const finishTaskList = Array.from(finish.tasks);
+    finishTaskList.splice(destination.index, 0, removed);
+    const newFinish = {
+      ...finish,
+      tasks: finishTaskList,
+    }
+
+    //update the state
+    const newInitialData = {
+      ...initialData,
+      columns: {
+        ...initialData.columns,
+        [newStart.id]: newStart,
+        [newFinish.id]: newFinish,
+      },
+    };
+    setInitialData(newInitialData);
   };
 
-  useEffect(() => {
-    console.log(
-      "---->initialData = " + JSON.stringify(initialData.columns["column-1"])
-    );
-  }, [initialData]);
+  // useEffect(() => {
+  //   console.log(
+  //     "---->initialData = " + JSON.stringify(initialData.columns["column-1"])
+  //   );
+  // }, [initialData]);
 
   return (
     <Box marginBottom="30%">
@@ -225,6 +250,12 @@ const HomePage = () => {
             error={error}
             mutate={mutate}
           />
+          {/* <Box>
+            <MorningSchedule
+              scheduledTasks={initialData.columns["column-2"].tasks}
+              mutate={mutate}
+            />
+          </Box> */}
           <IncomingSchedule
             morningScheduleTasks={
               initialData.columns["column-2"].tasks
