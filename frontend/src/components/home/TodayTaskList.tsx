@@ -5,6 +5,7 @@ import {
   border,
   Box,
   Button,
+  Center,
   Flex,
   Stack,
   styled,
@@ -53,7 +54,7 @@ const TodayTaskList = (props: {
         <Stack
           align="stretch"
           marginTop="3"
-          bg={snapshot.isDraggingOver ? "blue" : "none"}
+          // bg={snapshot.isDraggingOver ? "blue" : "none"}
           ref={provided.innerRef}
         >
           {props.tasks &&
@@ -70,9 +71,21 @@ const TodayTaskList = (props: {
                     index={index}
                     mutate={props.mutate}
                     hoverisDisabled={false}
+                    isDragging={snapshot.isDraggingOver}
                   />
                 </Flex>
               ))}
+
+          {/* image */}
+          {/* <Center width="100%" paddingBottom="10%" paddingTop="3%">
+            <img
+              src="/taskTypes/add.svg"
+              alt="picture of the adding task"
+              width="15%"
+              height="15%"
+            />
+          </Center> */}
+          {provided.placeholder}
           {props.tasks && props.tasks.length > 3 && (
             <Button
               bg="none"
@@ -86,7 +99,6 @@ const TodayTaskList = (props: {
               {showAllTask ? "Hide" : "Show All"}
             </Button>
           )}
-          {provided.placeholder}
         </Stack>
       )}
     </Droppable>

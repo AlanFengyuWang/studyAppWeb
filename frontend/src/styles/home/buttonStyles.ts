@@ -33,7 +33,7 @@ export const buttonStyles = {
     moveTaskCardToLeft: {
         transition: "transform 0.3s",
         transform: "translateX(-23%)",
-        opacity: "100%",
+        // opacity: "100%",
     }
 }
 

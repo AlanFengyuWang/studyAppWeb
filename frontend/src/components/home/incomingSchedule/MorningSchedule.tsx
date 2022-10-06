@@ -27,6 +27,14 @@ const MorningSchedule = (props: {
   return (
     <Droppable droppableId="column-2">
       {(provided, snapshot) => (
+        // <div style={{background-image: "url(/taskTypes/add.svg)"}}>
+        // <div
+        //   style={{
+        //     backgroundImage: "url(/taskTypes/add.svg)",
+        //     backgroundRepeat: "no-repeat",
+        //     backgroundSize: "300px 200px",
+        //   }}
+        // >
         <Stack
           bgColor={Theme.schedule.colors.morning}
           // bg={snapshot.isDraggingOver ? "red" : "blue"}
@@ -45,6 +53,7 @@ const MorningSchedule = (props: {
               height={50}
             />
           </Center>
+          {/* H */}
           {props.scheduledTasks.map((task, index) => (
             <TaskCard
               task={task}
@@ -52,10 +61,12 @@ const MorningSchedule = (props: {
               index={index}
               mutate={props.mutate}
               hoverisDisabled={true}
+              isDragging={snapshot.isDraggingOver}
             />
           ))}
           {provided.placeholder}
         </Stack>
+        // </div>
       )}
     </Droppable>
   );

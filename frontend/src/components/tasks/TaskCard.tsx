@@ -22,11 +22,13 @@ const TaskCard = ({
   index,
   mutate,
   hoverisDisabled,
+  isDragging,
 }: {
   task: TaskFormValues;
   index: number;
   mutate: Function;
   hoverisDisabled: boolean;
+  isDragging: boolean;
 }) => {
   const [hoveredTaskId, sethoveredTaskId] = useState("");
   const { email } = useEmailContext();
@@ -46,7 +48,6 @@ const TaskCard = ({
       {(provided, snapshot) => {
         return (
           <Box
-            // background={isDragging ? draggingColor : defaultColor}
             borderRadius="10"
             width="100%"
             padding="7%"
@@ -55,9 +56,9 @@ const TaskCard = ({
             position="relative"
             backgroundColor={defaultColor}
             ref={provided.innerRef}
+            opacity={isDragging && !snapshot.isDragging ? "80%" : "100%"}
             {...provided.draggableProps}
             {...provided.dragHandleProps}
-            // style={draggableStyle}
             {...(task._id === hoveredTaskId
               ? buttonStyles.moveTaskCardToLeft
               : {})}

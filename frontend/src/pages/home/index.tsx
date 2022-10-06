@@ -122,7 +122,6 @@ const HomePage = () => {
     }
   }, [data]);
 
-
   // useEffect(() => {
   //   console.log("initialData = " + JSON.stringify(initialData.columns));
   // }, [initialData]);
@@ -202,8 +201,8 @@ const HomePage = () => {
     const [removed] = startTaskList.splice(source.index, 1);
     const newStart = {
       ...start,
-      tasks: startTaskList
-    }
+      tasks: startTaskList,
+    };
 
     //update the finished task list
     const finishTaskList = Array.from(finish.tasks);
@@ -211,7 +210,7 @@ const HomePage = () => {
     const newFinish = {
       ...finish,
       tasks: finishTaskList,
-    }
+    };
 
     //update the state
     const newInitialData = {
@@ -224,12 +223,6 @@ const HomePage = () => {
     };
     setInitialData(newInitialData);
   };
-
-  // useEffect(() => {
-  //   console.log(
-  //     "---->initialData = " + JSON.stringify(initialData.columns["column-1"])
-  //   );
-  // }, [initialData]);
 
   return (
     <Box marginBottom="30%">
