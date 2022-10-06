@@ -1,4 +1,4 @@
-import { Box, Center, Flex, Stack } from "@chakra-ui/react";
+import { Box, Center, Flex, Stack, VStack } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { TaskFormValues } from "../../../types";
@@ -27,23 +27,13 @@ const MorningSchedule = (props: {
   return (
     <Droppable droppableId="column-2">
       {(provided, snapshot) => (
-        // <div style={{background-image: "url(/taskTypes/add.svg)"}}>
-        // <div
-        //   style={{
-        //     backgroundImage: "url(/taskTypes/add.svg)",
-        //     backgroundRepeat: "no-repeat",
-        //     backgroundSize: "300px 200px",
-        //   }}
-        // >
         <Stack
           bgColor={Theme.schedule.colors.morning}
-          // bg={snapshot.isDraggingOver ? "red" : "blue"}
           minHeight={Theme.schedule.schedulePeriodsMinHeight}
-          // minWidth="500px"
           borderRadius={Theme.schedule.borderRadius}
           ref={provided.innerRef}
           flexGrow={1}
-          // {...provided.droppableProps}
+          {...provided.droppableProps}
         >
           <Center>
             <Image
@@ -53,20 +43,23 @@ const MorningSchedule = (props: {
               height={50}
             />
           </Center>
-          {/* H */}
-          {props.scheduledTasks.map((task, index) => (
-            <TaskCard
-              task={task}
-              key={task._id}
-              index={index}
-              mutate={props.mutate}
-              hoverisDisabled={true}
-              isDragging={snapshot.isDraggingOver}
-            />
-          ))}
+          <VStack>
+            {props.scheduledTasks.map((task, index) => (
+              <Box width="80%">
+                <TaskCard
+                  task={task}
+                  key={task._id}
+                  index={index}
+                  mutate={props.mutate}
+                  hoverisDisabled={true}
+                  isDragging={snapshot.isDraggingOver}
+                  hideDeleteButton={true}
+                />
+              </Box>
+            ))}
+          </VStack>
           {provided.placeholder}
         </Stack>
-        // </div>
       )}
     </Droppable>
   );

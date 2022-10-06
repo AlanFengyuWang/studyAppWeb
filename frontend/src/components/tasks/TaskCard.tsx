@@ -23,12 +23,14 @@ const TaskCard = ({
   mutate,
   hoverisDisabled,
   isDragging,
+  hideDeleteButton = false,
 }: {
   task: TaskFormValues;
   index: number;
   mutate: Function;
   hoverisDisabled: boolean;
   isDragging: boolean;
+  hideDeleteButton: boolean;
 }) => {
   const [hoveredTaskId, sethoveredTaskId] = useState("");
   const { email } = useEmailContext();
@@ -98,45 +100,50 @@ const TaskCard = ({
               </Text>
             )}
             {/* invisible button that triggers the visible delete button once user hover on it */}
-            <Button
-              {...deleteInvisibleButton}
-              position="absolute"
-              opacity="0%"
-              // backgroundColor="red" //debug
-              onMouseEnter={() => {
-                sethoveredTaskId(task._id);
-              }}
-              onMouseLeave={() => {
-                sethoveredTaskId("");
-              }}
-            ></Button>
-            <Button
-              {...buttonStyles.hideDelete}
-              {...buttonStyles.deleteButton}
-              opacity="100%"
-              position="absolute"
-              onMouseEnter={() => {
-                sethoveredTaskId(task._id);
-              }}
-              onMouseLeave={() => {
-                sethoveredTaskId("");
-              }}
-              onClick={() => onSwipeDelete(task._id)}
-              // move the delete button to the left
-              {...(task._id === hoveredTaskId && {
-                transition: "transform 0.1s",
-                transform: "translateX(-42%)",
-                zIndex: "1",
-              })}
-              //make sure after it moved and are hovered, it stays in the same place
-              _hover={{
-                transition: "transform 0.1s",
-                transform: "translateX(-42%)",
-                zIndex: "1",
-              }}
-            >
-              <MdDeleteForever color="#E2E8F0" size="43px" />
-            </Button>
+            {!hideDeleteButton && (
+              <Button
+                {...deleteInvisibleButton}
+                position="absolute"
+                opacity="0%"
+                onMouseEnter={() => {
+                  sethoveredTaskId(task._id);
+                }}
+                onMouseLeave={() => {
+                  sethoveredTaskId("");
+                }}
+              ></Button>
+            )}
+
+            {/* the red color delete button */}
+            {!hideDeleteButton && (
+              <Button
+                {...buttonStyles.hideDelete}
+                {...buttonStyles.deleteButton}
+                opacity="100%"
+                position="absolute"
+                onMouseEnter={() => {
+                  sethoveredTaskId(task._id);
+                }}
+                onMouseLeave={() => {
+                  sethoveredTaskId("");
+                }}
+                onClick={() => onSwipeDelete(task._id)}
+                // move the delete button to the left
+                {...(task._id === hoveredTaskId && {
+                  transition: "transform 0.1s",
+                  transform: "translateX(-42%)",
+                  zIndex: "1",
+                })}
+                //make sure after it moved and are hovered, it stays in the same place
+                _hover={{
+                  transition: "transform 0.1s",
+                  transform: "translateX(-42%)",
+                  zIndex: "1",
+                }}
+              >
+                <MdDeleteForever color="#E2E8F0" size="43px" />
+              </Button>
+            )}
           </Box>
         );
       }}
