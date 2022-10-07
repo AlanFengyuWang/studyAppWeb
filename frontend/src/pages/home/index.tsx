@@ -179,9 +179,6 @@ const HomePage = () => {
     setInitialData(newInitialData);
   };
 
-    //isdragging
-    const [isDragging, setIsDragging] = useState<boolean>(false);
-    const [isScheduled, setisScheduled] = useState<boolean>(false);
 
   return (
     <Box marginBottom="30%">
@@ -201,10 +198,6 @@ const HomePage = () => {
             }
             error={error}
             mutate={mutate}
-            isDragging={isDragging}
-            setIsDragging={() => {}}
-            setisScheduled={() => {}}
-            isScheduled={isScheduled}
           />
           <IncomingSchedule
             morningScheduleTasks={
@@ -223,9 +216,6 @@ const HomePage = () => {
                 : []
             }
             mutate={mutate}
-            setisScheduled={setisScheduled}
-            // isDragging={isDragging}
-            setIsDragging={setIsDragging}
           />
         </DragDropContext>
       </Box>

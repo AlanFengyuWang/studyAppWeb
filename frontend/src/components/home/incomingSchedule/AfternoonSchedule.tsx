@@ -9,8 +9,6 @@ import TaskCard from "../../tasks/TaskCard";
 const AfternoonSchedule = (props: {
   scheduledTasks: TaskFormValues[];
   mutate: Function;
-  // isDragging: boolean;
-  setIsDragging: Function;
 }) => {
   return (
     <Droppable droppableId="column-4">
@@ -37,8 +35,6 @@ const AfternoonSchedule = (props: {
               index={index}
               mutate={props.mutate}
               hoverisDisabled={true}
-              // isDragging={props.isDragging}
-              setIsDragging={props.setIsDragging}
             />
           ))}
           {provided.placeholder}

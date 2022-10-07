@@ -21,8 +21,6 @@ const IncomingSchedule = (props: {
   afternoonScheduleTasks: TaskFormValues[];
   eveningScheduleTasks: TaskFormValues[];
   mutate: Function;
-  setIsDragging: Function;
-  setisScheduled: Function;
 }) => {
   // const { morningScheduleTasks, afternoonScheduleTasks, eveningScheduleTasks } =
   //   storeScheduleBasedOnPeriod(props.data);
@@ -40,8 +38,6 @@ const IncomingSchedule = (props: {
           scheduledTasks={props.morningScheduleTasks}
           mutate={mutate}
           // isDragging={props.isDragging}
-          setIsDragging={props.setIsDragging}
-          setisScheduled={props.setisScheduled}
         />
       </Box>
       <Box>
@@ -49,15 +45,12 @@ const IncomingSchedule = (props: {
           scheduledTasks={props.afternoonScheduleTasks}
           mutate={mutate}
           // isDragging={props.isDragging}
-          setIsDragging={props.setIsDragging}
         />
       </Box>
       <Box>
         <EveningSchedule
           scheduledTasks={props.eveningScheduleTasks}
           mutate={mutate}
-          // isDragging={props.isDragging}
-          setIsDragging={props.setIsDragging}
         />
       </Box>
     </Stack>
