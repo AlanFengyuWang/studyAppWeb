@@ -57,7 +57,7 @@ const HomePage = () => {
   const fetcher = (url: string) => fetch(url).then((res) => res.json());
   const { data, error, mutate } = useSWR(SHOW_TASK_URL, fetcher);
 
-  //data for drag and drop
+  //initial data initialization
   const [initialData, setInitialData] = useState<InitialDataType>({
     columns: {
       "column-1": {
@@ -167,7 +167,7 @@ const HomePage = () => {
       tasks: finishTaskList,
     };
 
-    //update the state
+    //update the initial data
     const newInitialData = {
       ...initialData,
       columns: {
@@ -178,6 +178,10 @@ const HomePage = () => {
     };
     setInitialData(newInitialData);
   };
+
+    //isdragging
+    const [isDragging, setIsDragging] = useState<boolean>(false);
+    const [isScheduled, setisScheduled] = useState<boolean>(false);
 
   return (
     <Box marginBottom="30%">
@@ -197,6 +201,10 @@ const HomePage = () => {
             }
             error={error}
             mutate={mutate}
+            isDragging={isDragging}
+            setIsDragging={() => {}}
+            setisScheduled={() => {}}
+            isScheduled={isScheduled}
           />
           <IncomingSchedule
             morningScheduleTasks={
@@ -215,6 +223,9 @@ const HomePage = () => {
                 : []
             }
             mutate={mutate}
+            setisScheduled={setisScheduled}
+            // isDragging={isDragging}
+            setIsDragging={setIsDragging}
           />
         </DragDropContext>
       </Box>

@@ -22,15 +22,21 @@ const TaskCard = ({
   task,
   index,
   mutate,
-  isDragging,
+  // isDragging,
   hideDeleteButton = false,
+  setIsDragging,
+  isScheduled = false,
+  setisScheduled,
 }: {
   task: TaskFormValues;
   index: number;
   mutate: Function;
   hoverisDisabled: boolean;
-  isDragging: boolean;
-  hideDeleteButton: boolean;
+  // isDragging: boolean;
+  hideDeleteButton?: boolean;
+  setIsDragging: Function;
+  isScheduled?: boolean;
+  setisScheduled: Function;
 }) => {
   const [hoveredTaskId, sethoveredTaskId] = useState("");
   const { email } = useEmailContext();
@@ -43,15 +49,23 @@ const TaskCard = ({
     deleteTask(email, taskId).then(() => mutate());
   }
 
+  //set to true if it is scheduled
+  if (isScheduled) {
+    setisScheduled(true);
+  }
+
   return (
     <Draggable draggableId={task._id} index={index}>
       {(provided, snapshot) => {
+        if (snapshot.isDragging) setIsDragging(true);
+        else setIsDragging(false);
         return (
           <Box
             className={styles.task_Root}
             backgroundColor={defaultColor}
             ref={provided.innerRef}
-            opacity={isDragging && !snapshot.isDragging ? "80%" : "100%"}
+            // opacity={!isDragging || snapshot.isDragging ? "100%" : "80%"}
+            opacity={snapshot.isDragging ? "80%" : "100%"}
             {...provided.draggableProps}
             {...provided.dragHandleProps}
             {...(task._id === hoveredTaskId

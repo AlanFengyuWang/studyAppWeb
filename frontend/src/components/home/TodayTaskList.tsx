@@ -20,6 +20,10 @@ const TodayTaskList = (props: {
   tasks: TaskFormValues[];
   error: any;
   mutate: Function;
+  isDragging: boolean;
+  setIsDragging: Function;
+  setisScheduled: Function;
+  isScheduled: boolean;
 }) => {
   //fix the issue of animation for drag and drop for react 18
   const [enabled, setEnabled] = useState(false);
@@ -55,12 +59,19 @@ const TodayTaskList = (props: {
     return index < endIndex;
   };
 
+  console.log(
+    "props.isScheduled = " +
+      props.isScheduled +
+      ", props.isDragging = " +
+      props.isDragging
+  );
+
   return (
     <Droppable droppableId="column-1" isDropDisabled={false}>
       {(provided, snapshot) => (
         <Stack
           marginTop="3"
-          // marginBottom={snapshot.isDraggingOver ? "100px" : "0px"}
+          marginBottom={props.isScheduled && props.isDragging ? "100px" : "0px"}
           ref={provided.innerRef}
         >
           {props.tasks &&
@@ -74,8 +85,10 @@ const TodayTaskList = (props: {
                     index={index}
                     mutate={props.mutate}
                     hoverisDisabled={false}
-                    isDragging={snapshot.isDraggingOver}
+                    // isDragging={snapshot.isDraggingOver}
                     hideDeleteButton={false}
+                    setIsDragging={props.setIsDragging}
+                    setisScheduled={props.setisScheduled}
                   />
                 </Flex>
               ))}

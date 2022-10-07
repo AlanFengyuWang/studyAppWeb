@@ -9,6 +9,9 @@ import TaskCard from "../../tasks/TaskCard";
 const MorningSchedule = (props: {
   scheduledTasks: TaskFormValues[];
   mutate: Function;
+  // isDragging: boolean;
+  setIsDragging: Function;
+  setisScheduled:Function;
 }) => {
   //fix the issue of animation for drag and drop for react 18
   const [enabled, setEnabled] = useState(false);
@@ -20,10 +23,12 @@ const MorningSchedule = (props: {
     };
   }, []);
 
+
   //fix the animation of drag and drop
   if (!enabled) {
     return null;
   }
+
   return (
     <Droppable droppableId="column-2">
       {(provided, snapshot) => (
@@ -52,8 +57,11 @@ const MorningSchedule = (props: {
                   index={index}
                   mutate={props.mutate}
                   hoverisDisabled={true}
-                  isDragging={snapshot.isDraggingOver}
                   hideDeleteButton={true}
+                  isScheduled={true}
+                  setisScheduled={props.setisScheduled}
+                  // isDragging={props.isDragging}
+                  setIsDragging={props.setIsDragging}
                 />
               </Box>
             ))}
