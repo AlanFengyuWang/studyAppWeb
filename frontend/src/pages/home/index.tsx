@@ -16,19 +16,13 @@ import {
   DropResult,
   NotDraggingStyle,
 } from "react-beautiful-dnd";
-import Dnd from "../../components/dndExample/Dnd";
-import { loadGetInitialProps } from "next/dist/shared/lib/utils";
 import { TaskFormValues, TaskType } from "../../types";
-import TaskCard from "../../components/tasks/TaskCard";
-import { json } from "stream/consumers";
 import {
   getAfternoonTasks,
   getEveningTasks,
   getMorningTasks,
   getUnscheduledTasks,
 } from "../../functions/tasks/getTasks";
-import FutureTasks from "../../components/tasks/FutureTasks";
-import MorningSchedule from "../../components/home/incomingSchedule/MorningSchedule";
 
 const HomePage = () => {
   //declare types
@@ -45,7 +39,6 @@ const HomePage = () => {
       tasks: TaskFormValues[];
     };
   };
-  // type InitialDataType = { tasks: TaskFormValues[]; columns: ColumnsType };
   type InitialDataType = { columns: ColumnsType };
 
   //using useContext to set email after logged in
@@ -64,8 +57,7 @@ const HomePage = () => {
   const fetcher = (url: string) => fetch(url).then((res) => res.json());
   const { data, error, mutate } = useSWR(SHOW_TASK_URL, fetcher);
 
-  //drag and drop
-  // const [listItems, setItems] = useState<TaskFormValues[]>([]);
+  //data for drag and drop
   const [initialData, setInitialData] = useState<InitialDataType>({
     columns: {
       "column-1": {
@@ -117,41 +109,8 @@ const HomePage = () => {
           },
         };
       });
-      // if (data !== undefined) console.log("data = " + data.tasks.length);
-      // if (data !== undefined) console.log("data = " + data.tasks[0]);
     }
   }, [data]);
-
-  // useEffect(() => {
-  //   console.log("initialData = " + JSON.stringify(initialData.columns));
-  // }, [initialData]);
-
-  // const [columns, setColumns] = useState<ColumnsType>(initialData.columns);
-
-  // const reorder = (
-  //   list: TaskFormValues[] | undefined,
-  //   startIndex: number,
-  //   endIndex: number
-  // ) => {
-  //   if (list == undefined) return [];
-  //   const result = Array.from(list);
-  //   const [removed] = result.splice(startIndex, 1);
-  //   result.splice(endIndex, 0, removed);
-  //   return result;
-  // };
-
-  // const onDragEnd = (result: DropResult) => {
-  //   // dropped outside the list
-  //   if (!result.destination) {
-  //     return;
-  //   }
-  //   const items = reorder(
-  //     listItems,
-  //     result.source.index,
-  //     result.destination.index
-  //   );
-  //   if (items) setItems(items);
-  // };
 
   const onDragEnd = (result: DropResult) => {
     const { destination, source, draggableId } = result;
@@ -168,9 +127,6 @@ const HomePage = () => {
     const start = initialData.columns[source.droppableId as ColumnsKeyType]; //here start is the list of all tasks in the starter column
     const finish =
       initialData.columns[destination.droppableId as ColumnsKeyType];
-
-    // console.log("start = " + JSON.stringify(start.tasks));
-    // console.log("finish = " + JSON.stringify(finish.tasks));
 
     //when the drag and drop in the same column
     if (start === finish) {
@@ -193,7 +149,6 @@ const HomePage = () => {
       });
       return;
     }
-    console.log("start = " + JSON.stringify(start));
 
     //when the drag and drop is in the diff column
     //update the start task list
@@ -243,12 +198,6 @@ const HomePage = () => {
             error={error}
             mutate={mutate}
           />
-          {/* <Box>
-            <MorningSchedule
-              scheduledTasks={initialData.columns["column-2"].tasks}
-              mutate={mutate}
-            />
-          </Box> */}
           <IncomingSchedule
             morningScheduleTasks={
               initialData.columns["column-2"].tasks
@@ -267,8 +216,6 @@ const HomePage = () => {
             }
             mutate={mutate}
           />
-
-          {/* <FutureTasks tasks={data ? data.tasks : []} mutate={mutate} /> */}
         </DragDropContext>
       </Box>
     </Box>

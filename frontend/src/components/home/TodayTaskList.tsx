@@ -14,6 +14,7 @@ import {
 import TaskCard from "../tasks/TaskCard";
 import { TaskFormValues } from "../../types";
 import { Droppable } from "react-beautiful-dnd";
+import { buttonStyles } from "../../styles/home/buttonStyles";
 
 const TodayTaskList = (props: {
   tasks: TaskFormValues[];
@@ -48,23 +49,25 @@ const TodayTaskList = (props: {
     return null;
   }
 
+  //Functions
+  const displayThreeTasks = (item: TaskFormValues, index: number) => {
+    const endIndex: number = showAllTask ? props.tasks.length : 3;
+    return index < endIndex;
+  };
+
   return (
     <Droppable droppableId="column-1" isDropDisabled={false}>
       {(provided, snapshot) => (
         <Stack
-          align="stretch"
           marginTop="3"
-          // bg={snapshot.isDraggingOver ? "blue" : "none"}
+          // marginBottom={snapshot.isDraggingOver ? "100px" : "0px"}
           ref={provided.innerRef}
         >
           {props.tasks &&
             props.tasks
-              .filter((item: TaskFormValues, index: number) => {
-                const endIndex: number = showAllTask ? props.tasks.length : 3;
-                return index < endIndex;
-              })
+              .filter(displayThreeTasks)
               .map((task: TaskFormValues, index: number) => (
-                <Flex width="100%" position="relative">
+                <Flex>
                   <TaskCard
                     task={task}
                     key={task._id}
@@ -76,27 +79,9 @@ const TodayTaskList = (props: {
                   />
                 </Flex>
               ))}
-
-          {/* image */}
-          {/* <Center width="100%" paddingBottom="10%" paddingTop="3%">
-            <img
-              src="/taskTypes/add.svg"
-              alt="picture of the adding task"
-              width="15%"
-              height="15%"
-            />
-          </Center> */}
           {provided.placeholder}
           {props.tasks && props.tasks.length > 3 && (
-            <Button
-              bg="none"
-              marginTop="0 !important"
-              _hover={{ bg: "none" }}
-              _active={{ bg: "none" }}
-              color="#2B6CB0"
-              fontWeight="600"
-              onClick={showAll}
-            >
+            <Button {...buttonStyles.showAll} onClick={showAll}>
               {showAllTask ? "Hide" : "Show All"}
             </Button>
           )}

@@ -34,6 +34,15 @@ export const buttonStyles = {
         transition: "transform 0.3s",
         transform: "translateX(-23%)",
         // opacity: "100%",
+    },
+
+    showAll: {
+        bg:"none",
+        marginTop:"0 !important",
+        _hover:{ bg: "none" },
+        _active:{bg: "none" },
+        color:"#2B6CB0",
+        fontWeight:"600",
     }
 }
 

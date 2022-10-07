@@ -16,12 +16,12 @@ import {
 import { deleteTask } from "../../functions/tasks/deleteTask";
 import { MdDeleteForever } from "react-icons/md";
 import { useEmailContext } from "../../context/EmailContext";
+import styles from "../../styles/home/task.module.css";
 
 const TaskCard = ({
   task,
   index,
   mutate,
-  hoverisDisabled,
   isDragging,
   hideDeleteButton = false,
 }: {
@@ -37,8 +37,6 @@ const TaskCard = ({
 
   //deciding the background color: red means its urgent, oragne means it's moderate urgent, green means it's not urgent
   let defaultColor = Theme.colors.task.green;
-  let draggingColor = Theme.colors.task.dragging;
-
   const imgPath = "/taskTypes/" + task.type + ".svg";
 
   function onSwipeDelete(taskId: string) {
@@ -50,12 +48,7 @@ const TaskCard = ({
       {(provided, snapshot) => {
         return (
           <Box
-            borderRadius="10"
-            width="100%"
-            padding="7%"
-            paddingLeft="5"
-            marginBottom="2%"
-            position="relative"
+            className={styles.task_Root}
             backgroundColor={defaultColor}
             ref={provided.innerRef}
             opacity={isDragging && !snapshot.isDragging ? "80%" : "100%"}
@@ -65,16 +58,10 @@ const TaskCard = ({
               ? buttonStyles.moveTaskCardToLeft
               : {})}
           >
+            {/* image & title */}
             <Flex gap="12%">
-              <Box
-                borderRadius="100%"
-                backgroundColor="#C4C4C4"
-                width="60px"
-                height="60px"
-                pos="relative"
-                bottom="1"
-              >
-                <Box position="relative" left="14%" top="10%">
+              <Box className={styles.taskImageTitle_Box}>
+                <Box className={styles.taskImage_Box}>
                   <Image
                     layout="fixed"
                     width="40vw"
@@ -84,14 +71,14 @@ const TaskCard = ({
                   />
                 </Box>
               </Box>
-              <Text fontWeight="semibold">{task.taskTitle}</Text>
+              <Text className={styles.taskTitle}>{task.taskTitle}</Text>
             </Flex>
+
             {/* due */}
             {task.due && (
               <Text
                 color={Theme.colors.task.due}
-                position="absolute"
-                left="45%"
+                className={styles.taskDue}
                 fontSize="xs"
                 float="right"
                 fontWeight="semibold"
@@ -104,7 +91,6 @@ const TaskCard = ({
               <Button
                 {...deleteInvisibleButton}
                 position="absolute"
-                opacity="0%"
                 onMouseEnter={() => {
                   sethoveredTaskId(task._id);
                 }}
@@ -119,7 +105,6 @@ const TaskCard = ({
               <Button
                 {...buttonStyles.hideDelete}
                 {...buttonStyles.deleteButton}
-                opacity="100%"
                 position="absolute"
                 onMouseEnter={() => {
                   sethoveredTaskId(task._id);
