@@ -22,14 +22,12 @@ const TaskCard = ({
   task,
   index,
   mutate,
-  // isDragging,
   hideDeleteButton = false,
 }: {
   task: TaskFormValues;
   index: number;
   mutate: Function;
   hoverisDisabled: boolean;
-  // isDragging: boolean;
   hideDeleteButton?: boolean;
 }) => {
   const [hoveredTaskId, sethoveredTaskId] = useState("");
@@ -42,6 +40,16 @@ const TaskCard = ({
   function onSwipeDelete(taskId: string) {
     deleteTask(email, taskId).then(() => mutate());
   }
+
+  const clickTaskCardEvent = () => {
+    //when the delete button is showing, move the delete button away from the screen when the user click on the card
+    if (task._id === hoveredTaskId) {
+      sethoveredTaskId("");
+    } else {
+      //otherwise, go into the card details
+      sethoveredTaskId(task._id);
+    }
+  };
 
   return (
     <Draggable draggableId={task._id} index={index}>
@@ -58,6 +66,7 @@ const TaskCard = ({
             {...(task._id === hoveredTaskId
               ? buttonStyles.moveTaskCardToLeft
               : {})}
+            onClick={() => clickTaskCardEvent()}
           >
             {/* image & title */}
             <Flex gap="12%">
@@ -87,9 +96,10 @@ const TaskCard = ({
                 <>Due: {task.due}</>
               </Text>
             )}
-            {/* invisible button that triggers the visible delete button once user hover on it */}
+            {/* invisible button that triggers the visible delete button once user hover or click on it */}
             {!hideDeleteButton && (
               <Button
+                // opacity="100% !important"
                 {...deleteInvisibleButton}
                 position="absolute"
                 onMouseEnter={() => {

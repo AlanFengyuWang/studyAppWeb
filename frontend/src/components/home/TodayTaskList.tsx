@@ -75,7 +75,6 @@ const TodayTaskList = (props: {
                     index={index}
                     mutate={props.mutate}
                     hoverisDisabled={false}
-                    // isDragging={snapshot.isDraggingOver}
                     hideDeleteButton={false}
                   />
                 </Flex>
