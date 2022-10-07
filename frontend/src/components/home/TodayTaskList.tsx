@@ -59,7 +59,8 @@ const TodayTaskList = (props: {
     <Droppable droppableId="column-1" isDropDisabled={false}>
       {(provided, snapshot) => (
         <Stack
-          marginBottom="30%"
+          marginBottom={showAllTask ? "0" : "20px"}
+          marginTop="2"
           // marginTop={props.isScheduled && props.isDragging ? "100px" : "3"}
           ref={provided.innerRef}
         >
