@@ -24,6 +24,7 @@ const FutureTasks = (props: { tasks: TaskFormValues[]; mutate: Function }) => {
                   key={task._id}
                   index={index}
                   mutate={props.mutate}
+                  hoverisDisabled={false}
                 />
               );
             }

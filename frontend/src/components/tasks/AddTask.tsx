@@ -123,7 +123,7 @@ const AddTask = (props: { mutate: Function }) => {
     if (dateTime == undefined) {
       setValue("due", noDueDate);
     } else {
-      setValue("due", dateTime);
+      setValue("due", dateTime.toString());
     }
   }, [dateTime]);
 
