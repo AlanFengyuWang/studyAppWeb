@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import AfternoonSchedule from "./AfternoonSchedule";
 import EveningSchedule from "./EveningSchedule";
 import MorningSchedule from "./MorningSchedule";
@@ -15,12 +15,15 @@ import { useInView } from "react-intersection-observer";
 import { Theme } from "../../../styles/theme";
 import { Droppable } from "react-beautiful-dnd";
 import { mutate } from "swr";
+import { useIsDraggingContext } from "../../../context/IsDraggingContext";
 
 const IncomingSchedule = (props: {
-  morningScheduleTasks: TaskFormValues[];
-  afternoonScheduleTasks: TaskFormValues[];
-  eveningScheduleTasks: TaskFormValues[];
-  mutate: Function;
+  // morningScheduleTasks: TaskFormValues[];
+  // afternoonScheduleTasks: TaskFormValues[];
+  // eveningScheduleTasks: TaskFormValues[];
+  // mutate: Function;
+  // isDragging: boolean;
+  children: React.ReactNode;
 }) => {
   // const { morningScheduleTasks, afternoonScheduleTasks, eveningScheduleTasks } =
   //   storeScheduleBasedOnPeriod(props.data);
@@ -32,28 +35,31 @@ const IncomingSchedule = (props: {
 
   return (
     <Stack mt="35px">
-      {/* <Text fontWeight="bold">My Incoming Schedule...</Text> */}
-      <Box>
-        <MorningSchedule
-          scheduledTasks={props.morningScheduleTasks}
-          mutate={mutate}
-          // isDragging={props.isDragging}
-        />
-      </Box>
-      <Box>
-        <AfternoonSchedule
-          scheduledTasks={props.afternoonScheduleTasks}
-          mutate={mutate}
-          // isDragging={props.isDragging}
-        />
-      </Box>
-      <Box>
-        <EveningSchedule
-          scheduledTasks={props.eveningScheduleTasks}
-          mutate={mutate}
-        />
-      </Box>
+      <Text fontWeight="bold">My Incoming Schedule...</Text>
+      {props.children}
     </Stack>
+    // <Stack mt="35px">
+    //   <Box>
+    //     <MorningSchedule
+    //       scheduledTasks={props.morningScheduleTasks}
+    //       mutate={mutate}
+    //       // isDragging={props.isDragging}
+    //     />
+    //   </Box>
+    //   <Box>
+    //     <AfternoonSchedule
+    //       scheduledTasks={props.afternoonScheduleTasks}
+    //       mutate={mutate}
+    //       // isDragging={props.isDragging}
+    //     />
+    //   </Box>
+    //   <Box>
+    //     <EveningSchedule
+    //       scheduledTasks={props.eveningScheduleTasks}
+    //       mutate={mutate}
+    //     />
+    //   </Box>
+    // </Stack>
   );
 };
 

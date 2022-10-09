@@ -1,5 +1,5 @@
-import { Box, Center, Stack } from "@chakra-ui/react";
-import React from "react";
+import { Box, Center, Stack, VStack } from "@chakra-ui/react";
+import React, { useEffect, useState } from "react";
 import { TaskFormValues } from "../../../types";
 import Image from "next/image";
 import { Theme } from "../../../styles/theme";
@@ -9,7 +9,22 @@ import TaskCard from "../../tasks/TaskCard";
 const EveningSchedule = (props: {
   scheduledTasks: TaskFormValues[];
   mutate: Function;
+  isDragging: boolean;
 }) => {
+  //fix the issue of animation for drag and drop for react 18
+  const [enabled, setEnabled] = useState(false);
+  useEffect(() => {
+    const animation = requestAnimationFrame(() => setEnabled(true));
+    return () => {
+      cancelAnimationFrame(animation);
+      setEnabled(false);
+    };
+  }, []);
+
+  //fix the animation of drag and drop
+  if (!enabled) {
+    return null;
+  }
   return (
     <Droppable droppableId="column-4">
       {(provided, snapshot) => (
@@ -17,7 +32,9 @@ const EveningSchedule = (props: {
           bgColor={Theme.schedule.colors.evening}
           minHeight={Theme.schedule.schedulePeriodsMinHeight}
           borderRadius={Theme.schedule.borderRadius}
+          opacity={props.isDragging ? "70%" : "100%"}
           ref={provided.innerRef}
+          flexGrow={1}
           {...provided.droppableProps}
         >
           <Center>
@@ -28,15 +45,20 @@ const EveningSchedule = (props: {
               height={36}
             />
           </Center>
-          {props.scheduledTasks.map((task, index) => (
-            <TaskCard
-              task={task}
-              key={task._id}
-              index={index}
-              mutate={props.mutate}
-              hoverisDisabled={true}
-            />
-          ))}
+          <VStack>
+            {props.scheduledTasks.map((task, index) => (
+              <Box width="80%">
+                <TaskCard
+                  task={task}
+                  key={task._id}
+                  index={index}
+                  mutate={props.mutate}
+                  hoverisDisabled={true}
+                  hideDeleteButton={true}
+                />
+              </Box>
+            ))}
+          </VStack>
           {provided.placeholder}
         </Stack>
       )}

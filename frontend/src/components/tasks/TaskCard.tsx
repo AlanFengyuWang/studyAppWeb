@@ -1,5 +1,5 @@
 import { Box, Button, Flex, Text } from "@chakra-ui/react";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { TaskFormValues } from "../../types";
 import { Theme } from "../../styles/theme";
 import Image from "next/image";
@@ -17,6 +17,7 @@ import { deleteTask } from "../../functions/tasks/deleteTask";
 import { MdDeleteForever } from "react-icons/md";
 import { useEmailContext } from "../../context/EmailContext";
 import styles from "../../styles/home/task.module.css";
+import { useIsDraggingContext } from "../../context/IsDraggingContext";
 
 const TaskCard = ({
   task,
@@ -50,6 +51,8 @@ const TaskCard = ({
       sethoveredTaskId(task._id);
     }
   };
+
+  //usecontext for isdragging
 
   return (
     <Draggable draggableId={task._id} index={index}>
@@ -116,6 +119,7 @@ const TaskCard = ({
               <Button
                 {...buttonStyles.hideDelete}
                 {...buttonStyles.deleteButton}
+                opacity={snapshot.isDragging ? "0" : "100%"}
                 position="absolute"
                 onMouseEnter={() => {
                   sethoveredTaskId(task._id);

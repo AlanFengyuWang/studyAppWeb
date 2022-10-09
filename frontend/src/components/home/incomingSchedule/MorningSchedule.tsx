@@ -5,10 +5,12 @@ import { TaskFormValues } from "../../../types";
 import { Theme } from "../../../styles/theme";
 import { Droppable } from "react-beautiful-dnd";
 import TaskCard from "../../tasks/TaskCard";
+import { useIsDraggingContext } from "../../../context/IsDraggingContext";
 
 const MorningSchedule = (props: {
   scheduledTasks: TaskFormValues[];
   mutate: Function;
+  isDragging: boolean;
 }) => {
   //fix the issue of animation for drag and drop for react 18
   const [enabled, setEnabled] = useState(false);
@@ -32,6 +34,7 @@ const MorningSchedule = (props: {
           bgColor={Theme.schedule.colors.morning}
           minHeight={Theme.schedule.schedulePeriodsMinHeight}
           borderRadius={Theme.schedule.borderRadius}
+          opacity={props.isDragging ? "70%" : "100%"}
           ref={provided.innerRef}
           flexGrow={1}
           {...provided.droppableProps}

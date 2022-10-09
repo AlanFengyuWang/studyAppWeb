@@ -1,4 +1,4 @@
-import React, { StrictMode, useEffect, useState } from "react";
+import React, { createContext, StrictMode, useEffect, useState } from "react";
 import Profile from "../../components/home/Profile";
 import ProgressCards from "../../components/home/taskProgress/ProgressDisplay";
 import TodayTaskList from "../../components/home/TodayTaskList";
@@ -23,6 +23,9 @@ import {
   getMorningTasks,
   getUnscheduledTasks,
 } from "../../functions/tasks/getTasks";
+import MorningSchedule from "../../components/home/incomingSchedule/MorningSchedule";
+import AfternoonSchedule from "../../components/home/incomingSchedule/AfternoonSchedule";
+import EveningSchedule from "../../components/home/incomingSchedule/EveningSchedule";
 
 const HomePage = () => {
   //declare types
@@ -112,7 +115,11 @@ const HomePage = () => {
     }
   }, [data]);
 
+  //usecontext for isdragging
+  const [isDragging, setIsDragging] = useState<boolean>(false);
+
   const onDragEnd = (result: DropResult) => {
+    setIsDragging(false);
     const { destination, source, draggableId } = result;
     if (!destination) {
       return;
@@ -179,6 +186,21 @@ const HomePage = () => {
     setInitialData(newInitialData);
   };
 
+  useEffect(() => {}, [isDragging]);
+
+  const ondragStart = () => {
+    setIsDragging(true);
+  };
+
+  const morningScheduleTasks = initialData.columns["column-2"].tasks
+    ? initialData.columns["column-2"].tasks
+    : [];
+  const afternoonScheduleTasks = initialData.columns["column-3"].tasks
+    ? initialData.columns["column-3"].tasks
+    : [];
+  const eveningScheduleTasks = initialData.columns["column-4"].tasks
+    ? initialData.columns["column-4"].tasks
+    : [];
 
   return (
     <Box marginBottom="30%">
@@ -189,7 +211,7 @@ const HomePage = () => {
           What do I need to do today?
         </Text>
         <AddTask mutate={mutate} />
-        <DragDropContext onDragEnd={onDragEnd}>
+        <DragDropContext onDragEnd={onDragEnd} onDragStart={ondragStart}>
           <TodayTaskList
             tasks={
               initialData.columns["column-1"].tasks
@@ -199,24 +221,23 @@ const HomePage = () => {
             error={error}
             mutate={mutate}
           />
-          <IncomingSchedule
-            morningScheduleTasks={
-              initialData.columns["column-2"].tasks
-                ? initialData.columns["column-2"].tasks
-                : []
-            }
-            afternoonScheduleTasks={
-              initialData.columns["column-3"].tasks
-                ? initialData.columns["column-3"].tasks
-                : []
-            }
-            eveningScheduleTasks={
-              initialData.columns["column-4"].tasks
-                ? initialData.columns["column-4"].tasks
-                : []
-            }
-            mutate={mutate}
-          />
+          <IncomingSchedule>
+            <MorningSchedule
+              scheduledTasks={morningScheduleTasks}
+              mutate={mutate}
+              isDragging={isDragging}
+            />
+            <AfternoonSchedule
+              scheduledTasks={afternoonScheduleTasks}
+              mutate={mutate}
+              isDragging={isDragging}
+            />
+            <EveningSchedule
+              scheduledTasks={eveningScheduleTasks}
+              mutate={mutate}
+              isDragging={isDragging}
+            />
+          </IncomingSchedule>
         </DragDropContext>
       </Box>
     </Box>
