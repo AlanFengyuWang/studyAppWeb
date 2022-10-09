@@ -5,6 +5,7 @@ import {
   border,
   Box,
   Button,
+  Center,
   Flex,
   Stack,
   styled,
@@ -13,6 +14,7 @@ import {
 import TaskCard from "../tasks/TaskCard";
 import { TaskFormValues } from "../../types";
 import { Droppable } from "react-beautiful-dnd";
+import { buttonStyles } from "../../styles/home/buttonStyles";
 
 const TodayTaskList = (props: {
   tasks: TaskFormValues[];
@@ -47,40 +49,42 @@ const TodayTaskList = (props: {
     return null;
   }
 
+  //Functions
+  const displayThreeTasks = (item: TaskFormValues, index: number) => {
+    const endIndex: number = showAllTask ? props.tasks.length : 3;
+    return index < endIndex;
+  };
+
   return (
-    <Droppable droppableId="droppableID" isDropDisabled={false}>
-      {(provided) => (
-        <Stack align="stretch" marginTop="3" ref={provided.innerRef}>
+    <Droppable droppableId="column-1" isDropDisabled={false}>
+      {(provided, snapshot) => (
+        <Stack
+          marginBottom={showAllTask ? "0" : "20px"}
+          marginTop="2"
+          // marginTop={props.isScheduled && props.isDragging ? "100px" : "3"}
+          ref={provided.innerRef}
+        >
           {props.tasks &&
             props.tasks
-              .filter((item: TaskFormValues, index: number) => {
-                const endIndex: number = showAllTask ? props.tasks.length : 3;
-                return index < endIndex;
-              })
+              .filter(displayThreeTasks)
               .map((task: TaskFormValues, index: number) => (
-                <Flex width="100%" position="relative">
+                <Flex>
                   <TaskCard
                     task={task}
                     key={task._id}
                     index={index}
                     mutate={props.mutate}
+                    hoverisDisabled={false}
+                    hideDeleteButton={false}
                   />
                 </Flex>
               ))}
+          {provided.placeholder}
           {props.tasks && props.tasks.length > 3 && (
-            <Button
-              bg="none"
-              marginTop="0 !important"
-              _hover={{ bg: "none" }}
-              _active={{ bg: "none" }}
-              color="#2B6CB0"
-              fontWeight="600"
-              onClick={showAll}
-            >
+            <Button {...buttonStyles.showAll} onClick={showAll}>
               {showAllTask ? "Hide" : "Show All"}
             </Button>
           )}
-          {provided.placeholder}
         </Stack>
       )}
     </Droppable>

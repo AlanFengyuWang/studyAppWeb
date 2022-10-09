@@ -17,7 +17,7 @@ export const buttonStyles = {
     deleteButton: {
         backgroundColor:"#E53E3E",
         borderRadius:"10",
-        bottom:"1%",
+        bottom:"0%",
         paddingTop:"35px",
         paddingRight:"15px",
         width:"24%",
@@ -33,7 +33,16 @@ export const buttonStyles = {
     moveTaskCardToLeft: {
         transition: "transform 0.3s",
         transform: "translateX(-23%)",
-        opacity: "100%",
+        // opacity: "100%",
+    },
+
+    showAll: {
+        bg:"none",
+        marginTop:"0 !important",
+        _hover:{ bg: "none" },
+        _active:{bg: "none" },
+        color:"#2B6CB0",
+        fontWeight:"600",
     }
 }
 

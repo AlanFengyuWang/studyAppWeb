@@ -30,8 +30,9 @@ import { buttonStyles } from "../../styles/home/buttonStyles";
 import { addTask } from "../../functions/tasks/addTask";
 import { useEmailContext } from "../../context/EmailContext";
 import { Theme } from "../../styles/theme";
+import { isToday } from "date-fns";
 
-const AddTask = (props: {mutate: Function}) => {
+const AddTask = (props: { mutate: Function }) => {
   const { email } = useEmailContext();
   const { isOpen, onOpen, onClose } = useDisclosure();
   const initialRef = React.useRef(null);
@@ -40,9 +41,7 @@ const AddTask = (props: {mutate: Function}) => {
   // const SHOW_TASK_URL = process.env.GET_TASKS_URL + email;
 
   //set default date
-  const noDueDate = new Date();
-  noDueDate.setDate(noDueDate.getDate() + 99999);
-
+  const noDueDate: Date | undefined = undefined;
 
   //useFieldAray
   const {
@@ -88,6 +87,7 @@ const AddTask = (props: {mutate: Function}) => {
   const onSubmit = (data: TaskFormValues) => {
     let dataWithEmail: any = data;
     dataWithEmail["email"] = email;
+
     //update tasks to the component immediatelly
     addTask(dataWithEmail).then(() => {
       props.mutate();
@@ -123,7 +123,7 @@ const AddTask = (props: {mutate: Function}) => {
     if (dateTime == undefined) {
       setValue("due", noDueDate);
     } else {
-      setValue("due", dateTime);
+      setValue("due", dateTime.toString());
     }
   }, [dateTime]);
 

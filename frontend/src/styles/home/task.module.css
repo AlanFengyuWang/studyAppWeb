@@ -1,0 +1,33 @@
+.task_Root {
+    border-radius:11px;
+    width:100%;
+    padding:7%;
+    margin-bottom:2%;
+    position:relative;
+}
+
+.taskImage_Box {
+    position:absolute;
+    left:14%;
+    top:10%;
+}
+
+.taskImageTitle_Box {
+    border-radius:100%;
+    background-color:#C4C4C4;
+    width:60px;
+    height:60px;
+    position:relative;
+    bottom:1;
+    left:2
+}
+
+.taskTitle {
+    font-weight:bold;
+}
+
+.taskDue {
+    position: absolute;
+    left:45%;
+    float:right;
+}

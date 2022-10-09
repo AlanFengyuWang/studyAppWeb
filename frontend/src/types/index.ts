@@ -13,7 +13,7 @@ export type TaskFormValues = {
   taskTitle: string;
   taskDescription: string;
   type: TaskType;
-  due: Date;
+  due: string | undefined;
   scheduledPeriod: SchedulePeriod;
   scheduledTime: ScheduleTime;
   milestones: {milestone: Date}[];

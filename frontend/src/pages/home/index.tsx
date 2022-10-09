@@ -1,4 +1,4 @@
-import React, { StrictMode, useEffect, useState } from "react";
+import React, { createContext, StrictMode, useEffect, useState } from "react";
 import Profile from "../../components/home/Profile";
 import ProgressCards from "../../components/home/taskProgress/ProgressDisplay";
 import TodayTaskList from "../../components/home/TodayTaskList";
@@ -16,12 +16,34 @@ import {
   DropResult,
   NotDraggingStyle,
 } from "react-beautiful-dnd";
-import Dnd from "../../components/dndExample/Dnd";
-import { loadGetInitialProps } from "next/dist/shared/lib/utils";
 import { TaskFormValues, TaskType } from "../../types";
-import TaskCard from "../../components/tasks/TaskCard";
+import {
+  getAfternoonTasks,
+  getEveningTasks,
+  getMorningTasks,
+  getUnscheduledTasks,
+} from "../../functions/tasks/getTasks";
+import MorningSchedule from "../../components/home/incomingSchedule/MorningSchedule";
+import AfternoonSchedule from "../../components/home/incomingSchedule/AfternoonSchedule";
+import EveningSchedule from "../../components/home/incomingSchedule/EveningSchedule";
 
 const HomePage = () => {
+  //declare types
+  type ColumnsKeyType = "column-1" | "column-2" | "column-3" | "column-4";
+  type ColumnTitleType =
+    | "Not scheduled"
+    | "Morning schedule"
+    | "Afternoon schedule"
+    | "Evening schedule";
+  type ColumnsType = {
+    [columnKey in ColumnsKeyType]: {
+      id: ColumnsKeyType;
+      title: ColumnTitleType;
+      tasks: TaskFormValues[];
+    };
+  };
+  type InitialDataType = { columns: ColumnsType };
+
   //using useContext to set email after logged in
   const { data: session } = useSession();
   const { setEmail } = useEmailContext();
@@ -32,42 +54,153 @@ const HomePage = () => {
   }, []);
 
   const { email } = useEmailContext();
+
   //fetch data
   const SHOW_TASK_URL = process.env.GET_TASKS_URL + email;
   const fetcher = (url: string) => fetch(url).then((res) => res.json());
   const { data, error, mutate } = useSWR(SHOW_TASK_URL, fetcher);
 
-  //drag and drop
-  const [listItems, setItems] = useState<TaskFormValues[]>();
+  //initial data initialization
+  const [initialData, setInitialData] = useState<InitialDataType>({
+    columns: {
+      "column-1": {
+        id: "column-1",
+        title: "Not scheduled",
+        tasks: [],
+      },
+      "column-2": {
+        id: "column-2",
+        title: "Morning schedule",
+        tasks: [],
+      },
+      "column-3": {
+        id: "column-3",
+        title: "Afternoon schedule",
+        tasks: [],
+      },
+      "column-4": {
+        id: "column-4",
+        title: "Evening schedule",
+        tasks: [],
+      },
+    },
+  });
 
   useEffect(() => {
-    if (data && data.tasks) setItems(data.tasks);
+    if (data && data.tasks) {
+      setInitialData((current) => {
+        return {
+          ...current,
+          columns: {
+            ...current.columns,
+            "column-1": {
+              ...current.columns["column-1"],
+              tasks: getUnscheduledTasks(data.tasks),
+            },
+            "column-2": {
+              ...current.columns["column-2"],
+              tasks: getMorningTasks(data.tasks),
+            },
+            "column-3": {
+              ...current.columns["column-3"],
+              tasks: getAfternoonTasks(data.tasks),
+            },
+            "column-4": {
+              ...current.columns["column-4"],
+              tasks: getEveningTasks(data.tasks),
+            },
+          },
+        };
+      });
+    }
   }, [data]);
 
-  const reorder = (
-    list: TaskFormValues[] | undefined,
-    startIndex: number,
-    endIndex: number
-  ) => {
-    if (list == undefined) return [];
-    const result = Array.from(list);
-    const [removed] = result.splice(startIndex, 1);
-    result.splice(endIndex, 0, removed);
-    return result;
-  };
+  //usecontext for isdragging
+  const [isDragging, setIsDragging] = useState<boolean>(false);
 
   const onDragEnd = (result: DropResult) => {
-    // dropped outside the list
-    if (!result.destination) {
+    setIsDragging(false);
+    const { destination, source, draggableId } = result;
+    if (!destination) {
       return;
     }
-    const items = reorder(
-      listItems,
-      result.source.index,
-      result.destination.index
-    );
-    if (items) setItems(items);
+    if (
+      destination.droppableId === source.droppableId &&
+      destination.index === source.index
+    ) {
+      return;
+    }
+
+    const start = initialData.columns[source.droppableId as ColumnsKeyType]; //here start is the list of all tasks in the starter column
+    const finish =
+      initialData.columns[destination.droppableId as ColumnsKeyType];
+
+    //when the drag and drop in the same column
+    if (start === finish) {
+      const newTaskList = Array.from(start.tasks);
+      const [removed] = newTaskList.splice(source.index, 1);
+      newTaskList.splice(destination.index, 0, removed);
+
+      //update column
+      setInitialData((current) => {
+        return {
+          ...current,
+          columns: {
+            ...current.columns,
+            [destination.droppableId]: {
+              ...current.columns[destination.droppableId as ColumnsKeyType],
+              tasks: newTaskList,
+            },
+          },
+        };
+      });
+      return;
+    }
+
+    //when the drag and drop is in the diff column
+    //update the start task list
+    const startTaskList = Array.from(start.tasks);
+    const [removed] = startTaskList.splice(source.index, 1);
+    const newStart = {
+      ...start,
+      tasks: startTaskList,
+    };
+
+    //update the finished task list
+    const finishTaskList = Array.from(finish.tasks);
+    finishTaskList.splice(destination.index, 0, removed);
+    const newFinish = {
+      ...finish,
+      tasks: finishTaskList,
+    };
+
+    //update the initial data
+    const newInitialData = {
+      ...initialData,
+      columns: {
+        ...initialData.columns,
+        [newStart.id]: newStart,
+        [newFinish.id]: newFinish,
+      },
+    };
+    setInitialData(newInitialData);
   };
+
+  useEffect(() => {}, [isDragging]);
+
+  const ondragStart = () => {
+    setIsDragging(true);
+  };
+
+  const morningScheduleTasks = initialData.columns["column-2"].tasks
+    ? initialData.columns["column-2"].tasks
+    : [];
+  const afternoonScheduleTasks = initialData.columns["column-3"].tasks
+    ? initialData.columns["column-3"].tasks
+    : [];
+  const eveningScheduleTasks = initialData.columns["column-4"].tasks
+    ? initialData.columns["column-4"].tasks
+    : [];
 
   return (
     <Box marginBottom="30%">
@@ -77,13 +210,34 @@ const HomePage = () => {
         <Text fontSize="1xl" fontWeight={600}>
           What do I need to do today?
         </Text>
-        <AddTask mutate={mutate}/>
-        <DragDropContext onDragEnd={onDragEnd}>
+        <AddTask mutate={mutate} />
+        <DragDropContext onDragEnd={onDragEnd} onDragStart={ondragStart}>
           <TodayTaskList
-            tasks={listItems ? listItems : []}
+            tasks={
+              initialData.columns["column-1"].tasks
+                ? initialData.columns["column-1"].tasks
+                : []
+            }
             error={error}
             mutate={mutate}
           />
+          <IncomingSchedule>
+            <MorningSchedule
+              scheduledTasks={morningScheduleTasks}
+              mutate={mutate}
+              isDragging={isDragging}
+            />
+            <AfternoonSchedule
+              scheduledTasks={afternoonScheduleTasks}
+              mutate={mutate}
+              isDragging={isDragging}
+            />
+            <EveningSchedule
+              scheduledTasks={eveningScheduleTasks}
+              mutate={mutate}
+              isDragging={isDragging}
+            />
+          </IncomingSchedule>
         </DragDropContext>
       </Box>
     </Box>
