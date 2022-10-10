@@ -26,6 +26,7 @@ import {
 import MorningSchedule from "../../components/home/incomingSchedule/MorningSchedule";
 import AfternoonSchedule from "../../components/home/incomingSchedule/AfternoonSchedule";
 import EveningSchedule from "../../components/home/incomingSchedule/EveningSchedule";
+import SchedulePeriod from "../../components/home/incomingSchedule/SchedulePeriod";
 
 const HomePage = () => {
   //declare types
@@ -120,6 +121,8 @@ const HomePage = () => {
 
   const onDragEnd = (result: DropResult) => {
     setIsDragging(false);
+
+    //update tasks
     const { destination, source, draggableId } = result;
     if (!destination) {
       return;
@@ -184,9 +187,11 @@ const HomePage = () => {
       },
     };
     setInitialData(newInitialData);
+
+    //set up the time
   };
 
-  useEffect(() => {}, [isDragging]);
+  /** END Of onDragEnd */
 
   const ondragStart = () => {
     setIsDragging(true);
@@ -222,20 +227,23 @@ const HomePage = () => {
             mutate={mutate}
           />
           <IncomingSchedule>
-            <MorningSchedule
+            <SchedulePeriod
               scheduledTasks={morningScheduleTasks}
               mutate={mutate}
               isDragging={isDragging}
+              period={"morning"}
             />
-            <AfternoonSchedule
+            <SchedulePeriod
               scheduledTasks={afternoonScheduleTasks}
               mutate={mutate}
               isDragging={isDragging}
+              period={"afternoon"}
             />
-            <EveningSchedule
+            <SchedulePeriod
               scheduledTasks={eveningScheduleTasks}
               mutate={mutate}
               isDragging={isDragging}
+              period={"evening"}
             />
           </IncomingSchedule>
         </DragDropContext>
