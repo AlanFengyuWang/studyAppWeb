@@ -16,6 +16,6 @@
     "incremental": true,
     "allowSyntheticDefaultImports": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/types/pages/_app.tsx", "src/components/home/ImageSlider.tsx", "src/pages/api/auth/[...nextauth].js", "src/components/dndExample/List.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/types/pages/_app.tsx", "src/components/home/ImageSlider.tsx", "src/api/auth/[...nextauth].jsc/components/dndExample/List.js"],
   "exclude": ["node_modules"]
 }

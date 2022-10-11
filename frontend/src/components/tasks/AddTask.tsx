@@ -27,7 +27,7 @@ import "react-clock/dist/Clock.css";
 import { TaskFormValues } from "../../types";
 import Milestone from "../home/Milestone";
 import { buttonStyles } from "../../styles/home/buttonStyles";
-import { addTask } from "../../functions/tasks/addTask";
+import { addTask } from "../../api/tasks/addTask";
 import { useEmailContext } from "../../context/EmailContext";
 import { Theme } from "../../styles/theme";
 import { isToday } from "date-fns";

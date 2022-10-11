@@ -23,9 +23,6 @@ import {
   getMorningTasks,
   getUnscheduledTasks,
 } from "../../functions/tasks/getTasks";
-import MorningSchedule from "../../components/home/incomingSchedule/MorningSchedule";
-import AfternoonSchedule from "../../components/home/incomingSchedule/AfternoonSchedule";
-import EveningSchedule from "../../components/home/incomingSchedule/EveningSchedule";
 import SchedulePeriod from "../../components/home/incomingSchedule/SchedulePeriod";
 
 const HomePage = () => {
@@ -86,6 +83,11 @@ const HomePage = () => {
       },
     },
   });
+
+  //showIncomingTaskTimeFocus
+  type ShowIncomingTaskTimeFocusType = "morning" | "afternoon" | "evening" | "";
+  const [showIncomingTaskTimeFocus, setshowIncomingTaskTimeFocus] =
+    useState<ShowIncomingTaskTimeFocusType>("");
 
   useEffect(() => {
     if (data && data.tasks) {
@@ -188,10 +190,23 @@ const HomePage = () => {
     };
     setInitialData(newInitialData);
 
-    //set up the time
+    //set up the showIncomingTaskTime
+    switch (destination.droppableId) {
+      case "column-2":
+        setshowIncomingTaskTimeFocus("morning");
+        break;
+      case "column-3":
+        setshowIncomingTaskTimeFocus("afternoon");
+        break;
+      case "column-4":
+        setshowIncomingTaskTimeFocus("evening");
+        break;
+      default:
+        setshowIncomingTaskTimeFocus("");
+    }
   };
 
-  /** END Of onDragEnd */
+  /** END OF onDragEnd */
 
   const ondragStart = () => {
     setIsDragging(true);
@@ -232,18 +247,27 @@ const HomePage = () => {
               mutate={mutate}
               isDragging={isDragging}
               period={"morning"}
+              showIncomingTaskTimeFocus={
+                showIncomingTaskTimeFocus === "morning"
+              }
             />
             <SchedulePeriod
               scheduledTasks={afternoonScheduleTasks}
               mutate={mutate}
               isDragging={isDragging}
               period={"afternoon"}
+              showIncomingTaskTimeFocus={
+                showIncomingTaskTimeFocus === "afternoon"
+              }
             />
             <SchedulePeriod
               scheduledTasks={eveningScheduleTasks}
               mutate={mutate}
               isDragging={isDragging}
               period={"evening"}
+              showIncomingTaskTimeFocus={
+                showIncomingTaskTimeFocus === "evening"
+              }
             />
           </IncomingSchedule>
         </DragDropContext>

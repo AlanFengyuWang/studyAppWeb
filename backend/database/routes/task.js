@@ -80,4 +80,44 @@ recordRoutes.route("/task/add").post(function (req, res) {
   );
 });
 
+//Example for the update task due
+// recordRoutes.route("/user/update").post(function (req, response) {
+//   let db_connect = dbo.getDb();
+//   let userobj = {
+//     name: { first: req.body.name.first, last: req.body.name.last },
+//     email: req.body.email,
+//     password: req.body.password, //Here we assume password is empty if it's third party, otherwise it's hashed password
+//     image: req.body.image,
+//     accountTimeCreated: req.body.accountTimeCreated,
+//     tasks: [],
+//   };
+//   db_connect
+//     .collection("users")
+//     .updateOne(
+//       { _id: ObjectId(req.body.userId) },
+//       { $set: userobj },
+//       function (err, res) {
+//         if (err) throw err;
+//         response.json(res);
+//       }
+//     );
+// });
+
+// update the task due
+recordRoutes.route("/task/:id/due").post(function (req, res) {
+  let db_connect = dbo.getDb();
+  // const taskObj = {
+  //   _id: new ObjectId(),
+  //   taskTitle: req.body.taskTitle,
+  //   taskDescription: req.body.taskDescription,
+  //   type: req.body.type,
+  //   due: req.body.due,
+  //   scheduleTime: req.body.scheduleTime,
+  //   milestones: req.body.milestones,
+  //   subtasks: req.body.subtask,
+  // };
+  
+  db_connect.collection("")
+})
+
 module.exports = recordRoutes;

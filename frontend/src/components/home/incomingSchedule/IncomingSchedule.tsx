@@ -1,7 +1,4 @@
 import React, { useContext } from "react";
-import AfternoonSchedule from "./AfternoonSchedule";
-import EveningSchedule from "./EveningSchedule";
-import MorningSchedule from "./MorningSchedule";
 import { Box, Flex, Stack, Text } from "@chakra-ui/react";
 import { TaskFormValues } from "../../../types";
 import {
@@ -10,7 +7,7 @@ import {
   isEvening,
   isMorning,
   isToday,
-} from "../../../functions/date/dateCheck";
+} from "../../../functions/date_time/dateCheck";
 import { useInView } from "react-intersection-observer";
 import { Theme } from "../../../styles/theme";
 import { Droppable } from "react-beautiful-dnd";

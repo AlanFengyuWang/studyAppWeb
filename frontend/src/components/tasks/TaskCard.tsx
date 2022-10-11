@@ -13,7 +13,7 @@ import {
   deleteInvisibleButton,
   deleteVisibleButton,
 } from "../../styles/home/buttonStyles";
-import { deleteTask } from "../../functions/tasks/deleteTask";
+import { deleteTask } from "../../api/tasks/deleteTask";
 import { MdDeleteForever } from "react-icons/md";
 import { useEmailContext } from "../../context/EmailContext";
 import styles from "../../styles/home/task.module.css";

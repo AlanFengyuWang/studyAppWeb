@@ -1,4 +1,11 @@
-import { Box, Center, Flex, ResponsiveArray, Stack, VStack } from "@chakra-ui/react";
+import {
+  Box,
+  Center,
+  Flex,
+  ResponsiveArray,
+  Stack,
+  VStack,
+} from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { TaskFormValues } from "../../../types";
@@ -8,11 +15,14 @@ import TaskCard from "../../tasks/TaskCard";
 import { useIsDraggingContext } from "../../../context/IsDraggingContext";
 import { Union } from "@chakra-ui/styled-system/dist/declarations/src/utils";
 import { Property } from "csstype";
+import IncomingSchedule from "./IncomingSchedule";
+import IncomingTaskTimeFocus from "./IncomingTaskTimeFocus";
 
 const SchedulePeriod = (props: {
   scheduledTasks: TaskFormValues[];
   mutate: Function;
   isDragging: boolean;
+  showIncomingTaskTimeFocus: boolean;
   period: "morning" | "afternoon" | "evening";
 }) => {
   //fix the issue of animation for drag and drop for react 18
@@ -73,6 +83,7 @@ const SchedulePeriod = (props: {
               height={widthHeight}
             />
           </Center>
+          {props.showIncomingTaskTimeFocus && <IncomingTaskTimeFocus />}
           <VStack>
             {props.scheduledTasks.map((task, index) => (
               <Box width="80%">
