@@ -61,8 +61,8 @@ const AddTask = (props: { mutate: Function }) => {
         startingTime: undefined,
         endingTime: undefined,
       },
-      milestones: [],
-      subtask: [],
+      // milestones: [],
+      // subtask: [],
     },
     mode: "onBlur",
   });
@@ -186,7 +186,7 @@ const AddTask = (props: { mutate: Function }) => {
                 <DateTimePicker onChange={setDateTime} value={dateTime} />
               </FormControl>
 
-              <FormControl mt={4}>
+              {/* <FormControl mt={4}>
                 <FormLabel htmlFor="milestones">Milestones:</FormLabel>
                 {milestones.map((milestone, index) => (
                   <Milestone
@@ -230,7 +230,7 @@ const AddTask = (props: { mutate: Function }) => {
                 >
                   Add
                 </Button>
-              </FormControl>
+              </FormControl> */}
             </ModalBody>
             <ModalFooter>
               <Button colorScheme="blue" mr={3} onClick={onClose} type="submit">

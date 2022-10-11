@@ -63,8 +63,8 @@ recordRoutes.route("/task/add").post(function (req, res) {
     type: req.body.type,
     due: req.body.due,
     scheduleTime: req.body.scheduleTime,
-    milestones: req.body.milestones,
-    subtasks: req.body.subtask,
+    // milestones: req.body.milestones,
+    // subtasks: req.body.subtask,
   };
 
   //add array elements using push
@@ -104,20 +104,24 @@ recordRoutes.route("/task/add").post(function (req, res) {
 // });
 
 // update the task due
-recordRoutes.route("/task/:id/due").post(function (req, res) {
-  let db_connect = dbo.getDb();
-  // const taskObj = {
-  //   _id: new ObjectId(),
-  //   taskTitle: req.body.taskTitle,
-  //   taskDescription: req.body.taskDescription,
-  //   type: req.body.type,
-  //   due: req.body.due,
-  //   scheduleTime: req.body.scheduleTime,
-  //   milestones: req.body.milestones,
-  //   subtasks: req.body.subtask,
-  // };
+// recordRoutes.route("/task/:id/due").post(function (req, res) {
+//   let db_connect = dbo.getDb();
+//   // const taskObj = {
+//   //   _id: new ObjectId(),
+//   //   taskTitle: req.body.taskTitle,
+//   //   taskDescription: req.body.taskDescription,
+//   //   type: req.body.type,
+//   //   due: req.body.due,
+//   //   scheduleTime: req.body.scheduleTime,
+//   //   milestones: req.body.milestones,
+//   //   subtasks: req.body.subtask,
+//   // };
   
-  db_connect.collection("")
-})
+//   db_connect.collection("users").updateOne(
+//     {_id: ObjectId(req.body.userId)}, {
+//       $set: userobj
+//     }
+//   )
+// })
 
 module.exports = recordRoutes;
