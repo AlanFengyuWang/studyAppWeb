@@ -14,6 +14,7 @@ const ObjectId = require("mongodb").ObjectId;
 //get all tasks given by user id
 recordRoutes.route("/task/:id").get(function (req, res) {
   let db_connect = dbo.getDb();
+  // console.log("task id");
   let myquery = { _id: req.params.id };
   db_connect.collection("users").findOne(myquery, function (err, result) {
     if (err) throw err;
@@ -108,20 +109,35 @@ recordRoutes.route("/task/add").post(function (req, res) {
 //   let db_connect = dbo.getDb();
 //   // const taskObj = {
 //   //   _id: new ObjectId(),
-//   //   taskTitle: req.body.taskTitle,
-//   //   taskDescription: req.body.taskDescription,
-//   //   type: req.body.type,
-//   //   due: req.body.due,
-//   //   scheduleTime: req.body.scheduleTime,
-//   //   milestones: req.body.milestones,
-//   //   subtasks: req.body.subtask,
+//   //   // taskTitle: req.body.taskTitle,
+//   //   // taskDescription: req.body.taskDescription,
+//   //   // type: req.body.type,
+//   //   // due: req.body.due,
+//   //   // scheduleTime: req.body.scheduleTime,
+//   //   // milestones: req.body.milestones,
+//   //   // subtasks: req.body.subtask,
 //   // };
-  
-//   db_connect.collection("users").updateOne(
-//     {_id: ObjectId(req.body.userId)}, {
-//       $set: userobj
-//     }
-//   )
-// })
+
+//   let taskId = { _id: req.params.id };
+//   db_connect
+//     .collection("users")
+//     .updateOne(
+//       { _id: ObjectId(req.body.userId) },
+//       { $set: { "tasks.$[elem].due": req.body.due } },
+//       { arrayFilter: [{ "ele._id": { $eq: taskId } }] }
+//     );
+// });
+
+recordRoutes.route("/task/acquire").get(function (req, res) {
+  let db_connect = dbo.getDb();
+  // console.log("task acquire");
+  // let taskId = req.params._id;
+  // console.log("req.body.userId = " + req.body.userId);
+  // let myquery = { _id: ObjectId(req.body.userId) };
+  db_connect.collection("users").findOne(myquery, function (err, result) {
+    if (err) throw err;
+    res.json(result);
+  });
+});
 
 module.exports = recordRoutes;
