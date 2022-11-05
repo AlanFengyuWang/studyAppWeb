@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": false,
+        "amount": 30
+    },
+    "auditLog": "/Users/fengyuwangbv/Desktop/studyAppWeb/backend/src/utils/debug/.aece1fb62dbba8b8adc8016bbf10365e5b5b94e5-audit.json",
+    "files": [
+        {
+            "date": 1667433143568,
+            "name": "/Users/fengyuwangbv/Desktop/studyAppWeb/backend/src/utils/debug/2022-11-03.log",
+            "hash": "a20ae9b64643d9538809fcd483f3e3eecdb1bd066ebc8fb12a5ef33672033756"
+        }
+    ],
+    "hashType": "sha256"
+}
