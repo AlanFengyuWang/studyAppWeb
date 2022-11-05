@@ -1,0 +1,25 @@
+{
+    "keep": {
+        "days": false,
+        "amount": 30
+    },
+    "auditLog": "/Users/fengyuwangbv/Desktop/studyAppWeb/backend/src/logs/debug/.f99e62b5d79cc7755f8c10c37156ffbe0278841f-audit.json",
+    "files": [
+        {
+            "date": 1667433781235,
+            "name": "/Users/fengyuwangbv/Desktop/studyAppWeb/backend/src/logs/debug/2022-11-03.log",
+            "hash": "e56c8d9e1ebc75e1c6f001b1dbd720fa896034b64969808db25ca312fb923a71"
+        },
+        {
+            "date": 1667516995298,
+            "name": "/Users/fengyuwangbv/Desktop/studyAppWeb/backend/src/logs/debug/2022-11-04.log",
+            "hash": "12128f5f2d9ac19022f65ecb40e56b1eb73a6dc5ed4cc065e1723a3447912dc9"
+        },
+        {
+            "date": 1667628625614,
+            "name": "/Users/fengyuwangbv/Desktop/studyAppWeb/backend/src/logs/debug/2022-11-05.log",
+            "hash": "b7e99a4494e83f0629de25ef527d58f63f094c301a97764ce3bb6dcde2e35409"
+        }
+    ],
+    "hashType": "sha256"
+}
