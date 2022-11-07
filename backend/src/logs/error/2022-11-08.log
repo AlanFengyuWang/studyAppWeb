@@ -1,0 +1,22 @@
+2022-11-08 08:45:37 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96mservices/users.service.ts[0m:[93m49[0m:[93m112[0m - [91merror[0m[90m TS1003: [0mIdentifier expected.
+
+[7m49[0m         const updateUserById: User | null = await this.users.findOneAndUpdate({_id: userId}, {$set: userData}. );
+[7m  [0m [91m                                                                                                               ~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96mservices/users.service.ts[0m:[93m49[0m:[93m112[0m - [91merror[0m[90m TS1003: [0mIdentifier expected.
+
+[7m49[0m         const updateUserById: User | null = await this.users.findOneAndUpdate({_id: userId}, {$set: userData}. );
+[7m  [0m [91m                                                                                                               ~[0m
+
+    at createTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/usr/local/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)

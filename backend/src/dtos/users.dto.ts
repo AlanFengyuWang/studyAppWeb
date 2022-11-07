@@ -6,4 +6,11 @@ export class CreateUserDto {
 
   @IsString()
   public password!: string;
+
+  @IsString()
+  public image!: string;
+
+  @IsString()
+  public accountTimeCreated!: string;
+
 }

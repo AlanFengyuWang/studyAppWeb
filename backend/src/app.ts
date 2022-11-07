@@ -3,7 +3,7 @@ import cookieParser from 'cookie-parser';
 import express, { RouterOptions } from 'express';
 import { CallbackWithoutResult, connect, ConnectOptions, set } from 'mongoose';
 import { Routes } from './interfaces/routes.interface';
-import { ORIGIN, PORT, NODE_ENV} from "./confg";
+import { ORIGIN, PORT, NODE_ENV, CREDENTIALS} from "./confg";
 import { logger, stream } from './utils/logger';
 import * as mongoDB from "mongodb";
 // import { connectToServer } from './database/connect';
@@ -50,10 +50,11 @@ class App {
         });
     }
     
-    private initializedMiddlewares = () =>{
+    private initializedMiddlewares = () => {
         this.app.use(express.json());
         this.app.use(express.urlencoded({extended: true}));
         this.app.use(cookieParser());
+        this.app.use(cors({ origin: ORIGIN, credentials: CREDENTIALS }));
     }
     
     private initializeRoutes(routes: Routes[]) {
