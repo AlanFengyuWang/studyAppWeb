@@ -43,12 +43,17 @@ class UserService {
             const hashedPassword = await hash(userData.password, 10);
             userData = { ...userData, password: hashedPassword};
         }
-        console.log("userData = " + JSON.stringify(userData));
         
         const updateUserById: User | null = await this.users.findOneAndUpdate({_id: userId}, {$set: userData}, {new:true});
         if(!updateUserById) throw new HttpException(409, "User doesn't exist");
 
         return updateUserById;
+    }
+
+    public async deleteUser(userId: String): Promise<User> {
+        const deleteUserById: User | null = await this.users.findOneAndRemove(userId);
+        if(!deleteUserById) throw new HttpException(409, "User doesn't exist");
+        return deleteUserById;
     }
 }
 

@@ -1,5 +1,5 @@
 import { KillOnSignal } from 'concurrently';
-import { NextFunction, request, Request, Response } from 'express';
+import { json, NextFunction, request, Request, Response } from 'express';
 // import { DB } from '../database/connect';
 import { CreateUserDto } from '../dtos/users.dto';
 import { User } from '../interfaces/users.interface';
@@ -48,6 +48,16 @@ class UsersController {
         next(error);
       }
     };
+
+    public deleteUser = async(req: Request, res: Response, next: NextFunction) => {
+      try {
+        const userId:string = req.params.id;
+        const deleteUserData: User = await this.userService.deleteUser(userId); 
+        res.status(200).json({data: deleteUserData, message: 'deleted'});
+      } catch(err) {
+        next(err);
+      }
+    }
 }
 
 export default UsersController;
