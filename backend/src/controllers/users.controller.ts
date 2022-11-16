@@ -39,8 +39,9 @@ class UsersController {
 
     public updateUser = async(req: Request, res: Response, next: NextFunction) => {
       try {
-        const userId: string = req.params.id;
+        const userId = req.query.userId as string;
         const userData: CreateUserDto = req.body;
+        
         const updateUserData: User = await this.userService.updateUser(userId, userData);
         console.log("updateUserData = " + JSON.stringify(updateUserData));
         res.status(200).json({data: updateUserData, message: 'Updated'});
@@ -54,6 +55,18 @@ class UsersController {
         const userId:string = req.params.id;
         const deleteUserData: User = await this.userService.deleteUser(userId); 
         res.status(200).json({data: deleteUserData, message: 'deleted'});
+      } catch(err) {
+        next(err);
+      }
+    }
+
+    public getUserByEmail = async(req: Request, res: Response, next: NextFunction) => {
+      try {
+        const userId:string = req.params.email;
+        console.log("userId = " + userId);
+        
+        const userData: User = await this.userService.getUserByEmail(userId); 
+        res.status(200).json({data: userData, message: 'Find One'});
       } catch(err) {
         next(err);
       }

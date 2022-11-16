@@ -1,6 +1,7 @@
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
-import express, { RouterOptions } from 'express';
+// import bodyParser from 'body-parser';
+import express, { RouterOptions, urlencoded } from 'express';
 import { CallbackWithoutResult, connect, ConnectOptions, set } from 'mongoose';
 import { Routes } from './interfaces/routes.interface';
 import { ORIGIN, PORT, NODE_ENV, CREDENTIALS} from "./confg";
@@ -54,6 +55,7 @@ class App {
         this.app.use(express.json());
         this.app.use(express.urlencoded({extended: true}));
         this.app.use(cookieParser());
+        this.app.use(express.json());
         this.app.use(cors({ origin: ORIGIN, credentials: CREDENTIALS }));
     }
     
