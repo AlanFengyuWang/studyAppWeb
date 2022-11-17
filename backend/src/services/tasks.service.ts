@@ -37,13 +37,13 @@ class TaskService {
         }
         const newTask = {...oldTask, ...newTaskData};
         const updatedTask: Task | null = await this.users.findOneAndUpdate({_id: userId,'tasks._id': taskId}, {$set: {"tasks.$": newTask} }, {new:true});
-        if(!updatedTask) throw new HttpException(404, "Task doesn't exist");
+        if(!updatedTask) throw new HttpException(404, "Task or User doesn't exist");
         return updatedTask;
     }
 
     public async deleteTask(userId: string, taskId: string): Promise<Task>{
         const updatedTask: Task | null = await this.users.findOneAndUpdate({_id: userId}, {$pull: {'tasks': {_id:taskId}} }, {new:true});
-        if(!updatedTask) throw new HttpException(404, "Task doesn't exist");
+        if(!updatedTask) throw new HttpException(404, "Task or User doesn't exist");
         return updatedTask;
     }
 }
