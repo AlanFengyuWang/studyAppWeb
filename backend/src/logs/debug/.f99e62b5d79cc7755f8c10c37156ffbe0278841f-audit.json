@@ -44,6 +44,11 @@
             "date": 1668551890054,
             "name": "/Users/fengyuwangbv/Desktop/studyAppWeb/backend/src/logs/debug/2022-11-16.log",
             "hash": "cc2bb11bf99c560899d0dffd9eeb0f9f1713a2ab604e28e76349e889ba56e721"
+        },
+        {
+            "date": 1668640625213,
+            "name": "/Users/fengyuwangbv/Desktop/studyAppWeb/backend/src/logs/debug/2022-11-17.log",
+            "hash": "9d9994467c5846166b4dc9de86c6c016be81c3d86b24b8034d41b689b99ca78f"
         }
     ],
     "hashType": "sha256"

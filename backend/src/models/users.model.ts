@@ -9,7 +9,7 @@ const taskSchema = new Schema({
     },
 
     description: {
-        type:String,
+        type: String,
     },
 
     type: {

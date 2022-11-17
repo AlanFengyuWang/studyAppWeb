@@ -15,24 +15,35 @@ class TaskService {
         return task;
     }
 
+    public async getTask(userId:string, taskId: string): Promise<Task[]> {
+        const user = await this.users.find({_id: userId, "tasks._id": taskId}, "tasks.$");
+        if(user.length == 0) throw new HttpException(404, "Task does not exist");
+        const task: Task[] = user[0].tasks;
+        return task;
+    }
+
     public async createTask(userId: string, taskData: CreateTaskDto): Promise<UpdateResult> {
         if(isEmpty(taskData)) throw new HttpException(400, "Input task data is empty");
-        
         const createTaskData: UpdateResult = await this.users.updateOne({_id: userId}, {$push: {tasks: {...taskData}}}, {upsert:true, runValidators:true});
         return createTaskData;
     }
 
-    public async updateTask(userId: string, taskId: string, newTaskData:CreateTaskDto): Promise<UpdateResult>{
-        console.log("userId = " + userId + ",taskId = " + taskId);
-        if(!userId.match(/^[0-9a-fA-F]{24}$/)) {
-            console.log("userId = " + userId + " is wrong");
-        }
-        
+    public async updateTask(userId: string, taskId: string, newTaskData:CreateTaskDto): Promise<Task>{
         if(isEmpty(newTaskData)) throw new HttpException(400, "Input task data is empty");
+        
+        const oldTask = await this.getTask(userId, taskId);
+        if(!oldTask) {
+            throw new HttpException(404, "Task does not exist");
+        }
+        const newTask = {...oldTask, ...newTaskData};
+        const updatedTask: Task | null = await this.users.findOneAndUpdate({_id: userId,'tasks._id': taskId}, {$set: {"tasks.$": newTask} }, {new:true});
+        if(!updatedTask) throw new HttpException(404, "Task doesn't exist");
+        return updatedTask;
+    }
 
-        const newUserData = {email:"newEmail",password:"newPassword",image:"newImage",accountTimeCreated:"newTime",tasks:[]};
-        const updatedTask: UpdateResult | null = await this.users.findOneAndUpdate({_id: new ObjectId(userId)}, {$set:newUserData}, {new:true});
-        if(!updatedTask) throw new HttpException(409, "Task doesn't exist");
+    public async deleteTask(userId: string, taskId: string): Promise<Task>{
+        const updatedTask: Task | null = await this.users.findOneAndUpdate({_id: userId}, {$pull: {'tasks': {_id:taskId}} }, {new:true});
+        if(!updatedTask) throw new HttpException(404, "Task doesn't exist");
         return updatedTask;
     }
 }

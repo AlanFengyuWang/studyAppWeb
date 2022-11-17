@@ -16,6 +16,16 @@ class TaskController {
             next(err);
         }
     }
+    public getTask = async(req: Request, res: Response, next: NextFunction) => {
+        try {
+            const userId = req.query.userId as string;
+            const taskId = req.params.id;
+            const tasks: Task[] = await this.taskService.getTask(userId, taskId);
+            res.status(200).json({data: tasks, message:"findAll"});
+        } catch(err) {
+            next(err);
+        }
+    }
 
     public createTask = async(req: Request, res: Response, next:NextFunction) => {
         try {
@@ -39,7 +49,16 @@ class TaskController {
             next(err);
         }
     }
-  
+    public deleteTask = async(req: Request, res: Response, next: NextFunction) => {
+        try {
+           const taskId: string = req.params.id;
+           const userId =  req.query.userId as string;
+           const task = await this.taskService.deleteTask(userId, taskId); 
+           res.status(200).json({data: task, message: "Deleted successfully"});
+        } catch(err) {
+            next(err);
+        }
+    }
 }
 
 export default TaskController;
