@@ -1,0 +1,1490 @@
+2022-11-08 08:45:37 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96mservices/users.service.ts[0m:[93m49[0m:[93m112[0m - [91merror[0m[90m TS1003: [0mIdentifier expected.
+
+[7m49[0m         const updateUserById: User | null = await this.users.findOneAndUpdate({_id: userId}, {$set: userData}. );
+[7m  [0m [91m                                                                                                               ~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96mservices/users.service.ts[0m:[93m49[0m:[93m112[0m - [91merror[0m[90m TS1003: [0mIdentifier expected.
+
+[7m49[0m         const updateUserById: User | null = await this.users.findOneAndUpdate({_id: userId}, {$set: userData}. );
+[7m  [0m [91m                                                                                                               ~[0m
+
+    at createTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/usr/local/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2022-11-08 08:46:26 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96mroutes/users.route.ts[0m:[93m21[0m:[93m65[0m - [91merror[0m[90m TS2339: [0mProperty 'deleteUser' does not exist on type 'UsersController'.
+
+[7m21[0m     this.router.delete(`${this.path}/:id`, this.usersController.deleteUser);
+[7m  [0m [91m                                                                ~~~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96mroutes/users.route.ts[0m:[93m21[0m:[93m65[0m - [91merror[0m[90m TS2339: [0mProperty 'deleteUser' does not exist on type 'UsersController'.
+
+[7m21[0m     this.router.delete(`${this.path}/:id`, this.usersController.deleteUser);
+[7m  [0m [91m                                                                ~~~~~~~~~~[0m
+
+    at createTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/usr/local/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2022-11-08 08:46:55 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96mcontrollers/users.controller.ts[0m:[93m56[0m:[93m5[0m - [91merror[0m[90m TS1472: [0m'catch' or 'finally' expected.
+
+[7m56[0m     }
+[7m  [0m [91m    ~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96mcontrollers/users.controller.ts[0m:[93m56[0m:[93m5[0m - [91merror[0m[90m TS1472: [0m'catch' or 'finally' expected.
+
+[7m56[0m     }
+[7m  [0m [91m    ~[0m
+
+    at createTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/usr/local/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2022-11-08 08:47:33 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96mcontrollers/users.controller.ts[0m:[93m54[0m:[93m24[0m - [91merror[0m[90m TS2693: [0m'string' only refers to a type, but is being used as a value here.
+
+[7m54[0m         const userId = string
+[7m  [0m [91m                       ~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96mcontrollers/users.controller.ts[0m:[93m54[0m:[93m24[0m - [91merror[0m[90m TS2693: [0m'string' only refers to a type, but is being used as a value here.
+
+[7m54[0m         const userId = string
+[7m  [0m [91m                       ~~~~~~[0m
+
+    at createTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/usr/local/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2022-11-08 08:48:08 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96mcontrollers/users.controller.ts[0m:[93m54[0m:[93m35[0m - [91merror[0m[90m TS2339: [0mProperty 'bo' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+
+[7m54[0m         const userId:string = req.bo
+[7m  [0m [91m                                  ~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96mcontrollers/users.controller.ts[0m:[93m54[0m:[93m35[0m - [91merror[0m[90m TS2339: [0mProperty 'bo' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+
+[7m54[0m         const userId:string = req.bo
+[7m  [0m [91m                                  ~~[0m
+
+    at createTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/usr/local/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2022-11-08 08:48:11 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96mcontrollers/users.controller.ts[0m:[93m55[0m:[93m7[0m - [91merror[0m[90m TS1003: [0mIdentifier expected.
+
+[7m55[0m       } catch(err) {
+[7m  [0m [91m      ~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96mcontrollers/users.controller.ts[0m:[93m55[0m:[93m7[0m - [91merror[0m[90m TS1003: [0mIdentifier expected.
+
+[7m55[0m       } catch(err) {
+[7m  [0m [91m      ~[0m
+
+    at createTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/usr/local/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2022-11-08 08:48:29 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96mcontrollers/users.controller.ts[0m:[93m56[0m:[93m7[0m - [91merror[0m[90m TS1003: [0mIdentifier expected.
+
+[7m56[0m       } catch(err) {
+[7m  [0m [91m      ~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96mcontrollers/users.controller.ts[0m:[93m56[0m:[93m7[0m - [91merror[0m[90m TS1003: [0mIdentifier expected.
+
+[7m56[0m       } catch(err) {
+[7m  [0m [91m      ~[0m
+
+    at createTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/usr/local/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2022-11-08 08:48:35 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96mcontrollers/users.controller.ts[0m:[93m55[0m:[93m61[0m - [91merror[0m[90m TS2339: [0mProperty 'deleteUser' does not exist on type 'UserService'.
+
+[7m55[0m         const deleteUserData: User = await this.userService.deleteUser();
+[7m  [0m [91m                                                            ~~~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96mcontrollers/users.controller.ts[0m:[93m55[0m:[93m61[0m - [91merror[0m[90m TS2339: [0mProperty 'deleteUser' does not exist on type 'UserService'.
+
+[7m55[0m         const deleteUserData: User = await this.userService.deleteUser();
+[7m  [0m [91m                                                            ~~~~~~~~~~[0m
+
+    at createTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/usr/local/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2022-11-08 08:48:38 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96mcontrollers/users.controller.ts[0m:[93m55[0m:[93m61[0m - [91merror[0m[90m TS2339: [0mProperty 'deleteUser' does not exist on type 'UserService'.
+
+[7m55[0m         const deleteUserData: User = await this.userService.deleteUser(userId);
+[7m  [0m [91m                                                            ~~~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96mcontrollers/users.controller.ts[0m:[93m55[0m:[93m61[0m - [91merror[0m[90m TS2339: [0mProperty 'deleteUser' does not exist on type 'UserService'.
+
+[7m55[0m         const deleteUserData: User = await this.userService.deleteUser(userId);
+[7m  [0m [91m                                                            ~~~~~~~~~~[0m
+
+    at createTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/usr/local/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2022-11-08 08:48:46 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96mcontrollers/users.controller.ts[0m:[93m55[0m:[93m61[0m - [91merror[0m[90m TS2339: [0mProperty 'deleteUser' does not exist on type 'UserService'.
+
+[7m55[0m         const deleteUserData: User = await this.userService.deleteUser(userId);
+[7m  [0m [91m                                                            ~~~~~~~~~~[0m
+[96mcontrollers/users.controller.ts[0m:[93m56[0m:[93m14[0m - [91merror[0m[90m TS2339: [0mProperty 'status' does not exist on type '(options?: OptionsJson | undefined) => NextHandleFunction'.
+
+[7m56[0m         json.status(200).json()
+[7m  [0m [91m             ~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96mcontrollers/users.controller.ts[0m:[93m55[0m:[93m61[0m - [91merror[0m[90m TS2339: [0mProperty 'deleteUser' does not exist on type 'UserService'.
+
+[7m55[0m         const deleteUserData: User = await this.userService.deleteUser(userId);
+[7m  [0m [91m                                                            ~~~~~~~~~~[0m
+[96mcontrollers/users.controller.ts[0m:[93m56[0m:[93m14[0m - [91merror[0m[90m TS2339: [0mProperty 'status' does not exist on type '(options?: OptionsJson | undefined) => NextHandleFunction'.
+
+[7m56[0m         json.status(200).json()
+[7m  [0m [91m             ~~~~~~[0m
+
+    at createTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/usr/local/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2022-11-08 08:48:57 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96mcontrollers/users.controller.ts[0m:[93m55[0m:[93m61[0m - [91merror[0m[90m TS2339: [0mProperty 'deleteUser' does not exist on type 'UserService'.
+
+[7m55[0m         const deleteUserData: User = await this.userService.deleteUser(userId);
+[7m  [0m [91m                                                            ~~~~~~~~~~[0m
+[96mcontrollers/users.controller.ts[0m:[93m56[0m:[93m14[0m - [91merror[0m[90m TS2339: [0mProperty 'status' does not exist on type '(options?: OptionsJson | undefined) => NextHandleFunction'.
+
+[7m56[0m         json.status(200).json({data: deleteUserData, message: 'deleted'});
+[7m  [0m [91m             ~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96mcontrollers/users.controller.ts[0m:[93m55[0m:[93m61[0m - [91merror[0m[90m TS2339: [0mProperty 'deleteUser' does not exist on type 'UserService'.
+
+[7m55[0m         const deleteUserData: User = await this.userService.deleteUser(userId);
+[7m  [0m [91m                                                            ~~~~~~~~~~[0m
+[96mcontrollers/users.controller.ts[0m:[93m56[0m:[93m14[0m - [91merror[0m[90m TS2339: [0mProperty 'status' does not exist on type '(options?: OptionsJson | undefined) => NextHandleFunction'.
+
+[7m56[0m         json.status(200).json({data: deleteUserData, message: 'deleted'});
+[7m  [0m [91m             ~~~~~~[0m
+
+    at createTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/usr/local/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2022-11-08 08:49:05 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96mcontrollers/users.controller.ts[0m:[93m55[0m:[93m72[0m - [91merror[0m[90m TS2554: [0mExpected 0 arguments, but got 1.
+
+[7m55[0m         const deleteUserData: User = await this.userService.deleteUser(userId);
+[7m  [0m [91m                                                                       ~~~~~~[0m
+[96mcontrollers/users.controller.ts[0m:[93m56[0m:[93m14[0m - [91merror[0m[90m TS2339: [0mProperty 'status' does not exist on type '(options?: OptionsJson | undefined) => NextHandleFunction'.
+
+[7m56[0m         json.status(200).json({data: deleteUserData, message: 'deleted'});
+[7m  [0m [91m             ~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96mcontrollers/users.controller.ts[0m:[93m55[0m:[93m72[0m - [91merror[0m[90m TS2554: [0mExpected 0 arguments, but got 1.
+
+[7m55[0m         const deleteUserData: User = await this.userService.deleteUser(userId);
+[7m  [0m [91m                                                                       ~~~~~~[0m
+[96mcontrollers/users.controller.ts[0m:[93m56[0m:[93m14[0m - [91merror[0m[90m TS2339: [0mProperty 'status' does not exist on type '(options?: OptionsJson | undefined) => NextHandleFunction'.
+
+[7m56[0m         json.status(200).json({data: deleteUserData, message: 'deleted'});
+[7m  [0m [91m             ~~~~~~[0m
+
+    at createTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/usr/local/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2022-11-08 08:49:07 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96mcontrollers/users.controller.ts[0m:[93m55[0m:[93m72[0m - [91merror[0m[90m TS2554: [0mExpected 0 arguments, but got 1.
+
+[7m55[0m         const deleteUserData: User = await this.userService.deleteUser(userId);
+[7m  [0m [91m                                                                       ~~~~~~[0m
+[96mcontrollers/users.controller.ts[0m:[93m56[0m:[93m14[0m - [91merror[0m[90m TS2339: [0mProperty 'status' does not exist on type '(options?: OptionsJson | undefined) => NextHandleFunction'.
+
+[7m56[0m         json.status(200).json({data: deleteUserData, message: 'deleted'});
+[7m  [0m [91m             ~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96mcontrollers/users.controller.ts[0m:[93m55[0m:[93m72[0m - [91merror[0m[90m TS2554: [0mExpected 0 arguments, but got 1.
+
+[7m55[0m         const deleteUserData: User = await this.userService.deleteUser(userId);
+[7m  [0m [91m                                                                       ~~~~~~[0m
+[96mcontrollers/users.controller.ts[0m:[93m56[0m:[93m14[0m - [91merror[0m[90m TS2339: [0mProperty 'status' does not exist on type '(options?: OptionsJson | undefined) => NextHandleFunction'.
+
+[7m56[0m         json.status(200).json({data: deleteUserData, message: 'deleted'});
+[7m  [0m [91m             ~~~~~~[0m
+
+    at createTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/usr/local/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2022-11-08 08:49:15 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96mcontrollers/users.controller.ts[0m:[93m56[0m:[93m14[0m - [91merror[0m[90m TS2339: [0mProperty 'status' does not exist on type '(options?: OptionsJson | undefined) => NextHandleFunction'.
+
+[7m56[0m         json.status(200).json({data: deleteUserData, message: 'deleted'});
+[7m  [0m [91m             ~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96mcontrollers/users.controller.ts[0m:[93m56[0m:[93m14[0m - [91merror[0m[90m TS2339: [0mProperty 'status' does not exist on type '(options?: OptionsJson | undefined) => NextHandleFunction'.
+
+[7m56[0m         json.status(200).json({data: deleteUserData, message: 'deleted'});
+[7m  [0m [91m             ~~~~~~[0m
+
+    at createTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/usr/local/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2022-11-08 08:49:19 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96mcontrollers/users.controller.ts[0m:[93m56[0m:[93m14[0m - [91merror[0m[90m TS2339: [0mProperty 'status' does not exist on type '(options?: OptionsJson | undefined) => NextHandleFunction'.
+
+[7m56[0m         json.status(200).json({data: deleteUserData, message: 'deleted'});
+[7m  [0m [91m             ~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96mcontrollers/users.controller.ts[0m:[93m56[0m:[93m14[0m - [91merror[0m[90m TS2339: [0mProperty 'status' does not exist on type '(options?: OptionsJson | undefined) => NextHandleFunction'.
+
+[7m56[0m         json.status(200).json({data: deleteUserData, message: 'deleted'});
+[7m  [0m [91m             ~~~~~~[0m
+
+    at createTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/usr/local/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2022-11-08 08:49:33 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96mcontrollers/users.controller.ts[0m:[93m56[0m:[93m14[0m - [91merror[0m[90m TS2339: [0mProperty 'status' does not exist on type '(options?: OptionsJson | undefined) => NextHandleFunction'.
+
+[7m56[0m         json.status(200).json({data: deleteUserData, message: 'deleted'});
+[7m  [0m [91m             ~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96mcontrollers/users.controller.ts[0m:[93m56[0m:[93m14[0m - [91merror[0m[90m TS2339: [0mProperty 'status' does not exist on type '(options?: OptionsJson | undefined) => NextHandleFunction'.
+
+[7m56[0m         json.status(200).json({data: deleteUserData, message: 'deleted'});
+[7m  [0m [91m             ~~~~~~[0m
+
+    at createTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/usr/local/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2022-11-08 08:49:36 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96mcontrollers/users.controller.ts[0m:[93m56[0m:[93m14[0m - [91merror[0m[90m TS2339: [0mProperty 'status' does not exist on type '(options?: OptionsJson | undefined) => NextHandleFunction'.
+
+[7m56[0m         json.status(200).json({data: deleteUserData, message: 'deleted'});
+[7m  [0m [91m             ~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96mcontrollers/users.controller.ts[0m:[93m56[0m:[93m14[0m - [91merror[0m[90m TS2339: [0mProperty 'status' does not exist on type '(options?: OptionsJson | undefined) => NextHandleFunction'.
+
+[7m56[0m         json.status(200).json({data: deleteUserData, message: 'deleted'});
+[7m  [0m [91m             ~~~~~~[0m
+
+    at createTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/usr/local/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2022-11-08 08:49:39 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96mcontrollers/users.controller.ts[0m:[93m56[0m:[93m14[0m - [91merror[0m[90m TS2339: [0mProperty 'status' does not exist on type '(options?: OptionsJson | undefined) => NextHandleFunction'.
+
+[7m56[0m         json.status(200).json({data: deleteUserData, message: 'deleted'});
+[7m  [0m [91m             ~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96mcontrollers/users.controller.ts[0m:[93m56[0m:[93m14[0m - [91merror[0m[90m TS2339: [0mProperty 'status' does not exist on type '(options?: OptionsJson | undefined) => NextHandleFunction'.
+
+[7m56[0m         json.status(200).json({data: deleteUserData, message: 'deleted'});
+[7m  [0m [91m             ~~~~~~[0m
+
+    at createTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/usr/local/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2022-11-08 08:49:42 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96mcontrollers/users.controller.ts[0m:[93m56[0m:[93m14[0m - [91merror[0m[90m TS2339: [0mProperty 'status' does not exist on type '(options?: OptionsJson | undefined) => NextHandleFunction'.
+
+[7m56[0m         json.status(200).json({data: deleteUserData, message: 'deleted'});
+[7m  [0m [91m             ~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96mcontrollers/users.controller.ts[0m:[93m56[0m:[93m14[0m - [91merror[0m[90m TS2339: [0mProperty 'status' does not exist on type '(options?: OptionsJson | undefined) => NextHandleFunction'.
+
+[7m56[0m         json.status(200).json({data: deleteUserData, message: 'deleted'});
+[7m  [0m [91m             ~~~~~~[0m
+
+    at createTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/usr/local/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2022-11-08 08:49:46 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96mcontrollers/users.controller.ts[0m:[93m56[0m:[93m14[0m - [91merror[0m[90m TS2339: [0mProperty 'status' does not exist on type '(options?: OptionsJson | undefined) => NextHandleFunction'.
+
+[7m56[0m         json.status(200).json({data: deleteUserData, message: 'deleted'});
+[7m  [0m [91m             ~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96mcontrollers/users.controller.ts[0m:[93m56[0m:[93m14[0m - [91merror[0m[90m TS2339: [0mProperty 'status' does not exist on type '(options?: OptionsJson | undefined) => NextHandleFunction'.
+
+[7m56[0m         json.status(200).json({data: deleteUserData, message: 'deleted'});
+[7m  [0m [91m             ~~~~~~[0m
+
+    at createTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/usr/local/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2022-11-08 08:49:50 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96mcontrollers/users.controller.ts[0m:[93m56[0m:[93m14[0m - [91merror[0m[90m TS2339: [0mProperty 'status' does not exist on type '(options?: OptionsJson | undefined) => NextHandleFunction'.
+
+[7m56[0m         json.status(200).json({data: deleteUserData, message: 'deleted'});
+[7m  [0m [91m             ~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96mcontrollers/users.controller.ts[0m:[93m56[0m:[93m14[0m - [91merror[0m[90m TS2339: [0mProperty 'status' does not exist on type '(options?: OptionsJson | undefined) => NextHandleFunction'.
+
+[7m56[0m         json.status(200).json({data: deleteUserData, message: 'deleted'});
+[7m  [0m [91m             ~~~~~~[0m
+
+    at createTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/usr/local/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2022-11-08 08:49:58 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96mcontrollers/users.controller.ts[0m:[93m56[0m:[93m14[0m - [91merror[0m[90m TS2339: [0mProperty 'status' does not exist on type '(options?: OptionsJson | undefined) => NextHandleFunction'.
+
+[7m56[0m         json.status(200).json({data: deleteUserData, message: 'deleted'});
+[7m  [0m [91m             ~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96mcontrollers/users.controller.ts[0m:[93m56[0m:[93m14[0m - [91merror[0m[90m TS2339: [0mProperty 'status' does not exist on type '(options?: OptionsJson | undefined) => NextHandleFunction'.
+
+[7m56[0m         json.status(200).json({data: deleteUserData, message: 'deleted'});
+[7m  [0m [91m             ~~~~~~[0m
+
+    at createTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/usr/local/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2022-11-08 08:50:02 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96mcontrollers/users.controller.ts[0m:[93m56[0m:[93m14[0m - [91merror[0m[90m TS2339: [0mProperty 'status' does not exist on type '(options?: OptionsJson | undefined) => NextHandleFunction'.
+
+[7m56[0m         json.status(200).json({data: deleteUserData, message: 'deleted'});
+[7m  [0m [91m             ~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96mcontrollers/users.controller.ts[0m:[93m56[0m:[93m14[0m - [91merror[0m[90m TS2339: [0mProperty 'status' does not exist on type '(options?: OptionsJson | undefined) => NextHandleFunction'.
+
+[7m56[0m         json.status(200).json({data: deleteUserData, message: 'deleted'});
+[7m  [0m [91m             ~~~~~~[0m
+
+    at createTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/usr/local/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2022-11-08 08:50:05 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96mcontrollers/users.controller.ts[0m:[93m56[0m:[93m14[0m - [91merror[0m[90m TS2339: [0mProperty 'status' does not exist on type '(options?: OptionsJson | undefined) => NextHandleFunction'.
+
+[7m56[0m         json.status(200).json({data: deleteUserData, message: 'deleted'});
+[7m  [0m [91m             ~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96mcontrollers/users.controller.ts[0m:[93m56[0m:[93m14[0m - [91merror[0m[90m TS2339: [0mProperty 'status' does not exist on type '(options?: OptionsJson | undefined) => NextHandleFunction'.
+
+[7m56[0m         json.status(200).json({data: deleteUserData, message: 'deleted'});
+[7m  [0m [91m             ~~~~~~[0m
+
+    at createTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/usr/local/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2022-11-08 08:50:12 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96mcontrollers/users.controller.ts[0m:[93m56[0m:[93m14[0m - [91merror[0m[90m TS2339: [0mProperty 'status' does not exist on type '(options?: OptionsJson | undefined) => NextHandleFunction'.
+
+[7m56[0m         json.status(200).json({data: deleteUserData, message: 'deleted'});
+[7m  [0m [91m             ~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96mcontrollers/users.controller.ts[0m:[93m56[0m:[93m14[0m - [91merror[0m[90m TS2339: [0mProperty 'status' does not exist on type '(options?: OptionsJson | undefined) => NextHandleFunction'.
+
+[7m56[0m         json.status(200).json({data: deleteUserData, message: 'deleted'});
+[7m  [0m [91m             ~~~~~~[0m
+
+    at createTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/usr/local/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2022-11-08 09:54:28 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96mcontrollers/tasks.controller.ts[0m:[93m6[0m:[93m30[0m - [91merror[0m[90m TS2304: [0mCannot find name 'TaskService'.
+
+[7m6[0m     public taskService = new TaskService();
+[7m [0m [91m                             ~~~~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96mcontrollers/tasks.controller.ts[0m:[93m6[0m:[93m30[0m - [91merror[0m[90m TS2304: [0mCannot find name 'TaskService'.
+
+[7m6[0m     public taskService = new TaskService();
+[7m [0m [91m                             ~~~~~~~~~~~[0m
+
+    at createTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/usr/local/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2022-11-08 09:54:33 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96mcontrollers/tasks.controller.ts[0m:[93m6[0m:[93m30[0m - [91merror[0m[90m TS2304: [0mCannot find name 'TaskService'.
+
+[7m6[0m     public taskService = new TaskService();
+[7m [0m [91m                             ~~~~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96mcontrollers/tasks.controller.ts[0m:[93m6[0m:[93m30[0m - [91merror[0m[90m TS2304: [0mCannot find name 'TaskService'.
+
+[7m6[0m     public taskService = new TaskService();
+[7m [0m [91m                             ~~~~~~~~~~~[0m
+
+    at createTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/usr/local/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2022-11-08 10:01:04 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96mcontrollers/tasks.controller.ts[0m:[93m6[0m:[93m30[0m - [91merror[0m[90m TS2304: [0mCannot find name 'TaskService'.
+
+[7m6[0m     public taskService = new TaskService();
+[7m [0m [91m                             ~~~~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96mcontrollers/tasks.controller.ts[0m:[93m6[0m:[93m30[0m - [91merror[0m[90m TS2304: [0mCannot find name 'TaskService'.
+
+[7m6[0m     public taskService = new TaskService();
+[7m [0m [91m                             ~~~~~~~~~~~[0m
+
+    at createTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/usr/local/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2022-11-08 10:01:42 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96mcontrollers/tasks.controller.ts[0m:[93m11[0m:[93m19[0m - [91merror[0m[90m TS2740: [0mType 'Promise<Task[]>' is missing the following properties from type 'Task': id, title, description, type, and 2 more.
+
+[7m11[0m             const taskDataById: Task = this.taskService.getTasks(taskId);
+[7m  [0m [91m                  ~~~~~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96mcontrollers/tasks.controller.ts[0m:[93m11[0m:[93m19[0m - [91merror[0m[90m TS2740: [0mType 'Promise<Task[]>' is missing the following properties from type 'Task': id, title, description, type, and 2 more.
+
+[7m11[0m             const taskDataById: Task = this.taskService.getTasks(taskId);
+[7m  [0m [91m                  ~~~~~~~~~~~~[0m
+
+    at createTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/usr/local/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2022-11-08 10:01:46 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96mcontrollers/tasks.controller.ts[0m:[93m11[0m:[93m19[0m - [91merror[0m[90m TS2740: [0mType 'Promise<Task[]>' is missing the following properties from type 'Task': id, title, description, type, and 2 more.
+
+[7m11[0m             const tasks: Task = this.taskService.getTasks(taskId);
+[7m  [0m [91m                  ~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96mcontrollers/tasks.controller.ts[0m:[93m11[0m:[93m19[0m - [91merror[0m[90m TS2740: [0mType 'Promise<Task[]>' is missing the following properties from type 'Task': id, title, description, type, and 2 more.
+
+[7m11[0m             const tasks: Task = this.taskService.getTasks(taskId);
+[7m  [0m [91m                  ~~~~~[0m
+
+    at createTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/usr/local/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2022-11-08 10:01:53 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96mcontrollers/tasks.controller.ts[0m:[93m11[0m:[93m19[0m - [91merror[0m[90m TS2740: [0mType 'Promise<Task[]>' is missing the following properties from type 'Task': id, title, description, type, and 2 more.
+
+[7m11[0m             const tasks: Task = this.taskService.getTasks(taskId);
+[7m  [0m [91m                  ~~~~~[0m
+[96mcontrollers/tasks.controller.ts[0m:[93m13[0m:[93m9[0m - [91merror[0m[90m TS1003: [0mIdentifier expected.
+
+[7m13[0m         } catch(err) {
+[7m  [0m [91m        ~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96mcontrollers/tasks.controller.ts[0m:[93m11[0m:[93m19[0m - [91merror[0m[90m TS2740: [0mType 'Promise<Task[]>' is missing the following properties from type 'Task': id, title, description, type, and 2 more.
+
+[7m11[0m             const tasks: Task = this.taskService.getTasks(taskId);
+[7m  [0m [91m                  ~~~~~[0m
+[96mcontrollers/tasks.controller.ts[0m:[93m13[0m:[93m9[0m - [91merror[0m[90m TS1003: [0mIdentifier expected.
+
+[7m13[0m         } catch(err) {
+[7m  [0m [91m        ~[0m
+
+    at createTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/usr/local/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2022-11-08 10:02:00 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96mcontrollers/tasks.controller.ts[0m:[93m11[0m:[93m19[0m - [91merror[0m[90m TS2740: [0mType 'Promise<Task[]>' is missing the following properties from type 'Task': id, title, description, type, and 2 more.
+
+[7m11[0m             const tasks: Task = this.taskService.getTasks(taskId);
+[7m  [0m [91m                  ~~~~~[0m
+[96mcontrollers/tasks.controller.ts[0m:[93m12[0m:[93m29[0m - [91merror[0m[90m TS2339: [0mProperty 'n' does not exist on type 'Response<any, Record<string, any>>'.
+
+[7m12[0m             res.status(200).n
+[7m  [0m [91m                            ~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96mcontrollers/tasks.controller.ts[0m:[93m11[0m:[93m19[0m - [91merror[0m[90m TS2740: [0mType 'Promise<Task[]>' is missing the following properties from type 'Task': id, title, description, type, and 2 more.
+
+[7m11[0m             const tasks: Task = this.taskService.getTasks(taskId);
+[7m  [0m [91m                  ~~~~~[0m
+[96mcontrollers/tasks.controller.ts[0m:[93m12[0m:[93m29[0m - [91merror[0m[90m TS2339: [0mProperty 'n' does not exist on type 'Response<any, Record<string, any>>'.
+
+[7m12[0m             res.status(200).n
+[7m  [0m [91m                            ~[0m
+
+    at createTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/usr/local/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2022-11-08 10:02:12 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96mcontrollers/tasks.controller.ts[0m:[93m11[0m:[93m19[0m - [91merror[0m[90m TS2740: [0mType 'Promise<Task[]>' is missing the following properties from type 'Task': id, title, description, type, and 2 more.
+
+[7m11[0m             const tasks: Task = this.taskService.getTasks(taskId);
+[7m  [0m [91m                  ~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96mcontrollers/tasks.controller.ts[0m:[93m11[0m:[93m19[0m - [91merror[0m[90m TS2740: [0mType 'Promise<Task[]>' is missing the following properties from type 'Task': id, title, description, type, and 2 more.
+
+[7m11[0m             const tasks: Task = this.taskService.getTasks(taskId);
+[7m  [0m [91m                  ~~~~~[0m
+
+    at createTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/usr/local/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2022-11-08 10:02:14 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96mcontrollers/tasks.controller.ts[0m:[93m11[0m:[93m19[0m - [91merror[0m[90m TS2740: [0mType 'Promise<Task[]>' is missing the following properties from type 'Task': id, title, description, type, and 2 more.
+
+[7m11[0m             const tasks: Task = this.taskService.getTasks(taskId);
+[7m  [0m [91m                  ~~~~~[0m
+[96mcontrollers/tasks.controller.ts[0m:[93m12[0m:[93m41[0m - [91merror[0m[90m TS1109: [0mExpression expected.
+
+[7m12[0m             res.status(200).json({data: })
+[7m  [0m [91m                                        ~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96mcontrollers/tasks.controller.ts[0m:[93m11[0m:[93m19[0m - [91merror[0m[90m TS2740: [0mType 'Promise<Task[]>' is missing the following properties from type 'Task': id, title, description, type, and 2 more.
+
+[7m11[0m             const tasks: Task = this.taskService.getTasks(taskId);
+[7m  [0m [91m                  ~~~~~[0m
+[96mcontrollers/tasks.controller.ts[0m:[93m12[0m:[93m41[0m - [91merror[0m[90m TS1109: [0mExpression expected.
+
+[7m12[0m             res.status(200).json({data: })
+[7m  [0m [91m                                        ~[0m
+
+    at createTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/usr/local/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2022-11-08 10:02:16 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96mcontrollers/tasks.controller.ts[0m:[93m11[0m:[93m19[0m - [91merror[0m[90m TS2740: [0mType 'Promise<Task[]>' is missing the following properties from type 'Task': id, title, description, type, and 2 more.
+
+[7m11[0m             const tasks: Task = this.taskService.getTasks(taskId);
+[7m  [0m [91m                  ~~~~~[0m
+[96mcontrollers/tasks.controller.ts[0m:[93m12[0m:[93m41[0m - [91merror[0m[90m TS1109: [0mExpression expected.
+
+[7m12[0m             res.status(200).json({data: });
+[7m  [0m [91m                                        ~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96mcontrollers/tasks.controller.ts[0m:[93m11[0m:[93m19[0m - [91merror[0m[90m TS2740: [0mType 'Promise<Task[]>' is missing the following properties from type 'Task': id, title, description, type, and 2 more.
+
+[7m11[0m             const tasks: Task = this.taskService.getTasks(taskId);
+[7m  [0m [91m                  ~~~~~[0m
+[96mcontrollers/tasks.controller.ts[0m:[93m12[0m:[93m41[0m - [91merror[0m[90m TS1109: [0mExpression expected.
+
+[7m12[0m             res.status(200).json({data: });
+[7m  [0m [91m                                        ~[0m
+
+    at createTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/usr/local/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2022-11-08 10:02:21 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96mcontrollers/tasks.controller.ts[0m:[93m11[0m:[93m19[0m - [91merror[0m[90m TS2740: [0mType 'Promise<Task[]>' is missing the following properties from type 'Task': id, title, description, type, and 2 more.
+
+[7m11[0m             const tasks: Task = this.taskService.getTasks(taskId);
+[7m  [0m [91m                  ~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96mcontrollers/tasks.controller.ts[0m:[93m11[0m:[93m19[0m - [91merror[0m[90m TS2740: [0mType 'Promise<Task[]>' is missing the following properties from type 'Task': id, title, description, type, and 2 more.
+
+[7m11[0m             const tasks: Task = this.taskService.getTasks(taskId);
+[7m  [0m [91m                  ~~~~~[0m
+
+    at createTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/usr/local/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2022-11-08 10:02:23 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96mcontrollers/tasks.controller.ts[0m:[93m11[0m:[93m19[0m - [91merror[0m[90m TS2740: [0mType 'Promise<Task[]>' is missing the following properties from type 'Task[]': length, pop, push, concat, and 29 more.
+
+[7m11[0m             const tasks: Task[] = this.taskService.getTasks(taskId);
+[7m  [0m [91m                  ~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96mcontrollers/tasks.controller.ts[0m:[93m11[0m:[93m19[0m - [91merror[0m[90m TS2740: [0mType 'Promise<Task[]>' is missing the following properties from type 'Task[]': length, pop, push, concat, and 29 more.
+
+[7m11[0m             const tasks: Task[] = this.taskService.getTasks(taskId);
+[7m  [0m [91m                  ~~~~~[0m
+
+    at createTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/usr/local/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2022-11-08 10:02:27 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96mcontrollers/tasks.controller.ts[0m:[93m11[0m:[93m19[0m - [91merror[0m[90m TS2740: [0mType 'Promise<Task[]>' is missing the following properties from type 'Task[]': length, pop, push, concat, and 29 more.
+
+[7m11[0m             const tasks: Task[] = this.taskService.getTasks(taskId);
+[7m  [0m [91m                  ~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96mcontrollers/tasks.controller.ts[0m:[93m11[0m:[93m19[0m - [91merror[0m[90m TS2740: [0mType 'Promise<Task[]>' is missing the following properties from type 'Task[]': length, pop, push, concat, and 29 more.
+
+[7m11[0m             const tasks: Task[] = this.taskService.getTasks(taskId);
+[7m  [0m [91m                  ~~~~~[0m
+
+    at createTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/usr/local/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2022-11-08 10:02:29 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96mcontrollers/tasks.controller.ts[0m:[93m11[0m:[93m19[0m - [91merror[0m[90m TS2740: [0mType 'Promise<Task[]>' is missing the following properties from type 'Task[]': length, pop, push, concat, and 29 more.
+
+[7m11[0m             const tasks: Task[] = this.taskService.getTasks(taskId);
+[7m  [0m [91m                  ~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96mcontrollers/tasks.controller.ts[0m:[93m11[0m:[93m19[0m - [91merror[0m[90m TS2740: [0mType 'Promise<Task[]>' is missing the following properties from type 'Task[]': length, pop, push, concat, and 29 more.
+
+[7m11[0m             const tasks: Task[] = this.taskService.getTasks(taskId);
+[7m  [0m [91m                  ~~~~~[0m
+
+    at createTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/usr/local/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2022-11-08 10:02:32 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96mcontrollers/tasks.controller.ts[0m:[93m11[0m:[93m19[0m - [91merror[0m[90m TS2740: [0mType 'Promise<Task[]>' is missing the following properties from type 'Task[]': length, pop, push, concat, and 29 more.
+
+[7m11[0m             const tasks: Task[] = this.taskService.getTasks(taskId);
+[7m  [0m [91m                  ~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96mcontrollers/tasks.controller.ts[0m:[93m11[0m:[93m19[0m - [91merror[0m[90m TS2740: [0mType 'Promise<Task[]>' is missing the following properties from type 'Task[]': length, pop, push, concat, and 29 more.
+
+[7m11[0m             const tasks: Task[] = this.taskService.getTasks(taskId);
+[7m  [0m [91m                  ~~~~~[0m
+
+    at createTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/usr/local/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2022-11-08 10:02:57 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96mcontrollers/tasks.controller.ts[0m:[93m11[0m:[93m19[0m - [91merror[0m[90m TS2740: [0mType 'Promise<Task[]>' is missing the following properties from type 'Task[]': length, pop, push, concat, and 29 more.
+
+[7m11[0m             const tasks: Task[] = this.taskService.getTasks(taskId);
+[7m  [0m [91m                  ~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96mcontrollers/tasks.controller.ts[0m:[93m11[0m:[93m19[0m - [91merror[0m[90m TS2740: [0mType 'Promise<Task[]>' is missing the following properties from type 'Task[]': length, pop, push, concat, and 29 more.
+
+[7m11[0m             const tasks: Task[] = this.taskService.getTasks(taskId);
+[7m  [0m [91m                  ~~~~~[0m
+
+    at createTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/usr/local/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2022-11-08 10:03:51 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96mcontrollers/tasks.controller.ts[0m:[93m11[0m:[93m19[0m - [91merror[0m[90m TS2740: [0mType 'Promise<Task[]>' is missing the following properties from type 'Task[]': length, pop, push, concat, and 29 more.
+
+[7m11[0m             const tasks: Task[] = this.taskService.getTasks(taskId);
+[7m  [0m [91m                  ~~~~~[0m
+[96mcontrollers/tasks.controller.ts[0m:[93m11[0m:[93m61[0m - [91merror[0m[90m TS2304: [0mCannot find name 'taskId'.
+
+[7m11[0m             const tasks: Task[] = this.taskService.getTasks(taskId);
+[7m  [0m [91m                                                            ~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96mcontrollers/tasks.controller.ts[0m:[93m11[0m:[93m19[0m - [91merror[0m[90m TS2740: [0mType 'Promise<Task[]>' is missing the following properties from type 'Task[]': length, pop, push, concat, and 29 more.
+
+[7m11[0m             const tasks: Task[] = this.taskService.getTasks(taskId);
+[7m  [0m [91m                  ~~~~~[0m
+[96mcontrollers/tasks.controller.ts[0m:[93m11[0m:[93m61[0m - [91merror[0m[90m TS2304: [0mCannot find name 'taskId'.
+
+[7m11[0m             const tasks: Task[] = this.taskService.getTasks(taskId);
+[7m  [0m [91m                                                            ~~~~~~[0m
+
+    at createTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/usr/local/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2022-11-08 10:03:53 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96mcontrollers/tasks.controller.ts[0m:[93m11[0m:[93m19[0m - [91merror[0m[90m TS2740: [0mType 'Promise<Task[]>' is missing the following properties from type 'Task[]': length, pop, push, concat, and 29 more.
+
+[7m11[0m             const tasks: Task[] = this.taskService.getTasks();
+[7m  [0m [91m                  ~~~~~[0m
+[96mcontrollers/tasks.controller.ts[0m:[93m11[0m:[93m52[0m - [91merror[0m[90m TS2554: [0mExpected 1 arguments, but got 0.
+
+[7m11[0m             const tasks: Task[] = this.taskService.getTasks();
+[7m  [0m [91m                                                   ~~~~~~~~~~[0m
+
+  [96mservices/tasks.service.ts[0m:[93m6[0m:[93m27[0m
+    [7m6[0m     public async getTasks(taskId: string): Promise<Task[]> {
+    [7m [0m [96m                          ~~~~~~~~~~~~~~[0m
+    An argument for 'taskId' was not provided.
+
+TSError: ⨯ Unable to compile TypeScript:
+[96mcontrollers/tasks.controller.ts[0m:[93m11[0m:[93m19[0m - [91merror[0m[90m TS2740: [0mType 'Promise<Task[]>' is missing the following properties from type 'Task[]': length, pop, push, concat, and 29 more.
+
+[7m11[0m             const tasks: Task[] = this.taskService.getTasks();
+[7m  [0m [91m                  ~~~~~[0m
+[96mcontrollers/tasks.controller.ts[0m:[93m11[0m:[93m52[0m - [91merror[0m[90m TS2554: [0mExpected 1 arguments, but got 0.
+
+[7m11[0m             const tasks: Task[] = this.taskService.getTasks();
+[7m  [0m [91m                                                   ~~~~~~~~~~[0m
+
+  [96mservices/tasks.service.ts[0m:[93m6[0m:[93m27[0m
+    [7m6[0m     public async getTasks(taskId: string): Promise<Task[]> {
+    [7m [0m [96m                          ~~~~~~~~~~~~~~[0m
+    An argument for 'taskId' was not provided.
+
+    at createTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/usr/local/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2022-11-08 10:03:55 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96mcontrollers/tasks.controller.ts[0m:[93m11[0m:[93m19[0m - [91merror[0m[90m TS2740: [0mType 'Promise<Task[]>' is missing the following properties from type 'Task[]': length, pop, push, concat, and 29 more.
+
+[7m11[0m             const tasks: Task[] = this.taskService.getTasks();
+[7m  [0m [91m                  ~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96mcontrollers/tasks.controller.ts[0m:[93m11[0m:[93m19[0m - [91merror[0m[90m TS2740: [0mType 'Promise<Task[]>' is missing the following properties from type 'Task[]': length, pop, push, concat, and 29 more.
+
+[7m11[0m             const tasks: Task[] = this.taskService.getTasks();
+[7m  [0m [91m                  ~~~~~[0m
+
+    at createTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/usr/local/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2022-11-08 10:04:10 error: uncaughtException: Invalid schema configuration: `description` schematype definition is invalid. See https://mongoosejs.com/docs/guide.html#definition for more info on supported schema syntaxes.
+TypeError: Invalid schema configuration: `description` schematype definition is invalid. See https://mongoosejs.com/docs/guide.html#definition for more info on supported schema syntaxes.
+    at Schema.interpretAsType (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/mongoose/lib/schema.js:1333:11)
+    at Schema.path (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/mongoose/lib/schema.js:964:27)
+    at Schema.add (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/mongoose/lib/schema.js:683:14)
+    at new Schema (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/mongoose/lib/schema.js:133:10)
+    at Object.<anonymous> (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/src/models/tasks.model.ts:12:28)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1618:23)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+2022-11-08 10:05:46 error: uncaughtException: Invalid schema configuration: `description` schematype definition is invalid. See https://mongoosejs.com/docs/guide.html#definition for more info on supported schema syntaxes.
+TypeError: Invalid schema configuration: `description` schematype definition is invalid. See https://mongoosejs.com/docs/guide.html#definition for more info on supported schema syntaxes.
+    at Schema.interpretAsType (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/mongoose/lib/schema.js:1333:11)
+    at Schema.path (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/mongoose/lib/schema.js:964:27)
+    at Schema.add (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/mongoose/lib/schema.js:683:14)
+    at new Schema (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/mongoose/lib/schema.js:133:10)
+    at Object.<anonymous> (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/src/models/tasks.model.ts:12:28)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1618:23)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+2022-11-08 10:07:01 error: uncaughtException: Invalid schema configuration: `description` schematype definition is invalid. See https://mongoosejs.com/docs/guide.html#definition for more info on supported schema syntaxes.
+TypeError: Invalid schema configuration: `description` schematype definition is invalid. See https://mongoosejs.com/docs/guide.html#definition for more info on supported schema syntaxes.
+    at Schema.interpretAsType (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/mongoose/lib/schema.js:1333:11)
+    at Schema.path (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/mongoose/lib/schema.js:964:27)
+    at Schema.add (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/mongoose/lib/schema.js:683:14)
+    at new Schema (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/mongoose/lib/schema.js:133:10)
+    at Object.<anonymous> (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/src/models/tasks.model.ts:12:28)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1618:23)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+2022-11-08 10:07:51 error: uncaughtException: Invalid schema configuration: `description` schematype definition is invalid. See https://mongoosejs.com/docs/guide.html#definition for more info on supported schema syntaxes.
+TypeError: Invalid schema configuration: `description` schematype definition is invalid. See https://mongoosejs.com/docs/guide.html#definition for more info on supported schema syntaxes.
+    at Schema.interpretAsType (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/mongoose/lib/schema.js:1333:11)
+    at Schema.path (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/mongoose/lib/schema.js:964:27)
+    at Schema.add (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/mongoose/lib/schema.js:683:14)
+    at new Schema (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/mongoose/lib/schema.js:133:10)
+    at Object.<anonymous> (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/src/models/tasks.model.ts:12:28)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1618:23)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+2022-11-08 10:08:06 error: uncaughtException: Invalid schema configuration: `description` schematype definition is invalid. See https://mongoosejs.com/docs/guide.html#definition for more info on supported schema syntaxes.
+TypeError: Invalid schema configuration: `description` schematype definition is invalid. See https://mongoosejs.com/docs/guide.html#definition for more info on supported schema syntaxes.
+    at Schema.interpretAsType (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/mongoose/lib/schema.js:1333:11)
+    at Schema.path (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/mongoose/lib/schema.js:964:27)
+    at Schema.add (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/mongoose/lib/schema.js:683:14)
+    at new Schema (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/mongoose/lib/schema.js:133:10)
+    at Object.<anonymous> (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/src/models/tasks.model.ts:12:28)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1618:23)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+2022-11-08 10:08:21 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96mservices/tasks.service.ts[0m:[93m8[0m:[93m16[0m - [91merror[0m[90m TS2304: [0mCannot find name 'tasks'.
+
+[7m8[0m         return tasks;
+[7m [0m [91m               ~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96mservices/tasks.service.ts[0m:[93m8[0m:[93m16[0m - [91merror[0m[90m TS2304: [0mCannot find name 'tasks'.
+
+[7m8[0m         return tasks;
+[7m [0m [91m               ~~~~~[0m
+
+    at createTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/usr/local/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2022-11-08 10:08:26 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96mservices/tasks.service.ts[0m:[93m9[0m:[93m9[0m - [91merror[0m[90m TS2322: [0mType 'string' is not assignable to type 'Task[]'.
+
+[7m9[0m         return "tasks";
+[7m [0m [91m        ~~~~~~~~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96mservices/tasks.service.ts[0m:[93m9[0m:[93m9[0m - [91merror[0m[90m TS2322: [0mType 'string' is not assignable to type 'Task[]'.
+
+[7m9[0m         return "tasks";
+[7m [0m [91m        ~~~~~~~~~~~~~~~[0m
+
+    at createTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/usr/local/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2022-11-08 10:08:35 error: uncaughtException: Invalid schema configuration: `description` schematype definition is invalid. See https://mongoosejs.com/docs/guide.html#definition for more info on supported schema syntaxes.
+TypeError: Invalid schema configuration: `description` schematype definition is invalid. See https://mongoosejs.com/docs/guide.html#definition for more info on supported schema syntaxes.
+    at Schema.interpretAsType (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/mongoose/lib/schema.js:1333:11)
+    at Schema.path (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/mongoose/lib/schema.js:964:27)
+    at Schema.add (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/mongoose/lib/schema.js:683:14)
+    at new Schema (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/mongoose/lib/schema.js:133:10)
+    at Object.<anonymous> (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/src/models/tasks.model.ts:12:28)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1618:23)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+2022-11-08 10:09:02 error: uncaughtException: Invalid schema configuration: `description` schematype definition is invalid. See https://mongoosejs.com/docs/guide.html#definition for more info on supported schema syntaxes.
+TypeError: Invalid schema configuration: `description` schematype definition is invalid. See https://mongoosejs.com/docs/guide.html#definition for more info on supported schema syntaxes.
+    at Schema.interpretAsType (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/mongoose/lib/schema.js:1333:11)
+    at Schema.path (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/mongoose/lib/schema.js:964:27)
+    at Schema.add (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/mongoose/lib/schema.js:683:14)
+    at new Schema (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/mongoose/lib/schema.js:133:10)
+    at Object.<anonymous> (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/src/models/tasks.model.ts:12:28)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1618:23)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+2022-11-08 10:09:29 error: uncaughtException: Invalid schema configuration: `description` schematype definition is invalid. See https://mongoosejs.com/docs/guide.html#definition for more info on supported schema syntaxes.
+TypeError: Invalid schema configuration: `description` schematype definition is invalid. See https://mongoosejs.com/docs/guide.html#definition for more info on supported schema syntaxes.
+    at Schema.interpretAsType (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/mongoose/lib/schema.js:1333:11)
+    at Schema.path (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/mongoose/lib/schema.js:964:27)
+    at Schema.add (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/mongoose/lib/schema.js:683:14)
+    at new Schema (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/mongoose/lib/schema.js:133:10)
+    at Object.<anonymous> (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/src/models/tasks.model.ts:12:28)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1618:23)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+2022-11-08 10:09:43 error: uncaughtException: Invalid schema configuration: `description` schematype definition is invalid. See https://mongoosejs.com/docs/guide.html#definition for more info on supported schema syntaxes.
+TypeError: Invalid schema configuration: `description` schematype definition is invalid. See https://mongoosejs.com/docs/guide.html#definition for more info on supported schema syntaxes.
+    at Schema.interpretAsType (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/mongoose/lib/schema.js:1333:11)
+    at Schema.path (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/mongoose/lib/schema.js:964:27)
+    at Schema.add (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/mongoose/lib/schema.js:683:14)
+    at new Schema (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/mongoose/lib/schema.js:133:10)
+    at Object.<anonymous> (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/src/models/tasks.model.ts:12:28)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1618:23)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+2022-11-08 10:10:32 error: uncaughtException: Invalid schema configuration: `Work` is not a valid type at path `0`. See https://bit.ly/mongoose-schematypes for a list of valid schema types.
+TypeError: Invalid schema configuration: `Work` is not a valid type at path `0`. See https://bit.ly/mongoose-schematypes for a list of valid schema types.
+    at Schema.interpretAsType (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/mongoose/lib/schema.js:1338:11)
+    at Schema.path (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/mongoose/lib/schema.js:964:27)
+    at Schema.add (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/mongoose/lib/schema.js:635:12)
+    at new Schema (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/mongoose/lib/schema.js:133:10)
+    at Schema.add (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/mongoose/lib/schema.js:675:25)
+    at new Schema (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/mongoose/lib/schema.js:133:10)
+    at Object.<anonymous> (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/src/models/tasks.model.ts:12:28)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1618:23)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+2022-11-08 10:10:42 error: uncaughtException: Invalid schema configuration: `Work` is not a valid type at path `0`. See https://bit.ly/mongoose-schematypes for a list of valid schema types.
+TypeError: Invalid schema configuration: `Work` is not a valid type at path `0`. See https://bit.ly/mongoose-schematypes for a list of valid schema types.
+    at Schema.interpretAsType (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/mongoose/lib/schema.js:1338:11)
+    at Schema.path (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/mongoose/lib/schema.js:964:27)
+    at Schema.add (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/mongoose/lib/schema.js:635:12)
+    at new Schema (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/mongoose/lib/schema.js:133:10)
+    at Schema.add (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/mongoose/lib/schema.js:675:25)
+    at new Schema (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/mongoose/lib/schema.js:133:10)
+    at Object.<anonymous> (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/src/models/tasks.model.ts:12:28)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1618:23)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+2022-11-08 10:10:47 error: uncaughtException: Invalid schema configuration: `Work` is not a valid type at path `0`. See https://bit.ly/mongoose-schematypes for a list of valid schema types.
+TypeError: Invalid schema configuration: `Work` is not a valid type at path `0`. See https://bit.ly/mongoose-schematypes for a list of valid schema types.
+    at Schema.interpretAsType (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/mongoose/lib/schema.js:1338:11)
+    at Schema.path (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/mongoose/lib/schema.js:964:27)
+    at Schema.add (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/mongoose/lib/schema.js:635:12)
+    at new Schema (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/mongoose/lib/schema.js:133:10)
+    at Schema.add (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/mongoose/lib/schema.js:675:25)
+    at new Schema (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/mongoose/lib/schema.js:133:10)
+    at Object.<anonymous> (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/src/models/tasks.model.ts:12:28)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1618:23)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+2022-11-08 10:11:55 error: uncaughtException: Invalid schema configuration: `Work` is not a valid type at path `0`. See https://bit.ly/mongoose-schematypes for a list of valid schema types.
+TypeError: Invalid schema configuration: `Work` is not a valid type at path `0`. See https://bit.ly/mongoose-schematypes for a list of valid schema types.
+    at Schema.interpretAsType (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/mongoose/lib/schema.js:1338:11)
+    at Schema.path (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/mongoose/lib/schema.js:964:27)
+    at Schema.add (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/mongoose/lib/schema.js:635:12)
+    at new Schema (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/mongoose/lib/schema.js:133:10)
+    at Schema.add (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/mongoose/lib/schema.js:675:25)
+    at new Schema (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/mongoose/lib/schema.js:133:10)
+    at Object.<anonymous> (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/src/models/tasks.model.ts:12:28)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1618:23)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+2022-11-08 10:11:56 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96mservices/tasks.service.ts[0m:[93m2[0m:[93m8[0m - [91merror[0m[90m TS1192: [0mModule '"/Users/fengyuwangbv/Desktop/studyAppWeb/backend/src/models/tasks.model"' has no default export.
+
+[7m2[0m import taskModel from "../models/tasks.model";
+[7m [0m [91m       ~~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96mservices/tasks.service.ts[0m:[93m2[0m:[93m8[0m - [91merror[0m[90m TS1192: [0mModule '"/Users/fengyuwangbv/Desktop/studyAppWeb/backend/src/models/tasks.model"' has no default export.
+
+[7m2[0m import taskModel from "../models/tasks.model";
+[7m [0m [91m       ~~~~~~~~~[0m
+
+    at createTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/usr/local/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2022-11-08 10:12:02 error: uncaughtException: Invalid schema configuration: `Work` is not a valid type at path `0`. See https://bit.ly/mongoose-schematypes for a list of valid schema types.
+TypeError: Invalid schema configuration: `Work` is not a valid type at path `0`. See https://bit.ly/mongoose-schematypes for a list of valid schema types.
+    at Schema.interpretAsType (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/mongoose/lib/schema.js:1338:11)
+    at Schema.path (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/mongoose/lib/schema.js:964:27)
+    at Schema.add (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/mongoose/lib/schema.js:635:12)
+    at new Schema (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/mongoose/lib/schema.js:133:10)
+    at Schema.add (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/mongoose/lib/schema.js:675:25)
+    at new Schema (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/mongoose/lib/schema.js:133:10)
+    at Object.<anonymous> (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/src/models/tasks.model.ts:12:28)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1618:23)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+2022-11-08 10:39:44 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96mroutes/tasks.route.ts[0m:[93m7[0m:[93m12[0m - [91merror[0m[90m TS2300: [0mDuplicate identifier 'path'.
+
+[7m7[0m     public path = "/users/:id/tasks";
+[7m [0m [91m           ~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96mroutes/tasks.route.ts[0m:[93m7[0m:[93m12[0m - [91merror[0m[90m TS2300: [0mDuplicate identifier 'path'.
+
+[7m7[0m     public path = "/users/:id/tasks";
+[7m [0m [91m           ~~~~[0m
+
+    at createTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/usr/local/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2022-11-08 10:40:00 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96mroutes/tasks.route.ts[0m:[93m15[0m:[93m33[0m - [91merror[0m[90m TS2339: [0mProperty 'path' does not exist on type 'TaskRoute'.
+
+[7m15[0m         this.router.get(`${this.path}`, this.taskController.getTasks);
+[7m  [0m [91m                                ~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96mroutes/tasks.route.ts[0m:[93m15[0m:[93m33[0m - [91merror[0m[90m TS2339: [0mProperty 'path' does not exist on type 'TaskRoute'.
+
+[7m15[0m         this.router.get(`${this.path}`, this.taskController.getTasks);
+[7m  [0m [91m                                ~~~~[0m
+
+    at createTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/usr/local/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2022-11-08 10:40:03 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96mroutes/tasks.route.ts[0m:[93m15[0m:[93m33[0m - [91merror[0m[90m TS2339: [0mProperty 'path' does not exist on type 'TaskRoute'.
+
+[7m15[0m         this.router.get(`${this.path}`, this.taskController.getTasks);
+[7m  [0m [91m                                ~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96mroutes/tasks.route.ts[0m:[93m15[0m:[93m33[0m - [91merror[0m[90m TS2339: [0mProperty 'path' does not exist on type 'TaskRoute'.
+
+[7m15[0m         this.router.get(`${this.path}`, this.taskController.getTasks);
+[7m  [0m [91m                                ~~~~[0m
+
+    at createTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/usr/local/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2022-11-08 10:40:34 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96mroutes/tasks.route.ts[0m:[93m15[0m:[93m33[0m - [91merror[0m[90m TS2339: [0mProperty 'path' does not exist on type 'TaskRoute'.
+
+[7m15[0m         this.router.get(`${this.path}`, this.taskController.getTasks);
+[7m  [0m [91m                                ~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96mroutes/tasks.route.ts[0m:[93m15[0m:[93m33[0m - [91merror[0m[90m TS2339: [0mProperty 'path' does not exist on type 'TaskRoute'.
+
+[7m15[0m         this.router.get(`${this.path}`, this.taskController.getTasks);
+[7m  [0m [91m                                ~~~~[0m
+
+    at createTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/usr/local/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2022-11-08 10:40:42 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96mroutes/tasks.route.ts[0m:[93m15[0m:[93m33[0m - [91merror[0m[90m TS2339: [0mProperty 'path' does not exist on type 'TaskRoute'.
+
+[7m15[0m         this.router.get(`${this.path}`, this.taskController.getTasks);
+[7m  [0m [91m                                ~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96mroutes/tasks.route.ts[0m:[93m15[0m:[93m33[0m - [91merror[0m[90m TS2339: [0mProperty 'path' does not exist on type 'TaskRoute'.
+
+[7m15[0m         this.router.get(`${this.path}`, this.taskController.getTasks);
+[7m  [0m [91m                                ~~~~[0m
+
+    at createTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/usr/local/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2022-11-08 10:40:44 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96mroutes/tasks.route.ts[0m:[93m15[0m:[93m33[0m - [91merror[0m[90m TS2339: [0mProperty 'path' does not exist on type 'TaskRoute'.
+
+[7m15[0m         this.router.get(`${this.path}`, this.taskController.getTasks);
+[7m  [0m [91m                                ~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96mroutes/tasks.route.ts[0m:[93m15[0m:[93m33[0m - [91merror[0m[90m TS2339: [0mProperty 'path' does not exist on type 'TaskRoute'.
+
+[7m15[0m         this.router.get(`${this.path}`, this.taskController.getTasks);
+[7m  [0m [91m                                ~~~~[0m
+
+    at createTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/usr/local/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2022-11-08 10:40:48 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96mroutes/tasks.route.ts[0m:[93m15[0m:[93m33[0m - [91merror[0m[90m TS2339: [0mProperty 'path' does not exist on type 'TaskRoute'.
+
+[7m15[0m         this.router.get(`${this.path}`, this.taskController.getTasks);
+[7m  [0m [91m                                ~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96mroutes/tasks.route.ts[0m:[93m15[0m:[93m33[0m - [91merror[0m[90m TS2339: [0mProperty 'path' does not exist on type 'TaskRoute'.
+
+[7m15[0m         this.router.get(`${this.path}`, this.taskController.getTasks);
+[7m  [0m [91m                                ~~~~[0m
+
+    at createTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/usr/local/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2022-11-08 10:41:22 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96mcontrollers/tasks.controller.ts[0m:[93m10[0m:[93m13[0m - [91merror[0m[90m TS2304: [0mCannot find name 'c'.
+
+[7m10[0m             c
+[7m  [0m [91m            ~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96mcontrollers/tasks.controller.ts[0m:[93m10[0m:[93m13[0m - [91merror[0m[90m TS2304: [0mCannot find name 'c'.
+
+[7m10[0m             c
+[7m  [0m [91m            ~[0m
+
+    at createTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/usr/local/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2022-11-08 10:41:36 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96mcontrollers/tasks.controller.ts[0m:[93m12[0m:[93m67[0m - [91merror[0m[90m TS2554: [0mExpected 0 arguments, but got 1.
+
+[7m12[0m             const tasks: Task[] = await this.taskService.getTasks(userId);
+[7m  [0m [91m                                                                  ~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96mcontrollers/tasks.controller.ts[0m:[93m12[0m:[93m67[0m - [91merror[0m[90m TS2554: [0mExpected 0 arguments, but got 1.
+
+[7m12[0m             const tasks: Task[] = await this.taskService.getTasks(userId);
+[7m  [0m [91m                                                                  ~~~~~~[0m
+
+    at createTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/usr/local/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
