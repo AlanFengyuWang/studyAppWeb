@@ -28,3 +28,8 @@ export class CreateUserDto {
   @IsArray()
   public tasks!: [];
 }
+
+export class IsThirdPartyDto {
+  @IsString()
+  public isThirdParty!: string;
+}

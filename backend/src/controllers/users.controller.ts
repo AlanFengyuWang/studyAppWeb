@@ -1,4 +1,3 @@
-import { KillOnSignal } from 'concurrently';
 import { json, NextFunction, request, Request, Response } from 'express';
 // import { DB } from '../database/connect';
 import { CreateUserDto } from '../dtos/users.dto';

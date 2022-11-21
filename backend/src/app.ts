@@ -1,13 +1,11 @@
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
-// import bodyParser from 'body-parser';
 import express, { RouterOptions, urlencoded } from 'express';
 import { CallbackWithoutResult, connect, ConnectOptions, set } from 'mongoose';
 import { Routes } from './interfaces/routes.interface';
 import { ORIGIN, PORT, NODE_ENV, CREDENTIALS} from "./confg";
 import { logger, stream } from './utils/logger';
 import * as mongoDB from "mongodb";
-// import { connectToServer } from './database/connect';
 import { dbConnection } from './database/connect';
 
 class App {

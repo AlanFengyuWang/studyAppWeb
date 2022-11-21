@@ -1,0 +1,254 @@
+2022-11-18 11:31:18 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96mcontrollers/index.controller.ts[0m:[93m6[0m:[93m25[0m - [91merror[0m[90m TS1003: [0mIdentifier expected.
+
+[7m6[0m       res.send(req.oidc.)
+[7m [0m [91m                        ~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96mcontrollers/index.controller.ts[0m:[93m6[0m:[93m25[0m - [91merror[0m[90m TS1003: [0mIdentifier expected.
+
+[7m6[0m       res.send(req.oidc.)
+[7m [0m [91m                        ~[0m
+
+    at createTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/usr/local/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2022-11-18 11:34:37 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96mroutes/users.route.ts[0m:[93m6[0m:[93m1[0m - [91merror[0m[90m TS2304: [0mCannot find name 'impor'.
+
+[7m6[0m impor
+[7m [0m [91m~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96mroutes/users.route.ts[0m:[93m6[0m:[93m1[0m - [91merror[0m[90m TS2304: [0mCannot find name 'impor'.
+
+[7m6[0m impor
+[7m [0m [91m~~~~~[0m
+
+    at createTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/usr/local/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2022-11-18 11:34:46 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96mroutes/users.route.ts[0m:[93m6[0m:[93m33[0m - [91merror[0m[90m TS2304: [0mCannot find name 'from'.
+
+[7m6[0m import "express-openid-connect" from "require"
+[7m [0m [91m                                ~~~~[0m
+[96mroutes/users.route.ts[0m:[93m6[0m:[93m33[0m - [91merror[0m[90m TS1005: [0m';' expected.
+
+[7m6[0m import "express-openid-connect" from "require"
+[7m [0m [91m                                ~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96mroutes/users.route.ts[0m:[93m6[0m:[93m33[0m - [91merror[0m[90m TS2304: [0mCannot find name 'from'.
+
+[7m6[0m import "express-openid-connect" from "require"
+[7m [0m [91m                                ~~~~[0m
+[96mroutes/users.route.ts[0m:[93m6[0m:[93m33[0m - [91merror[0m[90m TS1005: [0m';' expected.
+
+[7m6[0m import "express-openid-connect" from "require"
+[7m [0m [91m                                ~~~~[0m
+
+    at createTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/usr/local/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2022-11-18 11:34:50 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96mroutes/users.route.ts[0m:[93m6[0m:[93m33[0m - [91merror[0m[90m TS2304: [0mCannot find name 'from'.
+
+[7m6[0m import "express-openid-connect" from "requiresAuth";
+[7m [0m [91m                                ~~~~[0m
+[96mroutes/users.route.ts[0m:[93m6[0m:[93m33[0m - [91merror[0m[90m TS1005: [0m';' expected.
+
+[7m6[0m import "express-openid-connect" from "requiresAuth";
+[7m [0m [91m                                ~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96mroutes/users.route.ts[0m:[93m6[0m:[93m33[0m - [91merror[0m[90m TS2304: [0mCannot find name 'from'.
+
+[7m6[0m import "express-openid-connect" from "requiresAuth";
+[7m [0m [91m                                ~~~~[0m
+[96mroutes/users.route.ts[0m:[93m6[0m:[93m33[0m - [91merror[0m[90m TS1005: [0m';' expected.
+
+[7m6[0m import "express-openid-connect" from "requiresAuth";
+[7m [0m [91m                                ~~~~[0m
+
+    at createTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/usr/local/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2022-11-18 11:34:59 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96mroutes/users.route.ts[0m:[93m6[0m:[93m33[0m - [91merror[0m[90m TS2304: [0mCannot find name 'from'.
+
+[7m6[0m import "express-openid-connect" from "express-openid-connect";
+[7m [0m [91m                                ~~~~[0m
+[96mroutes/users.route.ts[0m:[93m6[0m:[93m33[0m - [91merror[0m[90m TS1005: [0m';' expected.
+
+[7m6[0m import "express-openid-connect" from "express-openid-connect";
+[7m [0m [91m                                ~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96mroutes/users.route.ts[0m:[93m6[0m:[93m33[0m - [91merror[0m[90m TS2304: [0mCannot find name 'from'.
+
+[7m6[0m import "express-openid-connect" from "express-openid-connect";
+[7m [0m [91m                                ~~~~[0m
+[96mroutes/users.route.ts[0m:[93m6[0m:[93m33[0m - [91merror[0m[90m TS1005: [0m';' expected.
+
+[7m6[0m import "express-openid-connect" from "express-openid-connect";
+[7m [0m [91m                                ~~~~[0m
+
+    at createTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/usr/local/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2022-11-18 11:40:19 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96mroutes/users.route.ts[0m:[93m19[0m:[93m115[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m19[0m     this.router.post(`${this.path}`, [validationMiddleware(CreateUserDto, 'body'), this.usersController.createUser);
+[7m  [0m [91m                                                                                                                  ~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96mroutes/users.route.ts[0m:[93m19[0m:[93m115[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m19[0m     this.router.post(`${this.path}`, [validationMiddleware(CreateUserDto, 'body'), this.usersController.createUser);
+[7m  [0m [91m                                                                                                                  ~[0m
+
+    at createTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/usr/local/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2022-11-18 11:48:04 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96mroutes/users.route.ts[0m:[93m19[0m:[93m39[0m - [91merror[0m[90m TS2304: [0mCannot find name 'authValidation'.
+
+[7m19[0m     this.router.post(`${this.path}`, [authValidation(), validationMiddleware(CreateUserDto, 'body')], this.usersController.createUser);
+[7m  [0m [91m                                      ~~~~~~~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96mroutes/users.route.ts[0m:[93m19[0m:[93m39[0m - [91merror[0m[90m TS2304: [0mCannot find name 'authValidation'.
+
+[7m19[0m     this.router.post(`${this.path}`, [authValidation(), validationMiddleware(CreateUserDto, 'body')], this.usersController.createUser);
+[7m  [0m [91m                                      ~~~~~~~~~~~~~~[0m
+
+    at createTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/usr/local/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2022-11-18 11:58:01 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96mmiddlewares/auth.middleware.ts[0m:[93m10[0m:[93m9[0m - [91merror[0m[90m TS2693: [0m'boolean' only refers to a type, but is being used as a value here.
+
+[7m10[0m         boolean result = requiresAuth();
+[7m  [0m [91m        ~~~~~~~[0m
+[96mmiddlewares/auth.middleware.ts[0m:[93m10[0m:[93m17[0m - [91merror[0m[90m TS2304: [0mCannot find name 'result'.
+
+[7m10[0m         boolean result = requiresAuth();
+[7m  [0m [91m                ~~~~~~[0m
+[96mmiddlewares/auth.middleware.ts[0m:[93m10[0m:[93m9[0m - [91merror[0m[90m TS1434: [0mUnexpected keyword or identifier.
+
+[7m10[0m         boolean result = requiresAuth();
+[7m  [0m [91m        ~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96mmiddlewares/auth.middleware.ts[0m:[93m10[0m:[93m9[0m - [91merror[0m[90m TS2693: [0m'boolean' only refers to a type, but is being used as a value here.
+
+[7m10[0m         boolean result = requiresAuth();
+[7m  [0m [91m        ~~~~~~~[0m
+[96mmiddlewares/auth.middleware.ts[0m:[93m10[0m:[93m17[0m - [91merror[0m[90m TS2304: [0mCannot find name 'result'.
+
+[7m10[0m         boolean result = requiresAuth();
+[7m  [0m [91m                ~~~~~~[0m
+[96mmiddlewares/auth.middleware.ts[0m:[93m10[0m:[93m9[0m - [91merror[0m[90m TS1434: [0mUnexpected keyword or identifier.
+
+[7m10[0m         boolean result = requiresAuth();
+[7m  [0m [91m        ~~~~~~~[0m
+
+    at createTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/usr/local/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2022-11-18 11:58:14 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96mmiddlewares/auth.middleware.ts[0m:[93m10[0m:[93m9[0m - [91merror[0m[90m TS2693: [0m'boolean' only refers to a type, but is being used as a value here.
+
+[7m10[0m         boolean result = requiresAuth();
+[7m  [0m [91m        ~~~~~~~[0m
+[96mmiddlewares/auth.middleware.ts[0m:[93m10[0m:[93m17[0m - [91merror[0m[90m TS2304: [0mCannot find name 'result'.
+
+[7m10[0m         boolean result = requiresAuth();
+[7m  [0m [91m                ~~~~~~[0m
+[96mmiddlewares/auth.middleware.ts[0m:[93m10[0m:[93m9[0m - [91merror[0m[90m TS1434: [0mUnexpected keyword or identifier.
+
+[7m10[0m         boolean result = requiresAuth();
+[7m  [0m [91m        ~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96mmiddlewares/auth.middleware.ts[0m:[93m10[0m:[93m9[0m - [91merror[0m[90m TS2693: [0m'boolean' only refers to a type, but is being used as a value here.
+
+[7m10[0m         boolean result = requiresAuth();
+[7m  [0m [91m        ~~~~~~~[0m
+[96mmiddlewares/auth.middleware.ts[0m:[93m10[0m:[93m17[0m - [91merror[0m[90m TS2304: [0mCannot find name 'result'.
+
+[7m10[0m         boolean result = requiresAuth();
+[7m  [0m [91m                ~~~~~~[0m
+[96mmiddlewares/auth.middleware.ts[0m:[93m10[0m:[93m9[0m - [91merror[0m[90m TS1434: [0mUnexpected keyword or identifier.
+
+[7m10[0m         boolean result = requiresAuth();
+[7m  [0m [91m        ~~~~~~~[0m
+
+    at createTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/usr/local/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
