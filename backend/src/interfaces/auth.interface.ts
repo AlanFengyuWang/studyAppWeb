@@ -13,3 +13,8 @@ export interface TokenData {
 export interface RequestWithUser extends Request {
   user: User;
 }
+
+// export interface TypedRequestWithUser<> extends Express.Request {
+//   cookies: any;
+//   user: User
+// }
