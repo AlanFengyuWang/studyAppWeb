@@ -25,6 +25,10 @@ class App {
         this.initializeSwagger();
         this.initializeErrorHandling();
     }
+
+    public getServer() {
+        return this.app;
+    }
     
     public listen() {
         this.app.listen(this.port, () => {

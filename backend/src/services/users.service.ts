@@ -19,12 +19,7 @@ class UserService {
         if (findUser) throw new HttpException(409, `This email ${userData.email} already exists`);
     
         const hashedPassword = await hash(userData.password, 10);
-        console.log("before create user");
-        
         const createUserData: User = await this.users.create({ ...userData, password: hashedPassword });
-        console.log("after create user");
-        
-        console.log("createUserData = " + JSON.stringify(createUserData));
         
         return createUserData;
     }
