@@ -89,6 +89,16 @@
             "date": 1669882998131,
             "name": "/Users/fengyuwangbv/Desktop/studyAppWeb/backend/src/logs/error/2022-12-01.log",
             "hash": "b69c2ee499598d0bb9f0d99fcc7559b910e20db00d582dd4218ed57eeb1c92dd"
+        },
+        {
+            "date": 1670222664138,
+            "name": "/Users/fengyuwangbv/Desktop/studyAppWeb/backend/src/logs/error/2022-12-05.log",
+            "hash": "5114e712226768edd814fdd769443a9bd6327b7266a618560b0af8921a7f4c64"
+        },
+        {
+            "date": 1670308752491,
+            "name": "/Users/fengyuwangbv/Desktop/studyAppWeb/backend/src/logs/error/2022-12-06.log",
+            "hash": "6d7a58b554dd4bc133e2f9a22cb8a26a54d977d899e81aa1fa322fd4d561d81c"
         }
     ],
     "hashType": "sha256"

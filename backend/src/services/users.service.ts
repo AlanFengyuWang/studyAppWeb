@@ -4,9 +4,12 @@ import { HttpException } from '../exceptions/HttpException';
 import { User } from "../interfaces/users.interface";
 import { hash } from 'bcrypt';
 import userModel from "../models/users.model";
+import mongoose from "mongoose"
 
 class UserService {
     public users = userModel;
+    private objectId = mongoose.Types.ObjectId;
+
     public async findAllUser(): Promise<User[]> {
         const users: User[] = await this.users.find();
         return users;
@@ -25,8 +28,12 @@ class UserService {
     }
 
     public async findUserById(userId: string): Promise<User> {
-        if(isEmpty(userId)) throw new HttpException(400, "UserId is empty");
+        if(!this.objectId.isValid(userId)) {
+            throw new HttpException(400, "The user Id is not valid");
+        }
         const findUser: User | null = await this.users.findOne({_id: userId});
+        // console.log("findUser = " + findUser);
+        
         if(!findUser) throw new HttpException(409, "User doesn't exist");
         return findUser;
     }
