@@ -49,6 +49,56 @@
             "date": 1668640625214,
             "name": "/Users/fengyuwangbv/Desktop/studyAppWeb/backend/src/logs/error/2022-11-17.log",
             "hash": "09bd110e4644f3b428394384fcfcd5d2bba31ee49e83d6a5b0d6dfb57c80ebbf"
+        },
+        {
+            "date": 1668724882333,
+            "name": "/Users/fengyuwangbv/Desktop/studyAppWeb/backend/src/logs/error/2022-11-18.log",
+            "hash": "0e5932ade4b6d5cfe9c3ff1685e005eca6fa5b4cc61a71407045561af4524e25"
+        },
+        {
+            "date": 1668814571946,
+            "name": "/Users/fengyuwangbv/Desktop/studyAppWeb/backend/src/logs/error/2022-11-19.log",
+            "hash": "5306ecf8584c425d894f8fc28e269af6544edad56f205149ded51cd9933ec952"
+        },
+        {
+            "date": 1668900712910,
+            "name": "/Users/fengyuwangbv/Desktop/studyAppWeb/backend/src/logs/error/2022-11-20.log",
+            "hash": "b163b2e02e721ba386f56640573848ee00c86cd72c613bbc042d78a365502657"
+        },
+        {
+            "date": 1669016545764,
+            "name": "/Users/fengyuwangbv/Desktop/studyAppWeb/backend/src/logs/error/2022-11-21.log",
+            "hash": "0764b83b466d7df9385eda2b6f3addf4f44a811159a65c7b08917ca3f93ef43d"
+        },
+        {
+            "date": 1669092428623,
+            "name": "/Users/fengyuwangbv/Desktop/studyAppWeb/backend/src/logs/error/2022-11-22.log",
+            "hash": "96779d35d801968ac2f153ee649e80bf3b5b8298eff041ff70f04539b752c4b2"
+        },
+        {
+            "date": 1669177919053,
+            "name": "/Users/fengyuwangbv/Desktop/studyAppWeb/backend/src/logs/error/2022-11-23.log",
+            "hash": "f9fa2a805c8f87e683e801700335cf9d725d52210d4f3d00c491cf60803164e4"
+        },
+        {
+            "date": 1669804354122,
+            "name": "/Users/fengyuwangbv/Desktop/studyAppWeb/backend/src/logs/error/2022-11-30.log",
+            "hash": "4cf38637f46f33207e83df5dd21747b64f517b285ad55a6daab281695761ef04"
+        },
+        {
+            "date": 1669882998131,
+            "name": "/Users/fengyuwangbv/Desktop/studyAppWeb/backend/src/logs/error/2022-12-01.log",
+            "hash": "b69c2ee499598d0bb9f0d99fcc7559b910e20db00d582dd4218ed57eeb1c92dd"
+        },
+        {
+            "date": 1670222664138,
+            "name": "/Users/fengyuwangbv/Desktop/studyAppWeb/backend/src/logs/error/2022-12-05.log",
+            "hash": "5114e712226768edd814fdd769443a9bd6327b7266a618560b0af8921a7f4c64"
+        },
+        {
+            "date": 1670308752491,
+            "name": "/Users/fengyuwangbv/Desktop/studyAppWeb/backend/src/logs/error/2022-12-06.log",
+            "hash": "6d7a58b554dd4bc133e2f9a22cb8a26a54d977d899e81aa1fa322fd4d561d81c"
         }
     ],
     "hashType": "sha256"

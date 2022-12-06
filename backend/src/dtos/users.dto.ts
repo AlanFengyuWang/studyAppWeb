@@ -1,4 +1,4 @@
-import { IsArray, IsEmail, IsObject, isString, IsString } from 'class-validator';
+import { IsArray, IsBoolean, IsEmail, IsObject, isString, IsString } from 'class-validator';
 
 class Name {
   @IsString()
@@ -27,4 +27,18 @@ export class CreateUserDto {
 
   @IsArray()
   public tasks!: [];
+
+}
+
+export class IsThirdPartyDto {
+  @IsString()
+  public isThirdParty!: string;
+}
+
+export class LoginDto {
+  @IsString()
+  public email!: string;
+  
+  @IsString()
+  public password!: string;
 }

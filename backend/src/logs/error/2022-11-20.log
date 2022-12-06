@@ -1,0 +1,284 @@
+2022-11-20 11:08:33 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96mmiddlewares/auth.middleware.ts[0m:[93m8[0m:[93m51[0m - [91merror[0m[90m TS1003: [0mIdentifier expected.
+
+[7m8[0m         console.log("requiresAuth()) = " + result.);
+[7m [0m [91m                                                  ~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96mmiddlewares/auth.middleware.ts[0m:[93m8[0m:[93m51[0m - [91merror[0m[90m TS1003: [0mIdentifier expected.
+
+[7m8[0m         console.log("requiresAuth()) = " + result.);
+[7m [0m [91m                                                  ~[0m
+
+    at createTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/usr/local/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2022-11-20 11:08:49 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96mroutes/users.route.ts[0m:[93m19[0m:[93m52[0m - [91merror[0m[90m TS2554: [0mExpected 0 arguments, but got 1.
+
+[7m19[0m     this.router.get(`${this.path}`, authValidation(true), this.usersController.getUsers);
+[7m  [0m [91m                                                   ~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96mroutes/users.route.ts[0m:[93m19[0m:[93m52[0m - [91merror[0m[90m TS2554: [0mExpected 0 arguments, but got 1.
+
+[7m19[0m     this.router.get(`${this.path}`, authValidation(true), this.usersController.getUsers);
+[7m  [0m [91m                                                   ~~~~[0m
+
+    at createTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/usr/local/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2022-11-20 11:09:00 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96mmiddlewares/auth.middleware.ts[0m:[93m7[0m:[93m37[0m - [91merror[0m[90m TS2345: [0mArgument of type 'boolean' is not assignable to parameter of type '(req: OpenidRequest) => boolean'.
+
+[7m7[0m         const result = requiresAuth(true);
+[7m [0m [91m                                    ~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96mmiddlewares/auth.middleware.ts[0m:[93m7[0m:[93m37[0m - [91merror[0m[90m TS2345: [0mArgument of type 'boolean' is not assignable to parameter of type '(req: OpenidRequest) => boolean'.
+
+[7m7[0m         const result = requiresAuth(true);
+[7m [0m [91m                                    ~~~~[0m
+
+    at createTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/usr/local/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2022-11-20 11:12:11 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96mroutes/users.route.ts[0m:[93m20[0m:[93m5[0m - [91merror[0m[90m TS2304: [0mCannot find name 'app'.
+
+[7m20[0m     app.get('/profile', requiresAuth(), (req, res) => {
+[7m  [0m [91m    ~~~[0m
+[96mroutes/users.route.ts[0m:[93m20[0m:[93m42[0m - [91merror[0m[90m TS7006: [0mParameter 'req' implicitly has an 'any' type.
+
+[7m20[0m     app.get('/profile', requiresAuth(), (req, res) => {
+[7m  [0m [91m                                         ~~~[0m
+[96mroutes/users.route.ts[0m:[93m20[0m:[93m47[0m - [91merror[0m[90m TS7006: [0mParameter 'res' implicitly has an 'any' type.
+
+[7m20[0m     app.get('/profile', requiresAuth(), (req, res) => {
+[7m  [0m [91m                                              ~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96mroutes/users.route.ts[0m:[93m20[0m:[93m5[0m - [91merror[0m[90m TS2304: [0mCannot find name 'app'.
+
+[7m20[0m     app.get('/profile', requiresAuth(), (req, res) => {
+[7m  [0m [91m    ~~~[0m
+[96mroutes/users.route.ts[0m:[93m20[0m:[93m42[0m - [91merror[0m[90m TS7006: [0mParameter 'req' implicitly has an 'any' type.
+
+[7m20[0m     app.get('/profile', requiresAuth(), (req, res) => {
+[7m  [0m [91m                                         ~~~[0m
+[96mroutes/users.route.ts[0m:[93m20[0m:[93m47[0m - [91merror[0m[90m TS7006: [0mParameter 'res' implicitly has an 'any' type.
+
+[7m20[0m     app.get('/profile', requiresAuth(), (req, res) => {
+[7m  [0m [91m                                              ~~~[0m
+
+    at createTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/usr/local/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/usr/local/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2022-11-20 11:40:37 error: uncaughtException: "baseURL" is required
+TypeError: "baseURL" is required
+    at module.exports.get (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/express-openid-connect/lib/config.js:267:11)
+    at auth (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/express-openid-connect/middleware/auth.js:28:18)
+    at App.initializedMiddlewares (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/src/app.ts:59:26)
+    at new App (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/src/app.ts:24:14)
+    at Object.<anonymous> (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/src/server.ts:8:13)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1618:23)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+2022-11-20 11:40:41 error: uncaughtException: "baseURL" is required
+TypeError: "baseURL" is required
+    at module.exports.get (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/express-openid-connect/lib/config.js:267:11)
+    at auth (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/express-openid-connect/middleware/auth.js:28:18)
+    at App.initializedMiddlewares (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/src/app.ts:59:26)
+    at new App (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/src/app.ts:24:14)
+    at Object.<anonymous> (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/src/server.ts:8:13)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1618:23)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+2022-11-20 11:43:42 error: uncaughtException: "baseURL" is required
+TypeError: "baseURL" is required
+    at module.exports.get (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/express-openid-connect/lib/config.js:267:11)
+    at auth (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/express-openid-connect/middleware/auth.js:28:18)
+    at App.initializedMiddlewares (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/src/app.ts:60:26)
+    at new App (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/src/app.ts:24:14)
+    at Object.<anonymous> (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/src/server.ts:8:13)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1618:23)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+2022-11-20 11:44:00 error: uncaughtException: "baseURL" is required
+TypeError: "baseURL" is required
+    at module.exports.get (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/express-openid-connect/lib/config.js:267:11)
+    at auth (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/express-openid-connect/middleware/auth.js:28:18)
+    at App.initializedMiddlewares (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/src/app.ts:60:26)
+    at new App (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/src/app.ts:24:14)
+    at Object.<anonymous> (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/src/server.ts:8:13)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1618:23)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+2022-11-20 11:44:18 error: uncaughtException: "baseURL" is required
+TypeError: "baseURL" is required
+    at module.exports.get (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/express-openid-connect/lib/config.js:267:11)
+    at auth (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/express-openid-connect/middleware/auth.js:28:18)
+    at App.initializedMiddlewares (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/src/app.ts:60:26)
+    at new App (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/src/app.ts:24:14)
+    at Object.<anonymous> (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/src/server.ts:8:13)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1618:23)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+2022-11-20 11:44:23 error: uncaughtException: "baseURL" is required
+TypeError: "baseURL" is required
+    at module.exports.get (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/express-openid-connect/lib/config.js:267:11)
+    at auth (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/express-openid-connect/middleware/auth.js:28:18)
+    at App.initializedMiddlewares (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/src/app.ts:60:26)
+    at new App (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/src/app.ts:24:14)
+    at Object.<anonymous> (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/src/server.ts:8:13)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1618:23)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+2022-11-20 11:44:47 error: uncaughtException: "baseURL" is required
+TypeError: "baseURL" is required
+    at module.exports.get (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/express-openid-connect/lib/config.js:267:11)
+    at auth (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/express-openid-connect/middleware/auth.js:28:18)
+    at App.initializedMiddlewares (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/src/app.ts:60:26)
+    at new App (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/src/app.ts:24:14)
+    at Object.<anonymous> (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/src/server.ts:8:13)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1618:23)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+2022-11-20 11:44:56 error: uncaughtException: "baseURL" is required
+TypeError: "baseURL" is required
+    at module.exports.get (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/express-openid-connect/lib/config.js:267:11)
+    at auth (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/express-openid-connect/middleware/auth.js:28:18)
+    at App.initializedMiddlewares (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/src/app.ts:61:17)
+    at new App (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/src/app.ts:24:14)
+    at Object.<anonymous> (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/src/server.ts:8:13)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1618:23)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+2022-11-20 11:45:24 error: uncaughtException: "baseURL" is required
+TypeError: "baseURL" is required
+    at module.exports.get (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/express-openid-connect/lib/config.js:267:11)
+    at auth (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/express-openid-connect/middleware/auth.js:28:18)
+    at App.initializedMiddlewares (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/src/app.ts:61:17)
+    at new App (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/src/app.ts:24:14)
+    at Object.<anonymous> (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/src/server.ts:8:13)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1618:23)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+2022-11-20 11:45:26 error: uncaughtException: "baseURL" is required
+TypeError: "baseURL" is required
+    at module.exports.get (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/express-openid-connect/lib/config.js:267:11)
+    at auth (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/express-openid-connect/middleware/auth.js:28:18)
+    at App.initializedMiddlewares (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/src/app.ts:61:17)
+    at new App (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/src/app.ts:24:14)
+    at Object.<anonymous> (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/src/server.ts:8:13)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1618:23)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+2022-11-20 11:45:30 error: uncaughtException: "baseURL" is required
+TypeError: "baseURL" is required
+    at module.exports.get (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/express-openid-connect/lib/config.js:267:11)
+    at auth (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/express-openid-connect/middleware/auth.js:28:18)
+    at App.initializedMiddlewares (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/src/app.ts:61:17)
+    at new App (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/src/app.ts:24:14)
+    at Object.<anonymous> (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/src/server.ts:8:13)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1618:23)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+2022-11-20 11:45:35 error: uncaughtException: "baseURL" is required
+TypeError: "baseURL" is required
+    at module.exports.get (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/express-openid-connect/lib/config.js:267:11)
+    at auth (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/express-openid-connect/middleware/auth.js:28:18)
+    at App.initializedMiddlewares (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/src/app.ts:61:17)
+    at new App (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/src/app.ts:24:14)
+    at Object.<anonymous> (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/src/server.ts:8:13)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1618:23)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+2022-11-20 11:56:32 error: uncaughtException: "baseURL" is required
+TypeError: "baseURL" is required
+    at module.exports.get (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/express-openid-connect/lib/config.js:267:11)
+    at auth (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/express-openid-connect/middleware/auth.js:28:18)
+    at App.initializedMiddlewares (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/src/app.ts:61:17)
+    at new App (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/src/app.ts:24:14)
+    at Object.<anonymous> (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/src/server.ts:8:13)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1618:23)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+2022-11-20 11:56:39 error: uncaughtException: "baseURL" is required
+TypeError: "baseURL" is required
+    at module.exports.get (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/express-openid-connect/lib/config.js:267:11)
+    at auth (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/express-openid-connect/middleware/auth.js:28:18)
+    at App.initializedMiddlewares (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/src/app.ts:61:17)
+    at new App (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/src/app.ts:24:14)
+    at Object.<anonymous> (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/src/server.ts:8:13)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1618:23)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+2022-11-20 11:58:04 error: uncaughtException: "baseURL" is required
+TypeError: "baseURL" is required
+    at module.exports.get (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/express-openid-connect/lib/config.js:267:11)
+    at auth (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/node_modules/express-openid-connect/middleware/auth.js:28:18)
+    at App.initializedMiddlewares (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/src/app.ts:61:17)
+    at new App (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/src/app.ts:24:14)
+    at Object.<anonymous> (/Users/fengyuwangbv/Desktop/studyAppWeb/backend/src/server.ts:8:13)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Module.m._compile (/usr/local/lib/node_modules/ts-node/src/index.ts:1618:23)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Object.require.extensions.<computed> [as .ts] (/usr/local/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:981:32)

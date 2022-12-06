@@ -7,4 +7,5 @@ export interface User {
     image: string;
     accountTimeCreated: Date;
     tasks: Task[];
+    isThirdParty: boolean;
 }
